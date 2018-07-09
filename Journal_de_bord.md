@@ -7,3 +7,5 @@
 * Concertation avec nos collègues du projet Repair-Cafe sur la charte graphique et l'API du calendrier, principalement
 * Début de modélisation MCD
 * Envoie de questions sur le projet à Native Web
+
+- question: Doit-on impérativement oublier MongoDB?
