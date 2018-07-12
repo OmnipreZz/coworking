@@ -25,3 +25,11 @@
 * Choix d'un outil d'automatisation des mails : MailChimp semble correspondre aux besoins mais l'utilisation de l'API doit encore être étudiée
 * Reflexion et test d'un calendrier : Full-Calendar
 * Choix du framework : materialize
+
+#### jeudi 12 juillet
+* Finition des wireframes (côté modérateur)
+* Changement de cap pour l'automatisation des mails : SendGrid (gratuit et semble simple d'utilisation après quelques tests)
+* Mise au point de la création d'un calendrier
+* Création d'un serveur express avec gulp
+* Essais avec materialize
+* Echanges avec l'autre groupe qui travaille sur un projet de la MDA pour tenter d'uniformiser les technologies ainsi que le visuel des deux projets
