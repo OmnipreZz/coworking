@@ -1,6 +1,7 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
-      ejs = require('ejs');
+      ejs = require('ejs'),
+      sgMail = require('@sendgrid/mail');
 
 
 // declare la variable app avec express
