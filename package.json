@@ -2,9 +2,10 @@
   "name": "projet-pedago",
   "version": "1.0.0",
   "description": "Geoffrey, Edmond, Julien.",
-  "main": "index.js",
+  "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -16,16 +17,16 @@
     "url": "https://github.com/Simplejul/coworking/issues"
   },
   "homepage": "https://github.com/Simplejul/coworking#readme",
-  "dependencies": {
-    "@sendgrid/mail": "^6.3.1",
-    "body-parser": "^1.18.3",
-    "ejs": "^2.6.1",
-    "express": "^4.16.3"
-  },
   "devDependencies": {
     "browser-sync": "^2.24.5",
     "gulp": "^3.9.1",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^4.0.1"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
   }
 }
