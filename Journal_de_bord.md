@@ -42,3 +42,4 @@
 
 ### A demander lors de la réunion du 16 juillet :
 * Tous les liens à nous fournir
+* Le mail pour créer un compte chez l'hébergeur de BDD (besoin de l'accés seulement pour l'inscription)
