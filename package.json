@@ -18,8 +18,14 @@
   },
   "homepage": "https://github.com/Simplejul/coworking#readme",
   "devDependencies": {
+<<<<<<< HEAD
     "gulp": "^3.9.1",
     "gulp-imagemin": "^4.1.0",
+=======
+    "browser-sync": "^2.24.5",
+    "gulp": "^4.0.0",
+    "gulp-nodemon": "^2.2.1",
+>>>>>>> 3249a7c2c33923f21d43a2c53a68281a768bc430
     "gulp-sass": "^4.0.1"
   },
   "dependencies": {
