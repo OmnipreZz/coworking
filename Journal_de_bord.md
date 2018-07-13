@@ -33,3 +33,12 @@
 * Création d'un serveur express avec gulp
 * Essais avec materialize
 * Echanges avec l'autre groupe qui travaille sur un projet de la MDA pour tenter d'uniformiser les technologies ainsi que le visuel des deux projets
+
+
+
+
+
+
+
+### A demander lors de la réunion du 16 juillet :
+* Tous les liens à nous fournir
