@@ -19,7 +19,7 @@
   "homepage": "https://github.com/Simplejul/coworking#readme",
   "devDependencies": {
     "browser-sync": "^2.24.5",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "gulp-nodemon": "^2.2.1",
     "gulp-sass": "^4.0.1"
   },
