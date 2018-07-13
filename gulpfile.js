@@ -15,9 +15,6 @@ gulp.task('sass', () => {
       return gulp.src('./sass/**/*.scss')
             .pipe(sass())
             .pipe(gulp.dest('./dist/public/css'))
-            .pipe(browserSync.reload({
-                  stream: true
-            }))
 });
 
 
@@ -25,9 +22,6 @@ gulp.task('sass', () => {
 gulp.task('ejs', () => {
       return gulp.src('./views/*.ejs')
             .pipe(gulp.dest('./dist/views'))
-            .pipe(browserSync.reload({
-                  stream: true
-            }))
 });
 
 
@@ -35,9 +29,6 @@ gulp.task('ejs', () => {
 gulp.task('partials', () => {
       return gulp.src('./partials/*.ejs')
             .pipe(gulp.dest('./dist/views/partials'))
-            .pipe(browserSync.reload({
-                  stream: true
-            }))
 });
 
 
@@ -46,18 +37,12 @@ gulp.task('img', () => {
       return gulp.src('./img/**/*.+(png|jpg|gif|svg)')
             .pipe(imagemin())
             .pipe(gulp.dest('./dist/public/img'))
-            .pipe(browserSync.reload({
-                  stream: true
-            }))
 });
 
 //envoi du server.js vers dist
 gulp.task('server', () => {
       return gulp.src('./server.js')
             .pipe(gulp.dest('./dist'))
-            .pipe(browserSync.reload({
-                  stream: true
-            }))
 });
 
 
