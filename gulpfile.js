@@ -39,6 +39,14 @@ gulp.task('img', () => {
             .pipe(gulp.dest('./dist/public/img'))
 });
 
+
+//envoi du server.js vers dist
+gulp.task('js', () => {
+      return gulp.src('./js/*.js')
+            .pipe(gulp.dest('./dist/public/js'))
+});
+
+
 //envoi du server.js vers dist
 gulp.task('server', () => {
       return gulp.src('./server.js')
@@ -47,7 +55,7 @@ gulp.task('server', () => {
 
 
 // gulp build dans la console pour lancer toutes les taches qui envoie sur le dist
-gulp.task('build', ['server', 'ejs', 'partials', 'sass', 'img'], () => {
+gulp.task('build', ['server', 'ejs', 'partials', 'sass', 'js', 'img'], () => {
       console.log('Building files');
 });
 
@@ -57,6 +65,7 @@ gulp.task('watch', () => {
       gulp.watch('./sass/**/*.scss', ['sass']);
       gulp.watch('./views/*.ejs', ['ejs']);
       gulp.watch('./partials/*.ejs', ['partials']);
+      gulp.watch('./js/*.js', ['js']);
       gulp.watch('./img/**/*.+(png|jpg|gif|svg', ['img']);
       gulp.watch('./server.js', ['server']);
 });
