@@ -26,4 +26,3 @@ app.get('/', (req, res) => {
 const server = app.listen(process.env.PORT || 8080, (req, res) => {
     console.log('Server online!');
 });
-
