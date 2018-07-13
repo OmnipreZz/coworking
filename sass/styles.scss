@@ -9,29 +9,26 @@ h1 {
     color: $rouge;
 }
 
-.colorNav {
+.archivo {
+    font-family: 'Archivo Black', sans-serif;
+}
+
+.navColor {
     color: $bleu;
 }
 
-
-.colorNav:hover {
-    background-color: $vertPastel;
-    color: white;
+.navTitle {
+    margin-left: 10%;
+    font-size: 2em;
 }
 
-.colorSidenav {
+.navHover:hover {
+    background-color: white;
+}
+
+.navDivider {
     color: $bleu;
-}
-
-.ok {
     font-size: 25px;
     padding-left: 35px;
     padding-right: 35px;
-}
-
-.logo {
-    width: 90px; 
-    height: 60px;
-    margin-left: 10px;
-    margin-top: 2px;
 }
