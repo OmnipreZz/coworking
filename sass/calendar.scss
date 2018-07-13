@@ -1,0 +1,22 @@
+#month{
+    font-size: 2em;
+    margin: 2%;
+}
+
+#year{
+    font-size: 2em;
+    margin: 2%;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+}
+
+    .cell, .week{
+        border: 2px solid #000000;
+        border-radius: 11px;
+        height: 100px;
+        text-align: center;
+    }
