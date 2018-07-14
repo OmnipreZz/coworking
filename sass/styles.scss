@@ -44,3 +44,23 @@ $jaune: rgb(235, 219, 1);
     background: url(/img/rest-700156.jpg) no-repeat center;
     background-size: cover;
 }
+
+.option1 {
+    background-color: $bleu;
+}
+
+.option2 {
+    background-color: $jaune;
+}
+
+.option3 {
+    background-color: $orange;
+}
+
+.option4 {
+    background-color: $rouge;
+}
+
+.card-fav {
+    font-size::3em;
+}
