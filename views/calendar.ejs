@@ -1,13 +1,20 @@
 
-    <h1>Calendar</h1>
+
     <div id="cal">
 
-        <button onclick="beforemonth()" id="btnmonthbefore">before</button>
-        <div id="month">MONTH</div>
-        <button onclick="nextmonth()" id="btnmonthnext">next</button>
-        <button onclick="beforeyear()">before</button>
-        <div id="year">YEAR</div>
-        <button onclick="nextyear()">next</button>
+        <div id="btncontainer">
+            <div class="dispbtn">
+                <button onclick="beforemonth()" id="btnmonthbefore">before</button>
+                <div id="month">MONTH</div>
+                <button onclick="nextmonth()" id="btnmonthnext">next</button>
+            </div>
+            <h1>Calendar</h1>
+            <div class="dispbtn">
+                <button onclick="beforeyear()">before</button>
+                <div id="year">YEAR</div>
+                <button onclick="nextyear()">next</button>
+            </div>
+        </div>
 
         <div class="row" id="row1">
             <!-- <div id="" class="week">1</div> -->

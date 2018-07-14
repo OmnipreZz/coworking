@@ -1,3 +1,11 @@
+#btncontainer{
+    display: flex;
+    justify-content: space-between;
+}
+    .dispbtn{
+        display: flex;
+        height: 4em;
+    }
 #month{
     font-size: 2em;
     margin: 2%;
