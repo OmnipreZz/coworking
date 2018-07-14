@@ -12,7 +12,10 @@ $(document).ready(function () {
 // Carousel
 //---------------------
 
-$('.carousel').carousel();
+$('.carousel').carousel({
+    duration: 400,
+    fullWidth: true
+});
 setInterval(function () {
     $('.carousel').carousel('next');
 }, 5000);
