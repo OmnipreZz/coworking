@@ -28,3 +28,12 @@ document.addEventListener('DOMContentLoaded', function () {
         respponsivThreshold: 0
     });
 });
+
+// ------------------------
+// [Test Page] Modal
+
+$(document).ready(function(){
+    $('.modal').modal();
+  });
+
+//---------------------

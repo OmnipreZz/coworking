@@ -1,4 +1,3 @@
-exports.calendarjs = function() {
 //----------------------------------
 // display calendar of this moment
 //--------------------------------
@@ -21,12 +20,12 @@ let i = Number(idfirstday);
 let j = 0;
 for (i; i <= 42; i++) {
     j++;
-    let dat = moment().set('date',j).format('ddd D MMM YYYY');
+    let dat = moment().set('date',j).format('ddd D MMM');
     $("#" + i).text(dat);
 }
 for (i; i > 0; i--) {
     
-    let dat = moment().set('date',j+1).format('ddd D MMM YYYY');
+    let dat = moment().set('date',j+1).format('ddd D MMM');
     $("#" + i).text(dat);
     j--;
 }
@@ -72,7 +71,7 @@ function beforeyear(){
 
     for (i; i <= 42; i++) {
 
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         console.log( "dat : : " + dat);
         
         $("#" + i).text(dat);
@@ -81,7 +80,7 @@ function beforeyear(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
@@ -114,7 +113,7 @@ function nextyear(){
 
     for (i; i <= 42; i++) {
 
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         console.log( "dat : : " + dat);
         
         $("#" + i).text(dat);
@@ -123,7 +122,7 @@ function nextyear(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
@@ -150,7 +149,7 @@ function beforemonth(){
     
     let firstdayofmonthofyear = Number(moment().set({ 'year': year, 'month': monthnb, 'date': 1 }).format('DDD'));
 
-    console.log("year in before(2) :: " + moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY'));
+    console.log("year in before(2) :: " + moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM'));
     
     // syntax for jquery 
     onedayclass = "#week1 " + firstdayofmonth;
@@ -167,7 +166,7 @@ function beforemonth(){
 
     for (i; i <= 42; i++) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         console.log( "dat : : " + dat);
         
         $("#" + i).text(firstdayofmonthofyear);
@@ -177,7 +176,7 @@ function beforemonth(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
@@ -213,7 +212,7 @@ function nextmonth(){
 
     for (i; i <= 42; i++) {
 
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         console.log( "dat : : " + dat);
         
         $("#" + i).text(dat);
@@ -222,7 +221,7 @@ function nextmonth(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM YYYY');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
@@ -247,5 +246,3 @@ $('#btnmonthnext').click(function(){
         nextyear();
     };
 });
-
-};

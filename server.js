@@ -22,6 +22,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+// page test
+app.get('/test', (req,res)=>{
+    res.render('testpage');
+});
 
 const server = app.listen(process.env.PORT || 8080, (req, res) => {
     console.log('Server online!');

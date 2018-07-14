@@ -1,0 +1,52 @@
+<%- include partials/header.ejs %>
+    <%- include partials/navbar.ejs %>
+
+<div class=" carou carousel carousel-slider" style="height: 580px;">
+    <div class="carousel-fixed-item center">
+        <a href="#ancre" class="btn waves-effect white-text waves-light">En Savoir Plus</a>
+    </div>
+    <div class="carousel-item slide1 white-text" href="#one!">
+    </div>
+    <div class="carousel-item slide2 white-text" href="#two!">
+    </div>
+    <div class="carousel-item slide3 white-text" href="#three!">
+    </div>
+</div>
+
+
+<div class="container" id="ancre" style="height: 400px;">
+    <div class="row">
+        <div class="col s12">
+
+            <!-- Modal Trigger -->
+            <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                <%- include calendar.ejs %>
+                </div>
+            </div>
+
+            <h1>DESCRIPTION</h1>
+            <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatum, tempora, molestiae atque placeat
+                dolor repudiandae, libero perspiciatis voluptatibus aperiam labore ipsam in ratione dolore esse sapiente
+                harum recusandae deleniti!</span>
+        </div>
+    </div>
+</div>
+
+<div id="choicediv" class="container-fluid">
+    <%- include calendar.ejs %>
+    <div id="equipment">
+        equipment
+    </div>
+</div>
+
+<div class="container">
+    <%- include partials/registration.ejs %>
+</div>
+
+
+
+<%- include partials/footer.ejs %>
