@@ -81,5 +81,17 @@ $jaune: rgb(235, 219, 1);
 }
 
 .card-fav {
-    font-size::3em;
+    font-size:3em;
+}
+
+.blueBack {
+    background-color: $bleu;
+    width: 100%;
+}
+
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
 }
