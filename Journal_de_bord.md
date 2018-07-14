@@ -38,9 +38,12 @@
 * Finition du calendrier
 * Construction et organisation du repo
 * Paramétrage de gulp
-* front : page d'accueil
+* Front : page d'accueil
 
-
+#### samedi 14 juillet
+* Ajout de carousel et parallax
+* Travail sur le calendrier
+* Création et ajout des cartes "formules"
 
 ### A demander lors de la réunion du 16 juillet :
 * Tous les liens à nous fournir
