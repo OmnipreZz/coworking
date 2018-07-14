@@ -45,20 +45,39 @@ $jaune: rgb(235, 219, 1);
     background-size: cover;
 }
 
+.collapsible {
+    all: unset;
+}
+
+.card {
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.collapsible-header {
+    all: unset;
+}
+
+.card-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .option1 {
-    background-color: $bleu;
+    background-color: $vertPastel;
 }
 
 .option2 {
-    background-color: $jaune;
+    background-color: $bleu;
 }
 
 .option3 {
-    background-color: $orange;
+    background-color: $jaune;
 }
 
 .option4 {
-    background-color: $rouge;
+    background-color: $orange;
 }
 
 .card-fav {
