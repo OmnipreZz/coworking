@@ -29,6 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+
+//enable collapsible in the options cards
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, {inDuration: 300});
+  });
+
+
+
 // ------------------------
 // [Test Page] Modal
 
