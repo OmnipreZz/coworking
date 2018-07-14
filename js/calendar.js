@@ -1,4 +1,3 @@
-exports.calendarjs = function() {
 //----------------------------------
 // display calendar of this moment
 //--------------------------------
@@ -247,5 +246,3 @@ $('#btnmonthnext').click(function(){
         nextyear();
     };
 });
-
-};
