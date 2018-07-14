@@ -5,9 +5,6 @@ $orange: rgb(241, 173, 50);
 $jaune: rgb(235, 219, 1);
 
 
-h1 {
-    color: $rouge;
-}
 
 .archivo {
     font-family: 'Archivo Black', sans-serif;
@@ -31,4 +28,19 @@ h1 {
     font-size: 25px;
     padding-left: 35px;
     padding-right: 35px;
+}
+
+.slide1 {
+    background: url(/img/startup-594091.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.slide2 {
+    background: url(/img/action-2277292.jpg) no-repeat center;
+    background-size: cover;
+}
+
+.slide3 {
+    background: url(/img/rest-700156.jpg) no-repeat center;
+    background-size: cover;
 }
