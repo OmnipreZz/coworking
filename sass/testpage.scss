@@ -1,0 +1,15 @@
+#choicediv{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    border: 4px solid #1B9996;
+}
+    #equipment{
+        height: auto;
+        border: 4px solid #F1AD32;
+        border-radius: 10px;
+    }
+
+    #cal{
+        border: 4px solid #93CBA6;
+        border-radius: 10px;
+    }
