@@ -34,12 +34,14 @@
 * Essais avec materialize
 * Echanges avec l'autre groupe qui travaille sur un projet de la MDA pour tenter d'uniformiser les technologies ainsi que le visuel des deux projets
 
-
-
-
+#### vendredi 13 juillet
+* Finition du calendrier
+* Construction et organisation du repo
+* Paramétrage de gulp
+* front : page d'accueil
 
 
 
 ### A demander lors de la réunion du 16 juillet :
 * Tous les liens à nous fournir
-* Le mail pour créer un compte chez l'hébergeur de BDD (besoin de l'accés seulement pour l'inscription)
+* Le mail pour créer un compte chez Sendgrid (nécessaire pour l'API d'automatisation des mails)
