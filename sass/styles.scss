@@ -110,7 +110,6 @@ h2 {
     background-color: $bleu;
     width: 100%;
     margin: 0;
-    height: 30vh;
 }
 
 .button-align {
@@ -127,6 +126,10 @@ h2 {
 .align-arrow {
     text-align: center;
     margin-bottom:  2%;
+}
+
+.newsletterPad {
+    margin-top: -2%;
 }
 
 .map {
@@ -173,6 +176,30 @@ h2 {
     }
     a:hover {
         color: $rouge;
+    }
+}
+
+
+
+
+// --------------MEDIA------------
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+   
+    .parallax-container {
+        display: none;
+    }
+
+    .map {
+        background: none;
     }
 }
 
