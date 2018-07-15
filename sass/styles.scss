@@ -130,10 +130,12 @@ h2 {
 }
 
 .map {
-    background: url(/img/gmap.png) no-repeat center;
-    background-size: cover;
     height: 85vh;
     margin: 0;
+}
+
+#mapid {
+    height: 500px;
 }
 
 .contact {
@@ -220,5 +222,3 @@ h2 {
 //--------------------
 // Fin Page Resa
 //--------------------
-
-

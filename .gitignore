@@ -2,3 +2,4 @@
 sendgrid.env
 dist
 Document.md
+js/map.js
