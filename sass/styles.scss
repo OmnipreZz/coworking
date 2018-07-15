@@ -57,6 +57,9 @@ $jaune: rgb(235, 219, 1);
 
 .collapsible-header {
     all: unset;
+    i {
+        font-size: 3em;
+    }
 }
 
 .card-panel {
@@ -80,11 +83,6 @@ $jaune: rgb(235, 219, 1);
 .option4 {
     background-color: $rouge;
     color: white;
-}
-
-.card-fav {
-    font-size:1em;
-    font-size:3em;
 }
 
 .collapsible-body {
