@@ -198,8 +198,18 @@ h2 {
         display: none;
     }
 
-    .map {
-        background: none;
+    .page-footer {
+        // position:fixed;
+        // bottom:20px;
+        .row {
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .footer-fav{
+    margin-left: 0px;
     }
 }
 
