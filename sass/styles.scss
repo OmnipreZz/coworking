@@ -95,3 +95,15 @@ $jaune: rgb(235, 219, 1);
     align-items: center;
     height: 30vh;
 }
+
+.map {
+    background: url(/img/googleMap.jpg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+}
+
+.contact {
+    background-color: white;
+    opacity: 0.7;
+    height: 500px;
+}
