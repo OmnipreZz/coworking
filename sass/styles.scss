@@ -52,6 +52,7 @@ $jaune: rgb(235, 219, 1);
 .card {
     cursor: pointer;
     margin-top: 40px;
+    appearance: none;
 }
 
 .collapsible-header {
@@ -77,11 +78,25 @@ $jaune: rgb(235, 219, 1);
 }
 
 .option4 {
-    background-color: $orange;
+    background-color: $rouge;
+    color: white;
 }
 
 .card-fav {
+    font-size:1em;
     font-size:3em;
+}
+
+.collapsible-body {
+    a{
+    background-color: $orange;
+    margin-top: 5px;
+    height: 100%;
+    width:100%;
+    }
+    a:hover {
+        background-color: $jaune;
+    }
 }
 
 .blueBack {
