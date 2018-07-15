@@ -270,25 +270,25 @@
         </div>
        <div class=" contact col l4 m4 s12">
            <h3 class="titreContact">Contact</h3>
-           <form action="">
+           <form id="contact" action="#" method="POST">
                 <div>
                     <label for=""></label>
-                    <input type="text" placeholder="Nom et Prénom">
+                    <input type="text" id="user" name="user" placeholder="Nom et Prénom" required>
                 </div>
                 <div>
                     <label for="tel"></label>
-                    <input type="tel" id="tel" placeholder="Téléphone">
+                    <input type="tel" id="tel" name="tel" placeholder="Téléphone">
                 </div>
                 <div>
                     <label for="mail"></label>
-                    <input type="email" id="mail" placeholder="Email">
+                    <input type="email" id="mail" name="mail" placeholder="Email" required>
                 </div>
                 <div>
-                    <label for="hob">Entrez votre message:</label>
-                    <textarea maxlength="500" id="hob" required name="hobbies"></textarea>
+                    <label for="message">Entrez votre message:</label>
+                    <textarea maxlength="500" id="message" name="message" required></textarea>
                 </div>
                 <div>
-                    <button class="waves-effect waves-light btn">Envoyez</button>
+                    <input id="submitbtn" type="submit" class="waves-effect waves-light btn" value="Envoyer">
                 </div>
            </form>
            <div class="descContact col s12 l12 m12">
