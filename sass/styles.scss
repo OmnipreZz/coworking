@@ -6,6 +6,15 @@ $jaune: rgb(235, 219, 1);
 
 
 
+h2 {
+    color: $bleu;
+    text-align: center;
+}
+
+.montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .archivo {
     font-family: 'Archivo Black', sans-serif;
 }
@@ -31,12 +40,12 @@ $jaune: rgb(235, 219, 1);
 }
 
 .slide1 {
-    background: url(/img/startup-594091.jpg) no-repeat center;
+    background: url(/img/action-2277292.jpg) no-repeat center;
     background-size: cover;
 }
 
 .slide2 {
-    background: url(/img/action-2277292.jpg) no-repeat center;
+    background: url(/img/startup-594091.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -57,6 +66,9 @@ $jaune: rgb(235, 219, 1);
 
 .collapsible-header {
     all: unset;
+    i {
+        font-size: 3em;
+    }
 }
 
 .card-panel {
@@ -80,12 +92,7 @@ $jaune: rgb(235, 219, 1);
 .option4 {
     background-color: $rouge;
     color: white;
-}
-
-.card-fav {
-    font-size:1em;
-    font-size:3em;
-}
+}   
 
 .collapsible-body {
     a{
@@ -102,26 +109,71 @@ $jaune: rgb(235, 219, 1);
 .blueBack {
     background-color: $bleu;
     width: 100%;
-}
-
-.align {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin: 0;
     height: 30vh;
 }
 
+.button-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-arrow {
+    padding-top: 2%;
+    padding-left: 2%;
+}
+
+.align-arrow {
+    text-align: center;
+    margin-bottom:  2%;
+}
+
 .map {
-    background: url(/img/googleMap.jpg) no-repeat center;
+    background: url(/img/gmap.png) no-repeat center;
     background-size: cover;
-    height: 500px;
+    height: 85vh;
+    margin: 0;
 }
 
 .contact {
     background-color: white;
-    opacity: 0.7;
-    height: 500px;
+    opacity: 0.8;
+    height: 85vh;
 }
+
+.titreContact {
+    text-align: center;
+    color: $bleu;
+}
+
+.descContact {
+    color: $bleu;
+}
+
+.page-footer {
+    i {
+        font-size: 2.5em;
+        }
+}
+.footer-fav{
+    margin-left: 400px;
+}
+
+.footer-links {
+    span {
+        margin-right: 5px;
+        color: $jaune;
+    }
+    a {
+        border-bottom: solid 1px;
+        color: $jaune;
+    }
+    a:hover {
+        color: $rouge;
+    }
+}
+
 
 //---------------------
 // Page Resa
@@ -168,3 +220,5 @@ $jaune: rgb(235, 219, 1);
 //--------------------
 // Fin Page Resa
 //--------------------
+
+
