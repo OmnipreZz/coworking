@@ -84,6 +84,7 @@ $jaune: rgb(235, 219, 1);
 
 .card-fav {
     font-size:1em;
+    font-size:3em;
 }
 
 .collapsible-body {
@@ -98,22 +99,26 @@ $jaune: rgb(235, 219, 1);
     }
 }
 
+.blueBack {
+    background-color: $bleu;
+    width: 100%;
+}
 
+.align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
 
+.map {
+    background: url(/img/googleMap.jpg) no-repeat center;
+    background-size: cover;
+    height: 500px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-.card {
-    margin-bottom: 20em;
+.contact {
+    background-color: white;
+    opacity: 0.7;
+    height: 500px;
 }
