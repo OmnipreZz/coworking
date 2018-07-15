@@ -175,6 +175,30 @@ h2 {
 }
 
 
+
+
+// --------------MEDIA------------
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+   
+    .parallax-container {
+        display: none;
+    }
+
+    .map {
+        background: none;
+    }
+}
+
+
 //---------------------
 // Page Resa
 //---------------------
