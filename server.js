@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+// page resa
+app.get('/resa', (req,res)=>{
+    res.render('resa');
+});
+
 // page test
 app.get('/test', (req,res)=>{
     res.render('testpage');

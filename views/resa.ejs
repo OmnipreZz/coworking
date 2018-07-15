@@ -1,0 +1,114 @@
+<%- include partials/header.ejs %>
+    <%- include partials/navbar.ejs %>
+
+<!-- carousel -->
+<div class=" carou carousel carousel-slider" style="height: 90vh;">
+    <div class="carousel-fixed-item center">
+        <a href="#anchorDesc" class="btn-floating btn-large">
+            <i class="material-icons">arrow_downward</i>
+        </a>
+    </div>
+    <div class="carousel-item slide1 white-text" href="#one!">
+    </div>
+    <div class="carousel-item slide2 white-text" href="#two!">
+    </div>
+    <div class="carousel-item slide3 white-text" href="#three!">
+    </div>
+</div>
+
+<!-- bouton resa -->
+    <div class="blueBack row">
+        <div class="align">
+            <a href="#anchorResa" class="waves-effect waves-light btn align-center">Reserver</a>
+        </div>
+    </div>
+
+<!-- reservation -->
+<div id="anchorResa" class="container-fluid">
+    <div id="choicebloc" class="row">
+
+        <div class="col s4 l4 m4 center">
+             <!-- Modal Trigger -->
+            <span class="titlemodal">Calendrier</span>
+             <button data-target="modal1" class="modal-trigger " id="btnmodal1"></button> 
+              <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <%- include partials/calendaresa.ejs %>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s4 l4 m4 center">
+             <!-- Modal Trigger -->
+            <span class="titlemodal">Equipement</span>
+            <button data-target="modal2" class="btn modal-trigger" id="btnmodal2"></button>
+             <!-- Modal Structure -->
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                   <%- include partials/equipment.ejs %>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+               </div>
+           </div>
+        </div>
+
+        <div class="col s4 l4 m4 center">
+            <!-- Modal Trigger -->
+            <span class="titlemodal">Place</span>
+            <button data-target="modal3" class="btn modal-trigger" id="btnmodal3"></button>
+            <!-- Modal Structure -->
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <%- include partials/spot.ejs %>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- footer -->
+        <footer class="page-footer teal">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">Footer Content</h5>
+                        <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <h5 class="white-text">Links</h5>
+                        <ul>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 1</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 2</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 3</a>
+                            </li>
+                            <li>
+                                <a class="grey-text text-lighten-3" href="#!">Link 4</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    © 2014 Copyright Text
+                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+
+
+<%- include partials/footer.ejs %>
