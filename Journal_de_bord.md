@@ -45,6 +45,15 @@
 * Travail sur le calendrier
 * Création et ajout des cartes "formules"
 
+#### dimanche 15 juillet
+* Création de la page "resa"
+* Link entre les pages et les ancres
+* Travail sur la page d'accueil
+* Implémentation d'une open street map dans la page d'accueil avec leaflet
+* Mise en place du formulaire de contact avec  sendgrid (mail automatique)
+* Responsivité du site
+
+
 ### A demander lors de la réunion du 16 juillet :
 * Tous les liens à nous fournir
 * Le mail pour créer un compte chez Sendgrid (nécessaire pour l'API d'automatisation des mails)
