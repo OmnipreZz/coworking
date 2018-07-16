@@ -1,8 +1,9 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
       ejs = require('ejs'),
+      apikey = require('./sendgrid/apikey')
       sgMail = require('@sendgrid/mail');
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+sgMail.setApiKey(apikey);
 
 // declare la variable app avec express
 let app = express();
