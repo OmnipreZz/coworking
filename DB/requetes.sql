@@ -8,6 +8,7 @@ CREATE TABLE Equipment(
 	idEquipment INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY(idEquipment),
 	name VARCHAR(20),
+	descEquipment VARCHAR(200),
 	idType INT,
 	FOREIGN KEY(idType) REFERENCES Type_Equipment(idType)
 );
@@ -51,7 +52,7 @@ CREATE TABLE Options(
 	idOption INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY(idOption),
 	price INT,
-	numberOfDays INT
+	numberOfHalfDays INT
 );
 
 CREATE TABLE Users(
@@ -62,10 +63,10 @@ CREATE TABLE Users(
 	mail VARCHAR(20) NOT NULL,
 	password TEXT NOT NULL,
 	phone INT,
-	avatar BLOB,
+	urlAvatar VARCHAR(100),
 	work VARCHAR(20),
 	shortBiography TEXT(2000),
-	role VARCHAR(10),
+	role VARCHAR(20),
 	idOption INT,
 	FOREIGN KEY(idOption) REFERENCES Options(idOption)
 );
@@ -74,5 +75,5 @@ CREATE TABLE Images(
 	idImage INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY(idImage),
 	name VARCHAR(20),
-	content BLOB
+	urlImage VARCHAR(100)
 );
