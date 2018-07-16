@@ -2,10 +2,11 @@
     display: flex;
     justify-content: space-between;
 }
-    .dispbtn{
-        display: flex;
-        height: 4em;
-    }
+
+.dispbtn{
+    display: flex;
+    height: 4em;
+}
 
 #month{
     font-size: 2em;
@@ -17,14 +18,34 @@
     margin: 2%;
 }
 
+.calendargrid {
+    display:grid;
+    grid-template-rows: repeat(12, 1fr 2fr 2fr);
+    grid-gap: 2px;
+}
+
 .week{
     display: grid;
     grid-template-columns: repeat(7,1fr);
     grid-gap: 2px;
 }
 
-    .cell{
-        border: 2px solid #000000;
-        border-radius: 11px;
-        text-align: center;
-    }
+.morning {
+    border: solid yellow;
+    margin-bottom: 2px;
+}
+
+.afternoon {
+    border: solid green;
+    margin-bottom: 2px;
+}
+
+.cell{
+    border: 2px solid #000000;
+    // border-radius: 11px;
+    text-align: center;
+}
+
+.content {
+    border-right: solid;
+}

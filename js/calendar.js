@@ -25,7 +25,7 @@ for (i; i <= 42; i++) {
 }
 for (i; i > 0; i--) {
     
-    let dat = moment().set('date',j+1).format('ddd D MMM');
+    let dat = moment().set('date',j+1).format('D');
     $("#" + i).text(dat);
     j--;
 }
@@ -80,7 +80,7 @@ function beforeyear(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('D');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
@@ -122,7 +122,7 @@ function nextyear(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('D');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
@@ -176,7 +176,7 @@ function beforemonth(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('D');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
@@ -221,7 +221,7 @@ function nextmonth(){
 
     for (i; i > 0; i--) {
         
-        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
+        let dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('D');
         $("#" + i).text(dat);
         firstdayofmonthofyear--;
     }
