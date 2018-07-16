@@ -53,9 +53,15 @@ gulp.task('server', () => {
             .pipe(gulp.dest('./dist'))
 });
 
+gulp.task('sendgrid', () => {
+      return gulp.src('./sendgrid/*.+(js|env)')
+            .pipe(gulp.dest('./dist/sendgrid'))
+});
+
+
 
 // gulp build dans la console pour lancer toutes les taches qui envoie sur le dist
-gulp.task('build', ['server', 'ejs', 'partials', 'sass', 'js', 'img'], () => {
+gulp.task('build', ['server', 'ejs', 'partials', 'sass', 'js', 'img', 'sendgrid'], () => {
       console.log('Building files');
 });
 
@@ -66,6 +72,7 @@ gulp.task('watch', () => {
       gulp.watch('./views/*.ejs', ['ejs']);
       gulp.watch('./partials/*.ejs', ['partials']);
       gulp.watch('./js/*.js', ['js']);
-      gulp.watch('./img/**/*.+(png|jpg|gif|svg', ['img']);
+      gulp.watch('./img/**/*.+(png|jpg|gif|svg)', ['img']);
       gulp.watch('./server.js', ['server']);
+      gulp.watch('./sendgrid/*.+(js|env)', ['sendgrid']);
 });
