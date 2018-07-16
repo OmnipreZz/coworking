@@ -216,7 +216,7 @@
         </div>
     </div>
 
-<!-- reservation -->
+<!-- reservation
 <div id="anchorResa" class="container" style="height: 50vh;">
     <div class="row">
         <div class="col s12 l12 m12">
@@ -232,6 +232,62 @@
             <br>
             <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et modi sunt nostrum, porro voluptates explicabo enim id odio
                 itaque temporibus optio numquam assumenda, adipisci consequuntur mollitia perferendis praesentium. Laboriosam, quos!</span>
+        </div>
+    </div>
+</div> -->
+
+<!-- reservation -->
+<div id="anchorResa" class="container-fluid" style="height: 70vh;">
+    <h2>Reservation</h2>
+    <br>
+    <br>
+    <div id="choicebloc" class="row">
+        <div class="col s12 l4 m4 center">
+            <!-- Modal Trigger -->
+            <span class="titlemodal">Calendrier</span>
+            <button data-target="modal1" class="modal-trigger " id="btnmodal1"></button>
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Choisissez une date:</h4>
+                    <%- include partials/calendaresa.ejs %>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 l4 m4 center">
+            <!-- Modal Trigger -->
+            <span class="titlemodal">Equipement</span>
+            <button data-target="modal2" class="btn modal-trigger" id="btnmodal2"></button>
+            <!-- Modal Structure -->
+            <div id="modal2" class="modal">
+                <div class="modal-content">
+                    <h4>Choisissez votre équipement:</h4>
+                    <%- include partials/equipment.ejs %>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12 l4 m4 center">
+            <!-- Modal Trigger -->
+            <span class="titlemodal">Place</span>
+            <button data-target="modal3" class="btn modal-trigger" id="btnmodal3"></button>
+            <!-- Modal Structure -->
+            <div id="modal3" class="modal">
+                <div class="modal-content">
+                    <h4>Choisissez votre place:</h4>
+                    <%- include partials/spot.ejs %>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-green btn-flat">Valider</a>
+                </div>
+            </div>
         </div>
     </div>
 </div>
