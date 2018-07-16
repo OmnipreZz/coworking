@@ -61,3 +61,22 @@
 * Le mail qui doit S'AFFICHER lorsque les gens reçoivent des notifications
 * Le mail pour gérer la clef api Leaflet
 * Le mail vers lequel envoyer les formulaires de contact
+
+
+Julie Talbot : julie.talbot@mjc-st-gaudens.org
+Emma Satyagraha : emma.mda@outlook.fr
+
+
+### Notes de la réunion du 16 juillet 2018.
+#### Sont présent : Géna Paillha, Jérémy Piccoli (représentant de Native Web), Emma Satyagraha et Julie Talbot (MDA) ainsi que notre équipe : Geoffrey, Julien et Edmond
+
+* Réflexion autour de l'arborescence du site : ok pour rassembler en une page
+* informations sur les adresses et lieux de la MDA A FOURNIR
+* projection : abonnement coworking au sein de réseau de lieux sur la territoire midi-pyrénnées
+* 3 formules à la base : Demi-journées (passage) - "comme à la maison" (mensuel) - et carnet de 10/mois
+* mail à recevoir pour détail du matériel (option payante) + prestations supp (copies, scanner...) - formules dans le mail aussi
+* écran en option à priori (un seul de disponible)
+* ok pour différents mails à récupérer
+* RGPD du groupe "Repar' Café" validé
+* côté réseau social à mettre en avant
+* Créer boîte mail pour tout
