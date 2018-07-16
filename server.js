@@ -1,8 +1,9 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
       ejs = require('ejs'),
+      apikey = require('./sendgrid/apikey')
       sgMail = require('@sendgrid/mail');
-sgMail.setApiKey("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");
+sgMail.setApiKey(apikey);
 
 // declare la variable app avec express
 let app = express();
@@ -31,7 +32,7 @@ app.post('/', (req, res) => {
 	let message = req.body.message;
 	// création d'un mail avec les informations du formulaire
 	const msg = {
-		to: "edmond92@gmail.com",
+		to: "coworkingmda@gmail.com",
 		from: mail,
 		subject: user + " a rempli le formulaire de contact coworking",
 		text: user + " a rempli le formulaire de contact du site de coworking.<br> Il est joignable au " + tel + " ou à l'adresse : " + mail + ".<br>" + "Il souhaite vous faire parvenir ce message" + message,
