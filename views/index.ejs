@@ -2,7 +2,7 @@
     <%- include partials/navbar.ejs %>
 
 <!-- carousel -->
-<div class=" carou carousel carousel-slider" style="height: 90vh;">
+<div class=" carou carousel carousel-slider">
     <div class="carousel-fixed-item center">
         <a href="#anchorDesc" class="btn-floating btn-large">
             <i class="material-icons">arrow_downward</i>
@@ -19,7 +19,7 @@
 <!-- description -->
 <div class="container" id="anchorDesc" style="height: 60vh;">
     <div class="row">
-        <div class="col s12">
+        <div class="col s12 m12 s12">
             <h3>DESCRIPTION</h3>
             <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus voluptatum, tempora, molestiae atque placeat
                 dolor repudiandae, libero perspiciatis voluptatibus aperiam labore ipsam in ratione dolore esse sapiente
@@ -27,11 +27,6 @@
         </div>
     </div>
 </div>
-<!-- <div class="align-arrow">
-    <a href="#anchorTarif" class="btn-floating btn-large">
-        <i class="material-icons">arrow_downward</i>
-    </a>
-</div> -->
 
 <!-- parallax -->
 <div class="parallax-container">
@@ -40,11 +35,34 @@
     </div>
 </div>
 
+<!-- newsletter -->
+<div class="row newsLetter">
+    <div class="col s12 m12 l12 center newsMargin">
+        <img src="/img/charte-logotype-MDA.png" class="responsive-img newsletterPad" width="140">
+    </div>
+    <!-- <div class=" col s1 m1 l1">
+        <div class="button-arrow">
+            <a href="#anchorTarif" class="btn-floating btn-large">
+                <i class="material-icons">arrow_downward</i>
+            </a>
+        </div>
+    </div> -->
+    <div class="col s12 l12 m12 center mt">
+                <button class="waves-effect waves-light btn-large">S'inscrire à la newsletter</button>
+        </form>
+    </div>
+</div>
+
+<hr>
+
+
 <!-- cartes avec les différentes formules -->
-<!-- <div class="options container" id="anchorTarif"> -->
-    <div class="row" id="anchorTarif" style="height: 70vh;">
-        <h2>Les Formules</h2>
-        <div class="col s12 m5 l3">
+<div class="container-fluid" id="anchorTarif">
+    <div class="row">
+        <div class="colS12 l12 m12">
+            <h2>Les Formules</h2>
+        </div>
+        <div class="col s12 m6 l3">
             <ul class="collapsible">
                 <li class="card hoverable">
                     <div class="collapsible-header">
@@ -81,7 +99,7 @@
                 </li>
             </ul>
         </div>
-        <div class="col s12 m5 l3">
+        <div class="col s12 m6 l3">
             <ul class="collapsible">
                 <li class="card hoverable">
                     <div class="collapsible-header">
@@ -120,7 +138,7 @@
                 </li>
             </ul>    
         </div>
-        <div class="col s12 m5 l3">
+        <div class="col s12 m6 l3">
             <ul class="collapsible">
                 <li class="card hoverable">
                     <div class="collapsible-header">
@@ -159,7 +177,7 @@
                 </li>
             </ul>    
         </div>
-        <div class="col s12 m5 l3">
+        <div class="col s12 m6 l3">
             <ul class="collapsible">
                 <li class="card hoverable">
                     <div class="collapsible-header">
@@ -199,29 +217,23 @@
             </ul>    
         </div>
     </div>
-<!-- </div> -->
+</div>
 <!-- //fin div carte formule -->
 
-<!-- bouton resa -->
-    <div class="row">
-        <div class="blueBack col s12 l12 m12" style="height: 30vh;">
-            <div class="button-arrow">
+<!-- banner --> 
+    <div class="row blueBack">
+            <div class="col s12 l12 m12 center mt button-arrow">
                 <a href="#anchorResa" class="btn-floating btn-large">
                     <i class="material-icons">arrow_downward</i>
                 </a>
             </div>
-            <div class="button-align">
-                <a href="/resa" class="waves-effect waves-light btn align-center">Reservation</a>
-            </div>
-        </div>
     </div>
+<br>
 
 <!-- reservation -->
-<div id="anchorResa" class="container-fluid" style="height: 100vh;">
-    <h2>Reservation</h2>
-    <br>
-    <br>
+<div id="anchorResa" class="container-fluid">
     <div id="choicebloc" class="row">
+        <h2>Reservation</h2>
         <div class="col s12 l4 m4 center">
             <!-- Modal Trigger -->
             <span class="titlemodal">Calendrier</span>
@@ -269,34 +281,32 @@
                 </div>
             </div>
         </div>
+        <div class="s12 l12 m12">
+            <!-- <span>ici vous aves choisi des trucs</span> -->
+        </div>
     </div>
 </div>
 
-<!-- newsletter -->
-<div class="row" style="margin: 0;">
-    <div class="blueBack col s12 m12 l12" style="height: 40vh;">
-        <div class="button-arrow">
-            <a href="#anchorContact" class="btn-floating btn-large">
-                <i class="material-icons">arrow_downward</i>
-            </a>
-        </div>
-        <div class="button-align">
-            <img src="/img/charte-logotype-MDA.png" class="responsive-img newsletterPad" width="140">
-        </div>
+
+<!-- bouton resa -->
+<div class="row blueBack">
+    <div class="col s12 l12 m12 button-arrow">
+        <a href="#anchorContact" class="btn-floating btn-large">
+            <i class="material-icons">arrow_downward</i>
+        </a>
+    </div>
+    <div class="col s12 l12 m12 logoAlign">
+        <a href="/#" class="waves-effect waves-light btn center">Confirmez votre demande</a>
     </div>
 </div>
-<div class="row" style="margin: 0;">
-    <div class="blueBack button-align col s12 l12 m12">
-        <form action="" class="button-align newsletterPad" style="margin-bottom: 10vh;">
-            <!-- <div class="col s12 m12 l6">
-                <input placeholder="E-mail" type="text" style="background-color: white;">
-            </div> -->
-            <div class="col s12 m12 l12">
-                <button class="waves-effect waves-light btn-large">S'inscrire à la newsletter</button>
-            </div>
-        </form>
+
+<!-- logo -->
+<div class="row ">
+    <div class="col s12 m12 l12 logoAlign newsLetter">
+        <img src="/img/charte-logotype-MDA.png" class="responsive-img newsletterPad" width="250">
     </div>
 </div>
+
 
 
 <!-- contact and map -->
