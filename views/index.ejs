@@ -216,26 +216,6 @@
         </div>
     </div>
 
-<!-- reservation
-<div id="anchorResa" class="container" style="height: 50vh;">
-    <div class="row">
-        <div class="col s12 l12 m12">
-            <h2>Ici un truc</h2>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt mollitia vel facilis inventore eius in, repellendus ex nesciunt consectetur aspernatur. Sed quos at aut totam fugiat laboriosam, animi enim iure!</span>
-            <br>
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et modi sunt nostrum, porro voluptates explicabo enim id odio itaque temporibus optio numquam assumenda, adipisci consequuntur mollitia perferendis praesentium. Laboriosam, quos!</span>
-        </div>
-        <br>
-        <div class="col s12 l12 m12">
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt mollitia vel facilis inventore eius in, repellendus
-                ex nesciunt consectetur aspernatur. Sed quos at aut totam fugiat laboriosam, animi enim iure!</span>
-            <br>
-            <span>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et modi sunt nostrum, porro voluptates explicabo enim id odio
-                itaque temporibus optio numquam assumenda, adipisci consequuntur mollitia perferendis praesentium. Laboriosam, quos!</span>
-        </div>
-    </div>
-</div> -->
-
 <!-- reservation -->
 <div id="anchorResa" class="container-fluid" style="height: 100vh;">
     <h2>Reservation</h2>
@@ -245,9 +225,9 @@
         <div class="col s12 l4 m4 center">
             <!-- Modal Trigger -->
             <span class="titlemodal">Calendrier</span>
-            <button data-target="modal1" class="modal-trigger " id="btnmodal1"></button>
+            <button data-target="modal2" class="btn modal-trigger modalresa" id="btnmodal2"></button>
             <!-- Modal Structure -->
-            <div id="modal1" class="modal">
+            <div id="modal2" class="modal">
                 <div class="modal-content">
                     <h4>Choisissez une date:</h4>
                     <%- include partials/calendaresa.ejs %>
@@ -261,9 +241,9 @@
         <div class="col s12 l4 m4 center">
             <!-- Modal Trigger -->
             <span class="titlemodal">Equipement</span>
-            <button data-target="modal2" class="btn modal-trigger" id="btnmodal2"></button>
+            <button data-target="modal3" class="btn modal-trigger modalresa" id="btnmodal3"></button>
             <!-- Modal Structure -->
-            <div id="modal2" class="modal">
+            <div id="modal3" class="modal">
                 <div class="modal-content">
                     <h4>Choisissez votre équipement:</h4>
                     <%- include partials/equipment.ejs %>
@@ -277,9 +257,9 @@
         <div class="col s12 l4 m4 center">
             <!-- Modal Trigger -->
             <span class="titlemodal">Place</span>
-            <button data-target="modal3" class="btn modal-trigger" id="btnmodal3"></button>
+            <button data-target="modal4" class="btn modal-trigger modalresa" id="btnmodal4"></button>
             <!-- Modal Structure -->
-            <div id="modal3" class="modal">
+            <div id="modal4" class="modal">
                 <div class="modal-content">
                     <h4>Choisissez votre place:</h4>
                     <%- include partials/spot.ejs %>
