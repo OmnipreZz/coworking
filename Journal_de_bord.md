@@ -55,5 +55,9 @@
 
 
 ### A demander lors de la réunion du 16 juillet :
-* Tous les liens à nous fournir
+* Tous les liens à nous fournir (le site MDA, les conditions d'utilisation, le formulaire de la newsletter)
+* Confirmation des mails vers lesquels envoyer les notifications de réservation
 * Le mail pour créer un compte chez Sendgrid (nécessaire pour l'API d'automatisation des mails)
+* Le mail qui doit S'AFFICHER lorsque les gens reçoivent des notifications
+* Le mail pour gérer la clef api Leaflet
+* Le mail vers lequel envoyer les formulaires de contact
