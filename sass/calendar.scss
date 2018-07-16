@@ -1,3 +1,7 @@
+$rouge : rgb(84, 14, 11);
+$vertPastel: rgb(147, 203, 166);
+
+
 #btncontainer{
     display: flex;
     justify-content: space-between;
@@ -31,12 +35,12 @@
 }
 
 .morning {
-    border: solid yellow;
+    border: solid $vertPastel;
     margin-bottom: 2px;
 }
 
 .afternoon {
-    border: solid green;
+    border: solid $rouge;
     margin-bottom: 2px;
 }
 
