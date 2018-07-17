@@ -70,7 +70,10 @@ app.post('/registration', (req, res) => {
 	//requête
 	let queryRegister = `INSERT INTO users (name, surname, mail, password) VALUES ('${nom}', '${prenom}', '${mailRegister}', '${pwd}')`;
 
-	if (pwd === confpwd) {
+	let queryMail = `SELECT mail FROM users WHERE mail = '${mailRegister}'`;
+	
+
+	if (pwd === confpwd && queryMail != mailRegister) {
 		connection.query(queryRegister);
 		connection.end();
 		res.render('index');
@@ -80,6 +83,7 @@ app.post('/registration', (req, res) => {
 	}
 
 });
+//---------------------------------------------
 
 
 const server = app.listen(process.env.PORT || 8080, (req, res) => {
