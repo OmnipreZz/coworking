@@ -222,19 +222,19 @@ h2 {
 
 //map and contact
 .map {
-    height: 85vh;
+    height: 600px;
     margin: 0;
 }
 
 #mapid {
-    height: 85vh;
+    height: 600px;
     margin-left: -1.5%;
 }
 
 .contact {
     background-color: white;
     opacity: 0.8;
-    height: 85vh;
+    height: 600px;
 }
 
 .titreContact {
@@ -245,29 +245,61 @@ h2 {
 .descContact {
     color: $bleu;
 }
+//------------------------
 
-.page-footer {
-    i {
-        font-size: 2.5em;
-        }
-}
-.footer-fav{
-    margin-left: 400px;
+
+// footer ---------------
+
+.foot {
+    background-color: $bleu;
+    margin: 0;
+    height: 12vh;
 }
 
-.footer-links {
-    span {
-        margin-right: 5px;
-        color: $jaune;
-    }
-    a {
-        border-bottom: solid 1px;
-        color: $jaune;
-    }
-    a:hover {
-        color: $rouge;
-    }
+.footDivider {
+    color: white;
+    font-size: 25px;
+    padding-left: 35px;
+    padding-right: 35px;
 }
+
+.footIconSize {
+    font-size: 20px;
+}
+
+.footIcon {
+    margin-top: 15px;
+}
+
+.footHeight {
+    margin-top: 10px;
+}
+
+.mfArrow {
+    margin-top: 5px;
+}
+// .page-footer {
+//     i {
+//         font-size: 2.5em;
+//         }
+// }
+// .footer-fav{
+//     margin-left: 400px;
+// }
+
+// .footer-links {
+//     span {
+//         margin-right: 5px;
+//         color: $jaune;
+//     }
+//     a {
+//         border-bottom: solid 1px;
+//         color: $jaune;
+//     }
+//     a:hover {
+//         color: $rouge;
+//     }
+// }
 
 
 
@@ -288,19 +320,17 @@ h2 {
         display: none;
     }
 
-    .page-footer {
-        // position:fixed;
-        // bottom:20px;
-        .row {
-            display:flex;
-            flex-direction: column;
-            align-items: center;
-        }
-    }
+    // .page-footer {
+    //     .row {
+    //         display:flex;
+    //         flex-direction: column;
+    //         align-items: center;
+    //     }
+    // }
 
-    .footer-fav {
-    margin-left: 0px;
-    }
+    // .footer-fav {
+    // margin-left: 0px;
+    // }
 
     .button-arrow {
         display: none;
@@ -314,6 +344,16 @@ h2 {
     .blueBack {
         display: flex;
     align-items: center;
+    }
+
+    .foot {
+        height: auto;
+    }
+
+    .footDivider {
+        font-size: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
