@@ -8,14 +8,10 @@ sgMail.setApiKey(apikey);
 
 // declare la variable app avec express
 let app = express();
-let connection;
 
-let hostdb = require('./public/js/hostDB.js');
-hostdb();
-
-let queries = require('./public/js/queries.js');
-queries();
-
+//hostDB.js
+let config = require('./public/js/hostDB.js');
+let connection = mysql.createConnection(config);
 
 
 // fait tourner le moteur ejs
@@ -63,6 +59,27 @@ app.get('/test', (req,res)=>{
     res.render('testpage');
 });
 
+// requête DB inscription ---------------------
+app.post('/registration', (req, res) => {
+	//recupérantion input sur le formulaire d'inscription
+    let nom = req.body.nom,
+        prenom = req.body.prenom,
+		mailRegister = req.body.mailRegister,
+        pwd = req.body.pwd,
+		confpwd = req.body.confpwd; 
+	//requête
+	let queryRegister = `INSERT INTO users (name, surname, mail, password) VALUES ('${nom}', '${prenom}', '${mailRegister}', '${pwd}')`;
+
+	if (pwd === confpwd) {
+		connection.query(queryRegister);
+		connection.end();
+		res.render('index');
+	} 
+	else {
+		res.send('mot de passe invalide');
+	}
+
+});
 
 
 const server = app.listen(process.env.PORT || 8080, (req, res) => {
