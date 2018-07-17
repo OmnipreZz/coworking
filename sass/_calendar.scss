@@ -1,15 +1,13 @@
-$rouge : rgb(84, 14, 11);
-$vertPastel: rgb(147, 203, 166);
-
 
 #btncontainer{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .dispbtn{
     display: flex;
-    height: 4em;
+    align-items:center;
+    margin-bottom: 2em;
 }
 
 #month{
@@ -28,25 +26,29 @@ $vertPastel: rgb(147, 203, 166);
 //     grid-gap: 2px;
 // }
 
+.day {
+    display:flex;
+    justify-content: center;
+}
+
 .week{
     display: grid;
     grid-template-columns: repeat(7,1fr);
     grid-gap: 2px;
 }
 
-.morning {
-    border: solid $vertPastel;
-    margin-bottom: 2px;
-}
+// .morning {
+//     border: solid $vertPastel;
+//     margin-bottom: 2px;
+// }
 
-.afternoon {
-    border: solid $rouge;
-    margin-bottom: 2px;
-}
+// .afternoon {
+//     border: solid $rouge;
+//     margin-bottom: 2px;
+// }
 
 .cell{
     border: 2px solid #000000;
-    // border-radius: 11px;
     text-align: center;
     border: solid $vertPastel;
     margin-bottom:2px;

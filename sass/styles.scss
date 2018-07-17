@@ -9,6 +9,10 @@ $jaune: rgb(235, 219, 1);
 
 // ------------
 
+
+// import calendar partial
+
+@import 'calendar';
 hr {
     color: $bleu;
 }
