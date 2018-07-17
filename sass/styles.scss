@@ -9,6 +9,11 @@ $jaune: rgb(235, 219, 1);
 
 // ------------
 
+
+// import calendar partial
+
+@import 'calendar';
+
 hr {
     color: $bleu;
 }
@@ -311,6 +316,11 @@ h2 {
     background: no-repeat url(/img/business-3190209_960_720.jpg);
     background-size: cover;
     background-position: center;
+}
+
+#modal2 {
+    height:100%;
+    width:100%;
 }
 
 #btnmodal3{

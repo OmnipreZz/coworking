@@ -20,13 +20,22 @@ let i = Number(idfirstday);
 let j = 0;
 for (i; i <= 42; i++) {
     j++;
-    let dat = moment().set('date',j).format('ddd D MMM');
+    // here we get the number of the current selected month
+    let dat = moment().set('date',j).format('M');
     $("#" + i).text(dat);
+    // tfill cells in orange if monthdate on the cell is superior to current month number
+    if (dat>idfirstday){
+        $("#" + i).css("background-color", "rgb(241, 173, 50)");
+    }
 }
 for (i; i > 0; i--) {
     
     let dat = moment().set('date',j+1).format('D');
     $("#" + i).text(dat);
+    // this is where we change the style of the dates from the month before
+    if (i < Number(idfirstday)){
+        $("#" + i).css("background-color", "rgb(241, 173, 50)");
+    }
     j--;
 }
 

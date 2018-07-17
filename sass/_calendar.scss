@@ -1,0 +1,60 @@
+
+#btncontainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.dispbtn{
+    display: flex;
+    align-items:center;
+    margin-bottom: 2em;
+}
+
+#month{
+    font-size: 2em;
+    margin: 2%;
+}
+
+#year{
+    font-size: 2em;
+    margin: 2%;
+}
+
+// .calendargrid {
+//     display:grid;
+//     grid-template-rows: repeat(12, 1fr 2fr 2fr);
+//     grid-gap: 2px;
+// }
+
+.day {
+    display:flex;
+    justify-content: center;
+}
+
+.week{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    grid-gap: 2px;
+}
+
+// .morning {
+//     border: solid $vertPastel;
+//     margin-bottom: 2px;
+// }
+
+// .afternoon {
+//     border: solid $rouge;
+//     margin-bottom: 2px;
+// }
+
+.cell{
+    border: 2px solid #000000;
+    text-align: center;
+    border: solid $vertPastel;
+    margin-bottom:2px;
+    height:4em;
+}
+
+.content {
+    border-right: solid;
+}
