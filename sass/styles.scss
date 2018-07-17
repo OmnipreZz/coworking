@@ -10,7 +10,7 @@ $jaune: rgb(235, 219, 1);
 // ------------
 
 hr {
-    color: $bleu
+    color: $bleu;
 }
 
 h2 {
@@ -148,20 +148,27 @@ h2 {
 }
 
 .option1 {
-    background-color: $vertPastel;
+    background-color: $bleu;
+    color: white;
+    text-shadow: 2px 2px 2px $vertPastel;
 }
 
 .option2 {
-    background-color: $bleu;
+    background-color: $jaune;
+    color: white;
+    text-shadow: 2px 2px 2px $orange;
 }
 
 .option3 {
-    background-color: $jaune;
+    background-color: $orange;
+    color: white;
+    text-shadow: 2px 2px 2px #F4CA7C;
 }
 
 .option4 {
     background-color: $rouge;
     color: white;
+    text-shadow: 2px 2px 2px #754F4E;
 }   
 
 .collapsible-body {
