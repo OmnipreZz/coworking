@@ -52,47 +52,47 @@
                 <div>dimanche</div>
             </div>
         </div>
-        <div>
-<!--             <button data-target="modal3" class="btn modal-trigger modalresa" id="btnmodal3"></button>
- -->            
-        <div id="modal3" class="modal">
+        <div>   
+
+           <!-- Le modal pour la réservation -->
+           <div id="modal" class="modal">
             <div class="modal-content">             
-                <form action="#">
-                    <h5>Choisissez votre demie-journée</h5>
+                <form id="bookingForm" action="#" method="">
+                    <h5>Le matin ? L'après-midi ? Ou même les deux ?</h5>
                     <p>
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" id="morning" name="morning"/>
                             <span>Le Matin</span>
                         </label>
                     </p>
                     <p>
                         <label>
-                            <input type="checkbox">
+                            <input type="checkbox" id="afternoon" name="afternoon"/>
                             <span>L'Après-Midi</span>
                         </label>
                     </p>
                     <h5>Choisissez votre emplacement</h5>
                     <p>
                         <label>
-                            <input type="radio" name="place">
+                            <input type="radio" id="cowork" name="place"/>
                             <span>Table de travail partagée</span>
                         </label>
                         <label>
-                            <input type="radio" name="place">
+                            <input type="radio" id="solo" name="place"/>
                             <span>Espace individuel</span>
                         </label>
                     </p>
                     <h5>Avez-vous besoin d'un écran supplémentaire pour votre ordi ?(2€)</h5>
                     <p>
                         <label>
-                            <input type="checkbox"/>
+                            <input type="checkbox" id="screen" name="screen"/>
                             <span>Ecran avec cables</span>
                         </label>
                     </p>
                     <h5>Ou peut-être un hamac pour vous détendre un peu ?</h5>
                     <p>
                         <label>
-                            <input type="checkbox"/>
+                            <input type="checkbox" id="hammock" name="hammock"/>
                             <span>Hamac</span>
                         </label>
                     </p>
@@ -102,286 +102,155 @@
                 <a href="#!" class="modal-close waves-effect waves-light teal btn-small">Valider</a>
             </div>
         </div>
+    </div>
+    <!-- <div class="calendargrid"> -->
+        <div class="week" id="week1">
+            <!-- <div id="" class="week">1</div> -->
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="1" class="cell lundi j1">l1</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="2" class="cell mardi j2">m1</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="3" class="cell mercredi j3">M1</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="4" class="cell jeudi j4">j1</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="5" class="cell vendredi j5">v1</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="6" class="cell samedi j6">s1</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="7" class="cell dimanche j7">d1</div>
+            </div>
         </div>
-        <!-- <div class="calendargrid"> -->
-            <div class="week" id="week1">
-                <!-- <div id="" class="week">1</div> -->
-                <div data-target="modal3" class="cellday modal-trigger">
-                    <div id="1" class="cell lundi j1">l1</div>
-                </div>
-                <div class="cellday">
-                    <div id="2" class="cell mardi j2">m1</div>
-                </div>
-                <div class="cellday">
-                    <div id="3" class="cell mercredi j3">M1</div>
-                </div>
-                <div class="cellday">
-                    <div id="4" class="cell jeudi j4">j1</div>
-                </div>
-                <div class="cellday">
-                    <div id="5" class="cell vendredi j5">v1</div>
-                </div>
-                <div class="cellday">
-                    <div id="6" class="cell samedi j6">s1</div>
-                </div>
-                <div class="cellday">
-                    <div id="7" class="cell dimanche j7">d1</div>
-                </div>
+
+        <div class="week" id="week2">
+            <!-- <div id="" class="week">2</div> -->
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="8" class="cell lundi">l2</div>
             </div>
-
-
-            <!-- <div class="week">
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="9" class="cell mardi">m2</div>
             </div>
-
-            <div class="week">
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-            </div> -->
-
-
-
-            <div class="week" id="week2">
-                <!-- <div id="" class="week">2</div> -->
-                <div class="cellday">
-                    <div id="8" class="cell lundi">l2</div>
-                </div>
-                <div class="cellday">
-                    <div id="9" class="cell mardi">m2</div>
-                </div>
-                <div class="cellday">
-                    <div id="10" class="cell mercredi">M2</div>
-                </div>
-                <div class="cellday">
-                    <div id="11" class="cell jeudi">j2</div>
-                </div>
-                <div class="cellday">
-                    <div id="12" class="cell vendredi">v2</div>
-                </div>
-                <div class="cellday">
-                    <div id="13" class="cell samedi">s2</div>
-                </div>
-                <div class="cellday">
-                    <div id="14" class="cell dimanche">d2</div>
-                </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="10" class="cell mercredi">M2</div>
             </div>
-
-
-            <!-- <div class="week">
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="11" class="cell jeudi">j2</div>
             </div>
-
-            <div class="week">
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-            </div> -->
-
-
-
-            <div class="week" id="week3">
-                <!-- <div id="" class="week">3</div> -->
-                <div class="cellday">
-                    <div id="15" class="cell lundi">l3</div>
-                </div>
-                <div class="cellday">
-                    <div id="16" class="cell mardi">m3</div>
-                </div>
-                <div class="cellday">
-                    <div id="17" class="cell mercredi">M3</div>
-                </div>
-                <div class="cellday">
-                    <div id="18" class="cell jeudi">j3</div>
-                </div>
-                <div class="cellday">
-                    <div id="19" class="cell vendredi">v3</div>
-                </div>
-                <div class="cellday">
-                    <div id="20" class="cell samedi">s3</div>
-                </div>
-                <div class="cellday">
-                    <div id="21" class="cell dimanche">d3</div>
-                </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="12" class="cell vendredi">v2</div>
             </div>
-
-            <!-- <div class="week">
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="13" class="cell samedi">s2</div>
             </div>
-
-            <div class="week">
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-            </div> -->
-
-            <div class="week" id="week4">
-                <!-- <div id="" class="week">4</div> -->
-                <div class="cellday">
-                    <div id="22" class="cell lundi">l4</div>
-                </div>
-                <div class="cellday">
-                    <div id="23" class="cell mardi">m4</div>
-                </div>
-                <div class="cellday">
-                    <div id="24" class="cell mercredi">M4</div>
-                </div>
-                <div class="cellday">
-                    <div id="25" class="cell jeudi">j4</div>
-                </div>
-                <div class="cellday">
-                    <div id="26" class="cell vendredi">v4</div>
-                </div>
-                <div class="cellday">
-                    <div id="27" class="cell samedi">s4</div>
-                </div>
-                <div class="cellday">
-                    <div id="28" class="cell dimanche">d4</div>
-                </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="14" class="cell dimanche">d2</div>
             </div>
+        </div>
 
-
-            <!-- <div class="week">
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
+        <div class="week" id="week3">
+            <!-- <div id="" class="week">3</div> -->
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="15" class="cell lundi">l3</div>
             </div>
-
-            <div class="week">
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-            </div> -->
-
-
-            <div class="week" id="week5">
-                <!-- <div id="" class="week">5</div> -->
-                <div class="cellday">
-                    <div id="29" class="cell lundi">l5</div>
-                </div>
-                <div class="cellday">
-                    <div id="30" class="cell mardi">m5</div>
-                </div>
-                <div class="cellday">
-                    <div id="31" class="cell mercredi">M5</div>
-                </div>
-                <div class="cellday">
-                    <div id="32" class="cell jeudi">j5</div>
-                </div>
-                <div class="cellday">
-                    <div id="33" class="cell vendredi">v5</div>
-                </div>
-                <div class="cellday">
-                    <div id="34" class="cell samedi">s5</div>
-                </div>
-                <div class="cellday">
-                    <div id="35" class="cell dimanche">d5</div>
-                </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="16" class="cell mardi">m3</div>
             </div>
-
-
-            <!-- <div class="week">
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="17" class="cell mercredi">M3</div>
             </div>
-
-            <div class="week">
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-            </div> -->
-
-
-            <div class="week" id="week6">
-                <!-- <div id="" class="week">6</div> -->
-                <div class="cellday">
-                    <div id="36" class="cell lundi">l6</div>
-                </div>
-                <div class="cellday">
-                    <div id="37" class="cell mardi">m6</div>
-                </div>
-                <div class="cellday">
-                    <div id="38" class="cell mercredi">M6</div>
-                </div>
-                <div class="cellday">
-                    <div id="39" class="cell jeudi">j6</div>
-                </div>
-                <div class="cellday">
-                    <div id="40" class="cell vendredi">v6</div>
-                </div>
-                <div class="cellday">
-                    <div id="41" class="cell samedi">s6</div>
-                </div>
-                <div class="cellday">
-                    <div id="42" class="cell dimanche">d6</div>
-                </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="18" class="cell jeudi">j3</div>
             </div>
-
-            <!-- <div class="week">
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
-                <div class="morning">Matin</div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="19" class="cell vendredi">v3</div>
             </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="20" class="cell samedi">s3</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="21" class="cell dimanche">d3</div>
+            </div>
+        </div>
 
-            <div class="week">
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-                <div class="afternoon">Après-Midi</div>
-            </div> -->
-        <!-- </div> -->
+        <div class="week" id="week4">
+            <!-- <div id="" class="week">4</div> -->
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="22" class="cell lundi">l4</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="23" class="cell mardi">m4</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="24" class="cell mercredi">M4</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="25" class="cell jeudi">j4</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="26" class="cell vendredi">v4</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="27" class="cell samedi">s4</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="28" class="cell dimanche">d4</div>
+            </div>
+        </div>
+
+        <div class="week" id="week5">
+            <!-- <div id="" class="week">5</div> -->
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="29" class="cell lundi">l5</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="30" class="cell mardi">m5</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="31" class="cell mercredi">M5</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="32" class="cell jeudi">j5</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="33" class="cell vendredi">v5</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="34" class="cell samedi">s5</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="35" class="cell dimanche">d5</div>
+            </div>
+        </div>
+
+        <div class="week" id="week6">
+            <!-- <div id="" class="week">6</div> -->
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="36" class="cell lundi">l6</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="37" class="cell mardi">m6</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="38" class="cell mercredi">M6</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="39" class="cell jeudi">j6</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="40" class="cell vendredi">v6</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="41" class="cell samedi">s6</div>
+            </div>
+            <div data-target="modal" class="cellday modal-trigger">
+                <div id="42" class="cell dimanche">d6</div>
+            </div>
+        </div>
     </div>

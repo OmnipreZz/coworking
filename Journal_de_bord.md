@@ -71,12 +71,23 @@ Emma Satyagraha : emma.mda@outlook.fr
 #### Sont présent : Géna Paillha, Jérémy Piccoli (représentant de Native Web), Emma Satyagraha et Julie Talbot (MDA) ainsi que notre équipe : Geoffrey, Julien et Edmond
 
 * Réflexion autour de l'arborescence du site : ok pour rassembler en une page
-* informations sur les adresses et lieux de la MDA A FOURNIR
+* informations sur les adresses et lieux de la MDA à fournir  // Edit : mail reçu
 * projection : abonnement coworking au sein de réseau de lieux sur la territoire midi-pyrénnées
 * 3 formules à la base : Demi-journées (passage) - "comme à la maison" (mensuel) - et carnet de 10/mois
-* mail à recevoir pour détail du matériel (option payante) + prestations supp (copies, scanner...) - formules dans le mail aussi
+* mail à recevoir pour détail du matériel (option payante) + prestations supp (copies, scanner...) - formules dans le mail aussi // Edit : reçu
 * écran en option à priori (un seul de disponible)
-* ok pour différents mails à récupérer
 * RGPD du groupe "Repar' Café" validé
-* côté réseau social à mettre en avant
+* côté réseau social à mettre en avant : pas vraiment un besoin puisque le projet de "repar' café" a pour but de répondre à ce besoin 
 * Créer boîte mail pour tout
+
+
+### lundi 16 juillet
+
+
+* Révision des wireframes et fusion de plusieurs pages du site pour améliorer la fluidité de la navigation
+* Travail sur le style de l'agenda/calendrier, la version à présenter lors de la réservation est quasiment terminée
+* Création d'une boîte gmail pour gérer toute la modération du site (réception/envoi de notification et de message)
+* Solution trouvée pour masquer la clef api de Sendgrid
+* Inscription de cette boite mail chez les différents services que l'on utilise (GearHost, Sendgrid)
+* Création de la base de donnée et des tables
+* Création du formulaire d'inscription du site (ne manque que les pattern, gênants pour le développement)
