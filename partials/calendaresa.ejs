@@ -52,11 +52,62 @@
                 <div>dimanche</div>
             </div>
         </div>
+        <div>
+<!--             <button data-target="modal3" class="btn modal-trigger modalresa" id="btnmodal3"></button>
+ -->            
+        <div id="modal3" class="modal">
+            <div class="modal-content">             
+                <form action="#">
+                    <h5>Choisissez votre demie-journée</h5>
+                    <p>
+                        <label>
+                            <input type="checkbox">
+                            <span>Le Matin</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                            <input type="checkbox">
+                            <span>L'Après-Midi</span>
+                        </label>
+                    </p>
+                    <h5>Choisissez votre emplacement</h5>
+                    <p>
+                        <label>
+                            <input type="radio" name="place">
+                            <span>Table de travail partagée</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="place">
+                            <span>Espace individuel</span>
+                        </label>
+                    </p>
+                    <h5>Avez-vous besoin d'un écran supplémentaire pour votre ordi ?(2€)</h5>
+                    <p>
+                        <label>
+                            <input type="checkbox"/>
+                            <span>Ecran avec cables</span>
+                        </label>
+                    </p>
+                    <h5>Ou peut-être un hamac pour vous détendre un peu ?</h5>
+                    <p>
+                        <label>
+                            <input type="checkbox"/>
+                            <span>Hamac</span>
+                        </label>
+                    </p>
+                </form>
 
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-light teal btn-small">Valider</a>
+            </div>
+        </div>
+        </div>
         <!-- <div class="calendargrid"> -->
             <div class="week" id="week1">
                 <!-- <div id="" class="week">1</div> -->
-                <div class="cellday">
+                <div data-target="modal3" class="cellday modal-trigger">
                     <div id="1" class="cell lundi j1">l1</div>
                 </div>
                 <div class="cellday">
