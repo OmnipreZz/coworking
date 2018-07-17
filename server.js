@@ -1,12 +1,22 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
       ejs = require('ejs'),
-      apikey = require('./sendgrid/apikey')
+	  apikey = require('./sendgrid/apikey'),
+	  mysql = require('mysql'),
       sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(apikey);
 
 // declare la variable app avec express
 let app = express();
+let connection;
+
+let hostdb = require('./public/js/hostDB.js');
+hostdb();
+
+let queries = require('./public/js/queries.js');
+queries();
+
+
 
 // fait tourner le moteur ejs
 app.set('view engine', 'ejs');
@@ -52,6 +62,8 @@ app.get('/resa', (req,res)=>{
 app.get('/test', (req,res)=>{
     res.render('testpage');
 });
+
+
 
 const server = app.listen(process.env.PORT || 8080, (req, res) => {
     console.log('Server online!');
