@@ -7,6 +7,8 @@ $vertPastel: rgb(147, 203, 166);
 $orange: rgb(241, 173, 50);
 $jaune: rgb(235, 219, 1);
 
+$gray: #797979;
+
 // ------------
 
 
@@ -14,9 +16,11 @@ $jaune: rgb(235, 219, 1);
 
 @import 'calendar';
 
-hr {
-    color: $bleu;
+.hrBlue {
+    width: 50vw;
+    color: $bleu
 }
+
 
 h2 {
     color: $bleu;
@@ -28,8 +32,6 @@ h2 {
 }
 
 
-
-
 // fonts
 // ------------
 .montserrat {
@@ -39,6 +41,17 @@ h2 {
 .archivo {
     font-family: 'Archivo Black', sans-serif;
 }
+
+.amiko {
+    font-family: 'Amiko', sans-serif;
+}
+
+.grayLato {
+    font-family: 'Lato', sans-serif;
+    color: gray;
+}
+
+
 // ------------
 
 
@@ -92,8 +105,9 @@ h2 {
 //Newsletter
 //-------------
 .newsLetter {
-    height: 60vh;
+    height: 65vh;
     padding-top: 2vh;
+
 }
 
 .newsMargin {
@@ -136,7 +150,11 @@ h2 {
 
 .card {
     cursor: pointer;
-    appearance: none;
+    // appearance: none;
+}
+
+.card-title {
+    padding-top: 3vh;
 }
 
 .collapsible-header {
@@ -150,30 +168,27 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 20vh;
 }
 
 .option1 {
-    background-color: $bleu;
+    background-color: $vertPastel;
     color: white;
-    text-shadow: 2px 2px 2px $vertPastel;
 }
 
 .option2 {
     background-color: $jaune;
     color: white;
-    text-shadow: 2px 2px 2px $orange;
 }
 
 .option3 {
     background-color: $orange;
     color: white;
-    text-shadow: 2px 2px 2px #F4CA7C;
 }
 
 .option4 {
     background-color: $rouge;
     color: white;
-    text-shadow: 2px 2px 2px #754F4E;
 }   
 
 .collapsible-body {
@@ -186,7 +201,11 @@ h2 {
     a:hover {
         background-color: $jaune;
     }
+    hr {
+        opacity: 0.3;
+    }
 }
+
 //-------------------------
 
 
