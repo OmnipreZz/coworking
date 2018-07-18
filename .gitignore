@@ -4,4 +4,4 @@ dist
 Document.md
 js/map.js
 sendgrid
-js/hostDB.js
+js/connection.js
