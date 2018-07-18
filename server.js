@@ -8,7 +8,7 @@ const express = require('express'),
       connection = require('./public/js/connection'),
       jwt = require('jsonwebtoken'),
       config = require('./config');
-
+	  saltRounds = 10;
 sgMail.setApiKey(apikey);
 
 // declare la variable app avec express
@@ -59,6 +59,8 @@ app.get('/test', (req,res)=>{
 
 // requête DB inscription ---------------------
 app.post('/registration', (req, res) => {
+	
+
 	//recupérantion input sur le formulaire d'inscription et création d'un nouveau user
     let user = {
     	name : req.body.nom,
@@ -67,23 +69,40 @@ app.post('/registration', (req, res) => {
         password : req.body.pwd,
         role : "user",
 	}
+
+
+	
+
 	// création d'une variable avec la valeur du champs de confirmation du password
 	let confpwd = req.body.confpwd
 	//requête pour récupérer le mail du nouveau user s'il existe déjà dans la DB
 	let queryMail = `SELECT mail FROM users WHERE mail = '${user.mail}'`;
 	// comparaison mdp/confirmation mdp && mail du nouveau user/mail dans DB
 	if (user.password == confpwd && queryMail != user.mail) {
-		// envoi du nouvel utilisateur
-		connection.query(`INSERT INTO users SET ?`, user);
-		const registrationmsg = {
-		to: user.mail,
-		from: "coworkingmda@gmail.com",
-		subject: "Bonjour " + user.surname + " " + user.name,
-		text: "Bienvenue, vous êtes bien inscrit sur le site de Coworking de la Maison de l'Avenir de Saint-Gaudens. <br> Cliquez ici pour retourner sur le site : " + "url à mettre",
-		html: "Bienvenue, vous êtes bien inscrit sur le site de Coworking de la Maison de l'Avenir de Saint-Gaudens. <br> Cliquez ici pour retourner sur le site : " + "url à mettre",
-		};
-		sgMail.send(registrationmsg);
+			
+		// cryptage et generation du sel
+		bcrypt.hash(user.password, saltRounds, (err, hash)=>{
+			if (err){
+				console.log("Erreur dans le hashage :: " + err);			
+			}else{				
+				user.password = hash;
+				console.log("hashed key :: " + user.password);
+				// envoi du nouvel utilisateur
+				connection.query(`INSERT INTO users SET ?`, user);
+			}
+		})
+		
+
 		// connection.end();
+
+		// const registrationmsg = {
+		// to: user.mail,
+		// from: "coworkingmda@gmail.com",
+		// subject: "Bonjour " + user.surname + " " + user.name,
+		// text: "Bienvenue, vous êtes bien inscrit sur le site de Coworking de la Maison de l'Avenir de Saint-Gaudens. <br> Cliquez ici pour retourner sur le site : " + "url à mettre",
+		// html: "Bienvenue, vous êtes bien inscrit sur le site de Coworking de la Maison de l'Avenir de Saint-Gaudens. <br> Cliquez ici pour retourner sur le site : " + "url à mettre",
+		// };
+		// sgMail.send(registrationmsg);
 		res.render('index');
 	} 
 	else {
