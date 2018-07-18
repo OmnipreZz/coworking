@@ -80,12 +80,12 @@ app.post('/registration', (req, res) => {
 	let queryMail = `SELECT mail FROM users WHERE mail = '${user.mail}'`;
 	// comparaison mdp/confirmation mdp && mail du nouveau user/mail dans DB
 	if (user.password == confpwd && queryMail != user.mail) {
-			// cryptage et generation du sel
+			
+		// cryptage et generation du sel
 		bcrypt.hash(user.password, saltRounds, (err, hash)=>{
 			if (err){
 				console.log("Erreur dans le hashage :: " + err);			
-			}else{
-				
+			}else{				
 				user.password = hash;
 				console.log("hashed key :: " + user.password);
 				// envoi du nouvel utilisateur
