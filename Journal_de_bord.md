@@ -91,3 +91,17 @@ Emma Satyagraha : emma.mda@outlook.fr
 * Inscription de cette boite mail chez les différents services que l'on utilise (GearHost, Sendgrid)
 * Création de la base de donnée et des tables
 * Création du formulaire d'inscription du site (ne manque que les pattern, gênants pour le développement)
+
+### mardi 17 juillet
+
+* Création d'une nouvelle clé api pour les mails automatiques
+* Revu du code du calendrier
+* Enregistrement d'un utilisateur - partie front
+* Design de la page d'acceuil
+
+### mercredi 18 juillet
+
+* Sécurité: injections dans la BDD mises à mal
+* Commencement de l'authentification (connexion d'un utilisateur)
+* Enregistrement d'un utilisateur - partie back
+* Design du calendrier
