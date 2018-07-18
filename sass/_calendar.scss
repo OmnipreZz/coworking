@@ -22,9 +22,10 @@
 
 .day{
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    border: 2px solid black;
+    // border: 2px solid black;
+    font-size: 2em;
 }
 
 .calendargrid {
@@ -43,15 +44,17 @@
             display:flex;
             justify-content: center;
             align-items: center;
-            height:3em;
+            height:50px;
             background: linear-gradient(45deg,$orange,$jaune);
             font-size: 2em;
+            font-weight: bold;
+            color: rgba(35, 37, 37, 0.849);
         }
 
-.content {
-    border-right: solid;
-}
+// .content {
+//     border-right: solid;
+// }
 
 .outofmonth{
-    color: red;
+    color: rgba(126, 115, 115, 0.568);
 }
