@@ -41,6 +41,7 @@ CREATE TABLE Booking(
 	PRIMARY KEY(idBooking),
 	date_time Date, 	
 	idRent_Place INT,
+	status VARCHAR(20) NOT NULL,
 	FOREIGN KEY(idRent_Place) REFERENCES Rent_Place(idRent_Place),
 	idEquipment_Quantity INT,
 	FOREIGN KEY(idEquipment_Quantity) REFERENCES Equipment_Quantity(idEquipment_Quantity),
