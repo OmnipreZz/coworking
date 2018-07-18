@@ -38,12 +38,12 @@ let monthofdat = moment().set('date',j).format('M');
 
 for (i; i <= 42; i++) {
 
-    dat = moment().set('date',j).format('D MMM');
+    dat = moment().set('date',j).format('D');
 
     datmonth = Number(moment().set('date',j).format('M'));
     let monthafter = Number(monthofdat) + 1;
 
-    // Assign new attribut with the number of month and push date in cell
+    // Assign new attribut with the number of month (not necessary) and push date in cell
     $("#" + i).text(dat).attr("nbofmonth", datmonth);
 
     if (datmonth === monthafter){
@@ -104,7 +104,7 @@ function changedate() {
 
     for (i; i <= 42; i++) {
 
-        dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('ddd D MMM');
+        dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('D');
 
         
         datmonth = Number(moment().year(year).dayOfYear(firstdayofmonthofyear).format('M'));
@@ -128,7 +128,7 @@ function changedate() {
     firstdayofmonthofyear =  Number(moment().set({ 'year': year, 'month': monthnb, 'date': 1 }).format('DDD'));
 
     for (i; i > 0; i--) {
-        dat = moment().year(year).dayOfYear(firstdayofmonthofyear-1).format('ddd D MMM');
+        dat = moment().year(year).dayOfYear(firstdayofmonthofyear-1).format('D');
         $("#" + (i)).text(dat).addClass("outofmonth");
         firstdayofmonthofyear--;
         
@@ -156,11 +156,10 @@ function nextyear(){
 //------------------------------------------
 
 function beforemonth() {
-    monthnb--;
-    console.log(monthnb);
 
+    monthnb--;
+    
     if ($('#month').text()==="janvier"){
-        console.log("nouvelle annee");
         monthnb = 11;
         beforeyear();
     } else {
@@ -173,11 +172,10 @@ function beforemonth() {
 //----------------
 
 function nextmonth(){
+
     monthnb++;
-    console.log(monthnb);
-    
+
     if ($('#month').text()==="décembre"){
-        console.log("nouvelle annee");
         monthnb = 0;
         nextyear();
     } else {
