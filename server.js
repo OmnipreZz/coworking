@@ -4,15 +4,11 @@ const express = require('express'),
 	  apikey = require('./sendgrid/apikey'),
 	  mysql = require('mysql'),
       sgMail = require('@sendgrid/mail');
+      connection = require('./public/js/connection')
 sgMail.setApiKey(apikey);
 
 // declare la variable app avec express
 let app = express();
-
-//hostDB.js
-let config = require('./public/js/hostDB.js');
-let connection = mysql.createConnection(config);
-
 
 // fait tourner le moteur ejs
 app.set('view engine', 'ejs');
@@ -61,20 +57,23 @@ app.get('/test', (req,res)=>{
 
 // requête DB inscription ---------------------
 app.post('/registration', (req, res) => {
-	//recupérantion input sur le formulaire d'inscription
-    let nom = req.body.nom,
-        prenom = req.body.prenom,
-		mailRegister = req.body.mailRegister,
-        pwd = req.body.pwd,
-		confpwd = req.body.confpwd; 
-	//requête
-	let queryRegister = `INSERT INTO users (name, surname, mail, password) VALUES ('${nom}', '${prenom}', '${mailRegister}', '${pwd}')`;
-
-	let queryMail = `SELECT mail FROM users WHERE mail = '${mailRegister}'`;
-	
-
-	if (pwd === confpwd && queryMail != mailRegister) {
-		connection.query(queryRegister);
+	//recupérantion input sur le formulaire d'inscription et création d'un nouveau user
+    let user = {
+    	name : req.body.nom,
+        surname : req.body.prenom,
+		mail : req.body.mailRegister,
+        password : req.body.pwd,
+	} 
+	// création d'une variable avec la valeur du champs de confirmation du password
+	let confpwd = req.body.confpwd
+	console.log(user.password);
+	console.log(confpwd);
+	//requête pour récupérer le mail du nouveau user s'il existe déjà dans la DB
+	let queryMail = `SELECT mail FROM users WHERE mail = '${user.mail}'`;
+	// comparaison mdp/confirmation mdp && mail du nouveau user/mail dans DB
+	if (user.password == confpwd && queryMail != user.mail) {
+		// envoi du nouvel utilisateur
+		connection.query(`INSERT INTO users SET ?`, user);
 		connection.end();
 		res.render('index');
 	} 
