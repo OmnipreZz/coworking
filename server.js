@@ -3,6 +3,7 @@ const express = require('express'),
       ejs = require('ejs'),
 	  apikey = require('./sendgrid/apikey'),
 	  mysql = require('mysql'),
+	  bcrypt = require('bcrypt'),
       sgMail = require('@sendgrid/mail');
       connection = require('./public/js/connection')
 sgMail.setApiKey(apikey);
