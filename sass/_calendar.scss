@@ -20,40 +20,33 @@
     margin: 2%;
 }
 
-// .calendargrid {
-//     display:grid;
-//     grid-template-rows: repeat(12, 1fr 2fr 2fr);
-//     grid-gap: 2px;
-// }
-
-.day {
-    display:flex;
+.day{
+    display: flex;
+    align-items: center;
     justify-content: center;
+    border: 2px solid black;
 }
 
-.week{
-    display: grid;
-    grid-template-columns: repeat(7,1fr);
-    grid-gap: 2px;
+.calendargrid {
+    display:grid;
+    grid-template-rows: repeat(8, 1fr);
+    grid-gap: 5px;
+    margin: 0% 5%;
+    height: 80%;
 }
-
-// .morning {
-//     border: solid $vertPastel;
-//     margin-bottom: 2px;
-// }
-
-// .afternoon {
-//     border: solid $rouge;
-//     margin-bottom: 2px;
-// }
-
-.cell{
-    border: 2px solid #000000;
-    text-align: center;
-    border: solid $vertPastel;
-    margin-bottom:2px;
-    height:4em;
-}
+    .week{
+        display: grid;
+        grid-template-columns: repeat(7,1fr);
+        grid-gap: 5px;
+    }
+        .cell{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:3em;
+            background: linear-gradient(45deg,$orange,$jaune);
+            font-size: 2em;
+        }
 
 .content {
     border-right: solid;

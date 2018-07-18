@@ -1,4 +1,62 @@
     
+        <!--
+        <div class="chip">
+            <img src="https://static.comicvine.com/uploads/original/11/110482/3191339-aang+1.jpg" alt="Contact Person">
+            Air avatar
+            <i class="close material-icons">close</i>
+        </div> -->
+        
+           <!-- Le modal pour la réservation -->
+           <div id="modal" class="modal">
+                <div class="modal-content">             
+                    <form id="bookingForm" action="#" method="">
+                        <h5>Le matin ? L'après-midi ? Ou même les deux ?</h5>
+                        <p>
+                            <label>
+                                <input type="checkbox" id="morning" name="morning"/>
+                                <span>Le Matin</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input type="checkbox" id="afternoon" name="afternoon"/>
+                                <span>L'Après-Midi</span>
+                            </label>
+                        </p>
+                        <h5>Choisissez votre emplacement</h5>
+                        <p>
+                            <label>
+                                <input type="radio" id="cowork" name="place"/>
+                                <span>Table de travail partagée</span>
+                            </label>
+                            <label>
+                                <input type="radio" id="solo" name="place"/>
+                                <span>Espace individuel</span>
+                            </label>
+                        </p>
+                        <h5>Avez-vous besoin d'un écran supplémentaire pour votre ordi ?(2€)</h5>
+                        <p>
+                            <label>
+                                <input type="checkbox" id="screen" name="screen"/>
+                                <span>Ecran avec cables</span>
+                            </label>
+                        </p>
+                        <h5>Ou peut-être un hamac pour vous détendre un peu ?</h5>
+                        <p>
+                            <label>
+                                <input type="checkbox" id="hammock" name="hammock"/>
+                                <span>Hamac</span>
+                            </label>
+                        </p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="modal-close waves-effect waves-light teal btn-small">Valider</a>
+                </div>
+            </div>
+            <!-- End of modal -->
+
+    <!-- Start of calendar -->
         <div class="row" id="btncontainer">
             <div class="dispbtn col s12 m6 offset-l1 l5 center">
                 <button onclick="beforemonth()" id="btnmonthbefore" class="waves-effect waves-light btn-small">before</button>
@@ -11,98 +69,35 @@
                 <button onclick="nextyear()" class="waves-effect waves-light btn-small">next</button>
             </div>
         </div>
+    <div class="calendargrid">
+            <!-- Name of days on top -->
+            <div class="week" id="days">
+                <!-- <div id="" class="week">1</div> -->
+                <div class="day">
+                    <div>lun.</div>
+                </div>
+                <div class="day">
+                    <div>mar.</div>
+                </div>
+                <div class="day">
+                    <div>mer.</div>
+                </div>
+                <div class="day">
+                    <div>jeu.</div>
+                </div>
+                <div class="day">
+                    <div>ven.</div>
+                </div>
+                <div class="day">
+                    <div>sam.</div>
+                </div>
+                <div class="day">
+                    <div>dim.</div>
+                </div>
+            </div>
 
-        <!-- <div class="chip">
-            <img src="https://tommycummings.files.wordpress.com/2012/07/avatar.jpg" alt="Contact Person">
-            John Doe
-            <i class="close material-icons">close</i>
-        </div> 
-        <div class="chip">
-            <img src="https://akalol.files.wordpress.com/2010/01/zoe-saldana-avatar-wallpaper-1.jpg" alt="Contact Person">
-            Jane Doe
-            <i class="close material-icons">close</i>
-        </div> 
-        <div class="chip">
-            <img src="https://static.comicvine.com/uploads/original/11/110482/3191339-aang+1.jpg" alt="Contact Person">
-            Air avatar
-            <i class="close material-icons">close</i>
-        </div> -->
-        <div class="week" id="days">
-            <!-- <div id="" class="week">1</div> -->
-            <div class="day">
-                <div>lun.</div>
-            </div>
-            <div class="day">
-                <div>mar.</div>
-            </div>
-            <div class="day">
-                <div>mer.</div>
-            </div>
-            <div class="day">
-                <div>jeu.</div>
-            </div>
-            <div class="day">
-                <div>ven.</div>
-            </div>
-            <div class="day">
-                <div>sam.</div>
-            </div>
-            <div class="day">
-                <div>dim.</div>
-            </div>
-        </div>
-        <div>   
-
-           <!-- Le modal pour la réservation -->
-           <div id="modal" class="modal">
-            <div class="modal-content">             
-                <form id="bookingForm" action="#" method="">
-                    <h5>Le matin ? L'après-midi ? Ou même les deux ?</h5>
-                    <p>
-                        <label>
-                            <input type="checkbox" id="morning" name="morning"/>
-                            <span>Le Matin</span>
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <input type="checkbox" id="afternoon" name="afternoon"/>
-                            <span>L'Après-Midi</span>
-                        </label>
-                    </p>
-                    <h5>Choisissez votre emplacement</h5>
-                    <p>
-                        <label>
-                            <input type="radio" id="cowork" name="place"/>
-                            <span>Table de travail partagée</span>
-                        </label>
-                        <label>
-                            <input type="radio" id="solo" name="place"/>
-                            <span>Espace individuel</span>
-                        </label>
-                    </p>
-                    <h5>Avez-vous besoin d'un écran supplémentaire pour votre ordi ?(2€)</h5>
-                    <p>
-                        <label>
-                            <input type="checkbox" id="screen" name="screen"/>
-                            <span>Ecran avec cables</span>
-                        </label>
-                    </p>
-                    <h5>Ou peut-être un hamac pour vous détendre un peu ?</h5>
-                    <p>
-                        <label>
-                            <input type="checkbox" id="hammock" name="hammock"/>
-                            <span>Hamac</span>
-                        </label>
-                    </p>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-close waves-effect waves-light teal btn-small">Valider</a>
-            </div>
-        </div>
-    </div>
-    <!-- <div class="calendargrid"> -->
+        <!-- Calendar -->
+    
         <div class="week" id="week1">
             <!-- <div id="" class="week">1</div> -->
             <div data-target="modal" class="cellday modal-trigger">
@@ -252,3 +247,4 @@
                 <div id="42" class="cell dimanche">d6</div>
             </div>
         </div>
+    </div>
