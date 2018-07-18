@@ -6,7 +6,7 @@ const express = require('express'),
 	  bcrypt = require('bcrypt'),
       sgMail = require('@sendgrid/mail'),
       connection = require('./public/js/connection'),
-      jwt = require('json-web-token'),
+      jwt = require('jsonwebtoken'),
       config = require('./config');
 
 sgMail.setApiKey(apikey);
@@ -83,6 +83,7 @@ app.post('/registration', (req, res) => {
 		html: "Bienvenue, vous êtes bien inscrit sur le site de Coworking de la Maison de l'Avenir de Saint-Gaudens. <br> Cliquez ici pour retourner sur le site : " + "url à mettre",
 		};
 		sgMail.send(registrationmsg);
+		// connection.end();
 		res.render('index');
 	} 
 	else {
@@ -92,46 +93,101 @@ app.post('/registration', (req, res) => {
 });
 
 
-// page resa
-app.get('/resa', (req,res)=>{
-	let uQuery = `SELECT name, surname, mail, role FROM Users WHERE name = "Djohn"`
-	connection.query(uQuery, (err, result)=>{
-		if(err){
-			console.error(err);
-		}
-		else {
-			console.log(result[0]);
-			console.log(result[0].name);
-		}
-	});
-    res.render('resa');
-});
 
+// when validating log_in form
 app.post('/dashboard', (req,res)=>{
+	// get input into a "user" object
 	let user = {
 		mail : req.body.mailRegister,
         password : req.body.pwd
 	}
-
-	console.log(user.password);
+	// get the user on the database whith the mail of the user trying to log in 
 	let authquery = `SELECT * FROM Users WHERE mail ='${user.mail}'`
 	connection.query(authquery, (err, result)=>{
 		if(err){
 			console.error(err);
 		}
-		else if(result[0].mail == user.mail){
-			console.log(result);
-			console.log("vous existez dans la DB félicitation !!");
-			res.render("dashboard");
+		// if something match the query
+		else if(result[0] != undefined){
+			// compare also the password of the user with the matching mail
+			if(result[0].mail == user.mail && result[0].password == user.password){	
+				
+				// that's what will be in the token
+				const payload = {
+					name: result[0].name,
+					mail: result[0].mail,
+					role: result[0].role
+				};
+				// create the token with payload and secret key (cf config.js file)
+				let token = jwt.sign(payload, app.get("superSecret"), {expiresIn: 1200000});
+				// console.log(token);
+			 	res.redirect("/dashboard");
+			}
 		}
+		// if the query meets no match
 		else {
-			console.log(result[0].mail);
-			console.log("Va t'inscrire noob");
-			connection.end();
+			// connection.end();
 			res.redirect("/");
 		}
 	});
 });
+
+
+
+
+// defines an instance of the router for routes that imply authentication
+let tokenRoutes = express.Router();
+// route middleware to verify tokens
+tokenRoutes.use((req, res, next)=>{
+	// look for token in url or body of request
+	let token = req.body.token || req.query.token;
+	// if a token is found
+	if (token){
+		console.log(token);
+		console.log("checking the token")
+		// check token
+		jwt.verify(token, app.get("superSecret"), (err, decoded)=>{
+			if(err){
+				console.error(err);
+			}
+			// if token is as expected, save it for further requests in other routes
+			else {
+				req.decoded = recoded;
+				next();
+			}
+		});
+	}
+	// if there is no token found return an error
+	else {
+	res.status(403);
+	res.send("no token found");
+	}
+});
+
+
+// apply tokenverification to following routes
+// app.use(tokenRoutes);
+
+
+// page resa
+app.get('/resa', (req,res)=>{
+	console.log(req.body.token);
+	console.log(req.query.token);
+	console.log(req.param.token);
+    res.render('resa');
+});
+
+// route to dashboard page
+app.get('/dashboard', (req, res)=>{
+	console.log(req.body.token);
+	console.log(req.query.token);
+	console.log(req.param.token);
+	console.log(req.headers['x-access-token']);	
+	console.log(req.session);
+	console.log(req.session.token);
+	res.render('dashboard');
+});
+
 
 
 //---------------------------------------------
