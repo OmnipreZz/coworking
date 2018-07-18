@@ -63,6 +63,7 @@ app.post('/registration', (req, res) => {
         surname : req.body.prenom,
 		mail : req.body.mailRegister,
         password : req.body.pwd,
+        role : "user",
 	}
 	// création d'une variable avec la valeur du champs de confirmation du password
 	let confpwd = req.body.confpwd
