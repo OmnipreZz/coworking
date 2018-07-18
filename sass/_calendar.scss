@@ -1,23 +1,31 @@
 
-// #btncontainer{
-//     display: flex;
-//     justify-content: space-around;
-// }
 
 .dispbtn{
     display: flex;
     align-items:center;
-    margin-bottom: 2em;
+    justify-content: center;
+    margin-bottom: 1em;
 }
 
 #month{
     font-size: 2em;
     margin: 2%;
+    width: 28vh;
 }
 
 #year{
     font-size: 2em;
     margin: 2%;
+    width: 28vh
+}
+
+.styleDate {
+    font-family: 'Amiko', sans-serif;
+    background-color: red;
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    background: linear-gradient(45deg,$bleu,$vertPastel);
+    box-shadow: 2px 2px 2px $gray;
 }
 
 .day{
@@ -26,6 +34,11 @@
     justify-content: center;
     // border: 2px solid black;
     font-size: 2em;
+    border-radius: 30px 30px 0 0px;
+    background: linear-gradient(45deg,$rouge,$orange);
+    color: white;
+    font-family: 'Amiko', sans-serif;
+
 }
 
 .calendargrid {
@@ -45,10 +58,11 @@
             justify-content: center;
             align-items: center;
             height:50px;
-            background: linear-gradient(45deg,$orange,$jaune);
+            background: linear-gradient(45deg,$jaune,$orange);
             font-size: 2em;
             font-weight: bold;
-            color: rgba(35, 37, 37, 0.849);
+            color: white;
+            text-shadow: 2px 2px 2px $gray;
         }
 
 // .content {
@@ -57,4 +71,26 @@
 
 .outofmonth{
     color: rgba(126, 115, 115, 0.568);
+    text-shadow: none;
+}
+
+
+////////media
+
+@media (max-width: 767px) {
+
+    .day {
+        font-size: 1em;
+    }
+
+    .week {
+        .cell {
+            font-size: 1.5em;
+        }
+    }
+
+    .day {
+        background: none;
+        color: black;
+    }
 }
