@@ -63,11 +63,11 @@ app.post('/registration', (req, res) => {
         surname : req.body.prenom,
 		mail : req.body.mailRegister,
         password : req.body.pwd,
-	} 
+	}
 	// création d'une variable avec la valeur du champs de confirmation du password
 	let confpwd = req.body.confpwd
-	console.log(user.password);
-	console.log(confpwd);
+	// console.log(user.password);
+	// console.log(confpwd);
 	//requête pour récupérer le mail du nouveau user s'il existe déjà dans la DB
 	let queryMail = `SELECT mail FROM users WHERE mail = '${user.mail}'`;
 	// comparaison mdp/confirmation mdp && mail du nouveau user/mail dans DB
@@ -75,6 +75,14 @@ app.post('/registration', (req, res) => {
 		// envoi du nouvel utilisateur
 		connection.query(`INSERT INTO users SET ?`, user);
 		connection.end();
+		const registrationmsg = {
+		to: user.mail,
+		from: "coworkingmda@gmail.com",
+		subject: "Bonjour " + user.surname + " " + user.name,
+		text: "Bienvenue, vous êtes bien inscrit sur le site de Coworking de la Maison de l'Avenir de Saint-Gaudens. <br> Cliquez ici pour retourner sur le site : " + "url à mettre",
+		html: "Bienvenue, vous êtes bien inscrit sur le site de Coworking de la Maison de l'Avenir de Saint-Gaudens. <br> Cliquez ici pour retourner sur le site : " + "url à mettre",
+		};
+		sgMail.send(registrationmsg);
 		res.render('index');
 	} 
 	else {
