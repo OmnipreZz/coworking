@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+
+        <!-- Modal Trigger -->
+        <!-- <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a> -->
+        
+
+        <!-- Modal Structure -->
+        <div id="userchoice" class="modal">
+            <div class="modal-content">
+                    <form class="col s12" action="/reguser" method="POST">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="first_name" name="nom" type="text" class="validate" required/>
+                                <label for="first_name">Nom</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="telephone" name="telephone" type="tel" class="validate" required/>
+                                <label for="telephone">Telephone</label>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input id="email" name="mailRegister" type="email" class="validate" required/>
+                            <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" -->
+                                <label for="email">E-mail</label>
+                            </div>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <label>
+                                <input type="checkbox" class="filled-in" required>
+                                <span>J'ai lu et j'accepte les
+                                    <a href="#" class="teal-text">CGU</a>
+                                </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row center">
+                            <button class="btn waves-effect waves-light mt" type="submit" name="action">Je valide mes coordonnées</button>
+                        </div>
+                    </form>
+                    <div class="col s12" id="choiceaccount">
+                        <a class="waves-effect waves-teal btn-flat" href="#modal5">Je crée un compte</a>
+                        <a class="waves-effect waves-teal btn-flat" href="#">J'ai déjà un compte</a>
+                    </div>
+            </div>
+            <!-- <div class="modal-footer"> -->
+            <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Valider</a> -->
+            <!-- </div> -->
+        </div>
+
+    </div>
+</div>
