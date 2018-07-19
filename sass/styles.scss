@@ -27,8 +27,8 @@ h2 {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
-    margin-top: 10vh;
-    margin-bottom: 5vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 h4 {
@@ -130,7 +130,6 @@ h4 {
     height: 30vh;
     padding-top: 2vh;
 }
-
 
 .buttonMargin {
     padding-top: -5vh;
@@ -273,10 +272,11 @@ h4 {
 
 .footIconSize {
     font-size: 20px;
+    margin-left: 5px;
 }
 
 .footIcon {
-    margin-top: 15px;
+    margin-top: 25px;
 }
 
 .footHeight {
@@ -315,8 +315,7 @@ h4 {
     }   
 
     .blueBack {
-        display: flex;
-        align-items: center;
+        padding-top: 50px;
     }
 
     .foot {
@@ -329,6 +328,10 @@ h4 {
         padding-right: 15px;
     }
 
+    .footContact {
+        font-size: 12px;
+    }
+
     .carou {
         display: none;
     }
@@ -336,6 +339,7 @@ h4 {
     .hideLogo {
         display: none;
     }
+    
 }
 
 
