@@ -1,7 +1,9 @@
 
 //--------------------------------CALENDAR--------------------
 
-
+.pointer {
+    cursor: pointer;
+}
 .dispbtn{
     display: flex;
     align-items:center;
@@ -96,6 +98,17 @@
     text-shadow: none;
 }
 
+
+////////////////DIv INFO RESA----------------//////////////
+.resaDiv {
+    span {
+        color: $orange;
+        font-size: 20px;
+    }
+    h4 {
+        
+    }
+}
 
 ////////-------------------------------------media-----------------------------
 

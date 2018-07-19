@@ -51,7 +51,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <a href="#!" class="validModalResa modal-close waves-effect waves-light teal btn-small">Valider</a>
+                    <a href="#resaConfirm" class="validModalResa modal-close waves-effect waves-light teal btn-small">Valider</a>
                 </div>
             </div>
             <!-- End of modal -->
@@ -98,7 +98,7 @@
 
         <!-- Calendar -->
     
-        <div class="week" id="week1">
+        <div class="week pointer" id="week1">
             <!-- <div id="" class="week">1</div> -->
             <div data-target="modal" class="cellday modal-trigger">
                 <div id="1" class="cell lundi j1">l1</div>
@@ -123,7 +123,7 @@
             </div>
         </div>
 
-        <div class="week" id="week2">
+        <div class="week pointer" id="week2">
             <!-- <div id="" class="week">2</div> -->
             <div data-target="modal" class="cellday modal-trigger">
                 <div id="8" class="cell lundi">l2</div>
@@ -148,7 +148,7 @@
             </div>
         </div>
 
-        <div class="week" id="week3">
+        <div class="week pointer" id="week3">
             <!-- <div id="" class="week">3</div> -->
             <div data-target="modal" class="cellday modal-trigger">
                 <div id="15" class="cell lundi">l3</div>
@@ -173,7 +173,7 @@
             </div>
         </div>
 
-        <div class="week" id="week4">
+        <div class="week pointer" id="week4">
             <!-- <div id="" class="week">4</div> -->
             <div data-target="modal" class="cellday modal-trigger">
                 <div id="22" class="cell lundi">l4</div>
@@ -198,7 +198,7 @@
             </div>
         </div>
 
-        <div class="week" id="week5">
+        <div class="week pointer" id="week5">
             <!-- <div id="" class="week">5</div> -->
             <div data-target="modal" class="cellday modal-trigger">
                 <div id="29" class="cell lundi">l5</div>
@@ -223,7 +223,7 @@
             </div>
         </div>
 
-        <div class="week" id="week6">
+        <div class="week pointer" id="week6">
             <!-- <div id="" class="week">6</div> -->
             <div data-target="modal" class="cellday modal-trigger">
                 <div id="36" class="cell lundi">l6</div>
@@ -252,19 +252,19 @@
 <!-- Information resa div -->
 
 <div class="container">
-    <div class="row">
-        <div id="infoFormule">
-            <p id="msginfo"></p>
+    <div class="row resaDiv" id="resaConfirm">
+        <div id="infoFormule" class="center">
+            <h4 id="msginfo"></h4>
             <span id="msgformule"></span>
         </div>
-        <div id="infoDate">
-            <span id="msgDate"></span>
+        <div id="infoDate" class="center">
+            <h4 id="msgDate"></h4>
             <span id="dateMatin"></span>
             <br/>
             <span id="dateAprem"></span>
         </div>
-        <div id="optionResa">
-            <p id="msgOption"></p>
+        <div id="optionResa" class="center">
+            <h4 id="msgOption"></h4>
             <span id="optionEspace"></span>
             <br/>
             <span id="optionEcran"></span>
