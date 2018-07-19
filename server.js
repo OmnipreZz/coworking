@@ -7,7 +7,7 @@ const express = require('express'),
       sgMail = require('@sendgrid/mail'),
       connection = require('./public/js/connection'),
       jwt = require('jsonwebtoken'),
-      config = require('./config');
+      config = require('./public/js/config');
 	  saltRounds = 10;
 sgMail.setApiKey(apikey);
 
