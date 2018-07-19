@@ -57,6 +57,11 @@ app.get('/test', (req,res)=>{
     res.render('testpage');
 });
 
+// route to dashboardadmin
+app.get('/dashboardadmin', (req, res)=>{
+	res.render('dashboardadmin');
+});
+
 // requête DB inscription ---------------------
 app.post('/registration', (req, res) => {
 	
@@ -204,6 +209,7 @@ app.get('/dashboard', (req, res)=>{
 	console.log(req.params.token);
 	res.render('dashboard');
 });
+
 
 
 
