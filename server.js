@@ -1,5 +1,6 @@
 const express = require('express'),
       bodyParser = require('body-parser'),
+      session = require('express-session'),
       ejs = require('ejs'),
 	  apikey = require('./sendgrid/apikey'),
 	  mysql = require('mysql'),
@@ -17,8 +18,14 @@ let app = express();
 // fait tourner le moteur ejs
 app.set('view engine', 'ejs');
 
-//set secret key to read token
+
+//set secret key to sign cookies
 app.set("superSecret", config.secret);
+
+// USE COOKIE PARSER with secret
+app.use(session({secret : app.get('superSecret')}));
+// initiate a session variable to pass value and be accessible everywhere
+let sess;
 
 // utilise le dossier public pour les fichiers statiques
 app.use(express.static('public'));
@@ -55,6 +62,11 @@ app.post('/', (req, res) => {
 // page test
 app.get('/test', (req,res)=>{
     res.render('testpage');
+});
+
+// route to dashboardadmin
+app.get('/dashboardadmin', (req, res)=>{
+	res.render('dashboardadmin');
 });
 
 // requête DB inscription ---------------------
@@ -114,39 +126,46 @@ app.post('/registration', (req, res) => {
 
 
 // when validating log_in form
-app.post('/dashboard', (req,res)=>{
+app.post('/log_in', (req,res)=>{
 	// get input into a "user" object
 	let user = {
 		mail : req.body.mailRegister,
         password : req.body.pwd
 	}
 	// get the user on the database whith the mail of the user trying to log in 
-	let authquery = `SELECT * FROM Users WHERE mail ='${user.mail}'`
-	connection.query(authquery, (err, result)=>{
+	let logInQuery = `SELECT * FROM Users WHERE mail ='${user.mail}'`
+	connection.query(logInQuery, (err, result)=>{
 		if(err){
 			console.error(err);
 		}
 		// if something match the query
 		else if(result[0] != undefined){
-			// compare also the password of the user with the matching mail
-			if(result[0].mail == user.mail && result[0].password == user.password){	
+			// // compare also the password of the user with the matching mail
+			 if(result[0].mail == user.mail && result[0].password == user.password){	
 				
-				// that's what will be in the token
-				const payload = {
-					name: result[0].name,
-					mail: result[0].mail,
-					role: result[0].role
-				};
-				// create the token with payload and secret key (cf config.js file)
-				let token = jwt.sign(payload, app.get("superSecret"), {expiresIn: 1200000});
-				// console.log(token);
-				// res.header("x-auth", token)
-				let head = req.header("x-auth", token);
-				console.log(head);
-				res.redirect("/resa");
+			 	let authUser = {
+			 		name : result[0].name,
+			 		surname : result[0].surname,
+			 		mail : result[0].mail,
+			 		phone : result[0].phone,
+			 		avatar : result[0].urlavatar,
+			 		role : result[0].role
+			 	}
+			 	// set session then push the authUser object in it : it will be accessed with "sess.user"
+			 	sess = req.session;
+			 	sess.user = authUser;
+
+			 	// if it's a classic user, redirect to the user dashboard
+			 	if(sess.user.role === "user"){
+			 	res.redirect("/dashboard");
+			 	}
+			 	// else if it's an admin, redirect to admin dashboard
+			 	else if(sess.user.role === "admin"){
+			 		res.redirect("/dashboard_admin");
+			 	}
 			}
 		}
-		// if the query don't meet any match
+		// if the query don't meet any match so the identification failed
 		else {
 			// connection.end();
 			res.redirect("/");
@@ -156,55 +175,12 @@ app.post('/dashboard', (req,res)=>{
 
 
 
-
-// defines an instance of the router for routes that imply authentication
-let tokenRoutes = express.Router();
-// route middleware to verify tokens
-tokenRoutes.use((req, res, next)=>{
-	// look for token in url or body of request
-	// console.log(res.header("x-auth"));
-	let token = res.header("x-auth");
-	// console.log(token);
-	// if a token is found
-	if (token){
-		// console.log(token);
-		console.log("checking the token")
-		// check token
-		jwt.verify(token, app.get("superSecret"), (err, decoded)=>{
-			if(err){
-				// console.error(err);
-			}
-			// if token is as expected, save it for further requests in other routes
-			else {
-				req.decoded = recoded;
-				next();
-			}
-		});
-	}
-	// if there is no token found return an error
-	else {
-	res.status(403);
-	res.send("no token found");
-	}
-});
-
-
-// apply tokenverification to following routes
-app.use(tokenRoutes);
-
-
-// page resa
-app.post('/resa', (req,res)=>{
-	console.log(req.body.token);
-    res.render('resa');
-});
-
-// route to dashboard page
+// route to user dashboard page
 app.get('/dashboard', (req, res)=>{
-	console.log(req.params.token);
+	sess=req.session;
+	console.log(sess.user);
 	res.render('dashboard');
 });
-
 
 
 //---------------------------------------------
