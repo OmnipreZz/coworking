@@ -65,9 +65,36 @@ app.get('/test', (req,res)=>{
 });
 
 // route to dashboardadmin
+//-----------------------------------
+
+
+	// Request MySQL
+	//--------------------------------
+
+	let query = `SELECT * FROM Users`;
+	var rqname=[];
+	connection.query(query, (err, result)=>{
+		if(err){
+			console.error(err);
+		}else{
+			for (let i = 0; i < result.length; i++) {
+				rqname.push(result[i].name)
+				console.log(rqname);
+			}
+
+		}
+	});
+
+
+
 app.get('/dashboardadmin', (req, res)=>{
-	res.render('dashboardadmin');
+  
+	res.render('dashboardadmin', {'rqname' : 'rqname',
+								'ole':rqname});
 });
+
+//------------------------------------------------
+
 
 // requête DB inscription ---------------------
 app.post('/registration', (req, res) => {

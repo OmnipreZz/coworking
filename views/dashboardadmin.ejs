@@ -22,17 +22,17 @@
 
     
     <%- include partials/navbar.ejs %>
+
+    <%- include partials/tables.ejs %>
+
     <div class="container">
         <div class="row">
             <div id="coworkersofmonth">
-                <div class="chip">
-                    <img src="https://static.comicvine.com/uploads/original/11/110482/3191339-aang+1.jpg" alt="Contact Person">
-                    Air avatar
-                    <i class="close material-icons">close</i>
-                </div>
+                <%= ole %>
             </div>
         </div>
     </div>
+
     <%- include partials/calendaradmin.ejs %>
 
 
@@ -83,7 +83,7 @@
     crossorigin=""></script>
 
 <script type="text/javascript" src="/js/materialize.js"></script>
-<script type="text/javascript" src="/js/main.js"></script>
+<!-- <script type="text/javascript" src="/js/main.js"></script> -->
 <script type="text/javascript" src="/js/map.js"></script>
 <script type="text/javascript" src="/js/calendaradmin.js"></script>
 
