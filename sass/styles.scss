@@ -299,80 +299,12 @@ nav {
 
 
 
-// --------------MEDIA------------
-
-@media (max-width: 1199px) {
-
-}
-
-@media (max-width: 991px) {
-
-}
-
-@media (max-width: 767px) {
-   
-    .parallax-container {
-        display: none;
-    }
-
-    .button-arrow {
-        display: none;
-    }
-
-    .modalresa{
-        width: 10vw;
-        height: 5vh;
-    }   
-
-    .blueBack {
-        padding-top: 50px;
-    }
-
-    .foot {
-        height: auto;
-    }
-
-    .footDivider {
-        font-size: 15px;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-    .footContact {
-        font-size: 12px;
-    }
-
-    .carou {
-        display: none;
-    }
-
-    .hideLogo {
-        display: none;
-    }
-
-    .newsLetter {
-    height: 30vh;
-    }
-
-    .mobileMarge {
-        margin-top: 60px;
-    }
-
-    .goworking {
-        font-size: 25px;
-    }
-
-    h2 {
-        font-size: 40px;
-    }
-    
-}
-//-------------------media end----------------
-
-
-
 //modal
 
+.modalSize {
+    width: 70%;
+    min-height: 80%;
+}
 
 
 //---------------------
@@ -448,3 +380,83 @@ nav {
 
 // Fin
 //-------------------------
+
+
+// --------------MEDIA------------
+
+@media (max-width: 1199px) {
+
+}
+
+@media (max-width: 991px) {
+
+}
+
+@media (max-width: 767px) {
+   
+    .parallax-container {
+        display: none;
+    }
+
+    .button-arrow {
+        display: none;
+    }
+
+    .modalresa{
+        width: 10vw;
+        height: 5vh;
+    }   
+
+    .blueBack {
+        padding-top: 50px;
+    }
+
+    .foot {
+        height: auto;
+    }
+
+    .footDivider {
+        font-size: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .footContact {
+        font-size: 12px;
+    }
+
+    .carou {
+        display: none;
+    }
+
+    .hideLogo {
+        display: none;
+    }
+
+    .newsLetter {
+    height: 30vh;
+    }
+
+    .mobileMarge {
+        margin-top: 40px;
+    }
+
+    .goworking {
+        font-size: 25px;
+    }
+
+    .modalSize {
+    width: 100%;
+    min-height: 100%;
+    }
+
+    .reduceTxtSize {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+    
+}
+//-------------------media end----------------
