@@ -1,5 +1,5 @@
 
-// variables
+// -------------------------//variables--------------------
 
 $rouge : rgb(84, 14, 11);
 $bleu: rgb(27, 153, 150);
@@ -16,6 +16,8 @@ $gray: #797979;
 
 @import 'calendar';
 
+
+//------------------------------- // Titre hr----------------------------------
 .hrBlue {
     width: 50vw;
     color: $bleu
@@ -36,7 +38,26 @@ h4 {
 }
 
 
-// fonts
+// ------------------------------------//color--------------------------------
+.greenColor {
+    color: $vertPastel;
+}
+
+.blueColor {
+    color: $bleu;
+}
+
+.yellowColor {
+    color: $jaune;
+}
+
+.orangeColor {
+    color: $orange;
+}
+
+
+
+//------------------------------------------- //fonts------------------------------
 // ------------
 .montserrat {
     font-family: 'Montserrat', sans-serif;
@@ -56,18 +77,11 @@ h4 {
 }
 
 
-// ------------
-
-
-// navbar 
+// --------------------------------//navbar----------------------------------------- 
 // ------------
 
 nav {
     height: 70px;
-}
-
-.navColor {
-    color: $bleu;
 }
 
 .navTitle {
@@ -88,7 +102,7 @@ nav {
 // ------------
 
 
-// carousel
+// ------------------------------------------//carousel-----------------------------------
 // ------------
 .carou {
     height: 91vh;
@@ -111,8 +125,8 @@ nav {
 // ------------
 
 
-//Newsletter
-//-------------
+//-------------------------------//Newsletter-------------------------------------------
+
 .newsLetter {
     height: 65vh;
     padding-top: 2vh;
@@ -125,8 +139,7 @@ nav {
 
 //-------------
 
-//banner background and margin
-//----------
+//--------------------------//banner background and margin-------------------------
 
 .blueBack {
     background-color: $bleu;
@@ -145,17 +158,16 @@ nav {
     justify-content: center;
 }
 
-//--------------
 
 
-//description-----
+//------------------------------//description-----------------------------------
 
 .description {
     height: 400px;
 }
 
-//formules
-//----------------
+
+//-----------------------------//formules --- CARD ----------------------------------------
 
 .collapsible {
     all: unset;
@@ -188,6 +200,7 @@ nav {
     font-family: 'Montserrat', sans-serif;
     color: $orange;
     font-weight: bold;
+    height: 40px;
 }
 
 .hrOrange {
@@ -220,24 +233,72 @@ nav {
 }   
 
 .collapsible-body {
-    a{
-    background-color: $orange;
-    margin-top: 5px;
-    height: 100%;
-    width:100%;
-    }
-    a:hover {
-        background-color: $jaune;
-    }
     hr {
         opacity: 0.3;
     }
 }
 
+//---//boutton resa formule---------------
+
+.tarifColBack1 {
+    a{
+    background-color: $vertPastel;
+    }
+    a:hover {
+    background: linear-gradient(45deg,$bleu,$vertPastel);
+    background: -webkit-linear-gradient(45deg,$bleu,$vertPastel);
+    background: -moz-linear-gradient(45deg,$bleu,$vertPastel);
+    background: -ms-linear-gradient(45deg,$bleu,$vertPastel);
+    background: -o-linear-gradient(45deg,$bleu,$vertPastel);
+    }
+}
+
+.tarifColBack2 {
+    a{
+    background-color: $jaune;
+    }
+    a:hover {
+    background: linear-gradient(45deg,$orange,$jaune);
+    background: -webkit-linear-gradient(45deg,$orange,$jaune);
+    background: -moz-linear-gradient(45deg,$orange,$jaune);
+    background: -ms-linear-gradient(45deg,$orange,$jaune);
+    background: -o-linear-gradient(45deg,$orange,$jaune);
+    }
+}
+
+.tarifColBack3 {
+    a{
+    background-color: $orange;
+    }
+    a:hover {
+    background: linear-gradient(45deg,$jaune,$orange);
+    background: -webkit-linear-gradient(45deg,$jaune,$orange);
+    background: -moz-linear-gradient(45deg,$jaune,$orange);
+    background: -ms-linear-gradient(45deg,$jaune,$orange);
+    background: -o-linear-gradient(45deg,$jaune,$orange);
+    }
+
+}
+
+.tarifColBack4 {
+    a{
+    background-color: $rouge;
+    }
+    a:hover {
+    background: linear-gradient(45deg,$orange,$rouge);
+    background: -webkit-linear-gradient(45deg,$orange,$rouge);
+    background: -moz-linear-gradient(45deg,$orange,$rouge);
+    background: -ms-linear-gradient(45deg,$orange,$rouge);
+    background: -o-linear-gradient(45deg,$orange,$rouge);
+    }
+}
+
+
+
 //-------------------------
 
 
-//map and contact
+//-----------------------------//map and contact-------------------------------
 .map {
     height: 600px;
     margin: 0;
@@ -265,7 +326,7 @@ nav {
 //------------------------
 
 
-// footer ---------------
+// -----------------------------------------//footer ---------------
 
 .foot {
     background-color: $bleu;
@@ -308,7 +369,7 @@ nav {
 
 
 //---------------------
-// Page Resa // calendar
+// --------------------------------//Page Resa // calendar----------------------
 //---------------------
 #modal {
     width:80%;
@@ -355,7 +416,7 @@ nav {
 
 
 //------------------
-// Registration
+// --------------------------------//Registration-------------------------------------
 //------------------
 
 .mt{
@@ -371,7 +432,7 @@ nav {
 //------------------
 
 //-------------------------
-// Module Confirmation Resa
+// -----------------------------//Module Confirmation Resa--------------
 
 #choiceaccount{
     display: flex;
@@ -382,7 +443,7 @@ nav {
 //-------------------------
 
 
-// --------------MEDIA------------
+// -----------------------------//MEDIA------------------------------
 
 @media (max-width: 1199px) {
 
@@ -459,4 +520,7 @@ nav {
     }
     
 }
-//-------------------media end----------------
+//-------------------//media end---------------------------
+
+
+//END-----------------//END-------------------------------------

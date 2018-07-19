@@ -1,4 +1,6 @@
 
+//--------------------------------CALENDAR--------------------
+
 
 .dispbtn{
     display: flex;
@@ -25,11 +27,19 @@
     border-radius: 10px 10px 10px 10px;
     color: white;
     background: linear-gradient(45deg,$bleu,$vertPastel);
+    background: -webkit-linear-gradient(45deg,$bleu,$vertPastel);
+    background: -moz-linear-gradient(45deg,$bleu,$vertPastel);
+    background: -ms-linear-gradient(45deg,$bleu,$vertPastel);
+    background: -o-linear-gradient(45deg,$bleu,$vertPastel);
     box-shadow: 2px 2px 2px $gray;
 }
 
 .btnDate {
     background: linear-gradient(45deg,$orange,$jaune);
+    background: -webkit-linear-gradient(45deg,$orange,$jaune);
+    background: -moz-linear-gradient(45deg,$orange,$jaune);
+    background: -ms-linear-gradient(45deg,$orange,$jaune);
+    background: -o-linear-gradient(45deg,$orange,$jaune);
 }
 
 .day{
@@ -40,6 +50,10 @@
     font-size: 2em;
     border-radius: 30px 30px 0 0px;
     background: linear-gradient(45deg,$vertPastel,$bleu);
+    background: -webkit-linear-gradient(45deg,$vertPastel,$bleu);
+    background: -moz-linear-gradient(45deg,$vertPastel,$bleu);
+    background: -ms-linear-gradient(45deg,$vertPastel,$bleu);
+    background: -o-linear-gradient(45deg,$vertPastel,$bleu);
     color: white;
     font-family: 'Amiko', sans-serif;
 
@@ -63,6 +77,10 @@
             align-items: center;
             height:50px;
             background: linear-gradient(45deg,$jaune,$orange);
+            background: -webkit-linear-gradient(45deg,$jaune,$orange);
+            background: -moz-linear-gradient(45deg,$jaune,$orange);
+            background: -ms-linear-gradient(45deg,$jaune,$orange);
+            background: -o-linear-gradient(45deg,$jaune,$orange);
             font-size: 2em;
             font-weight: bold;
             color: white;
@@ -79,7 +97,7 @@
 }
 
 
-////////media
+////////-------------------------------------media-----------------------------
 
 @media (max-width: 767px) {
 
