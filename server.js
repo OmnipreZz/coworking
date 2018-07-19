@@ -133,16 +133,40 @@ app.post('/log_in', (req,res)=>{
         password : req.body.pwd
 	}
 	// get the user on the database whith the mail of the user trying to log in 
-	let logInQuery = `SELECT * FROM Users WHERE mail ='${user.mail}'`
-	connection.query(logInQuery, (err, result)=>{
+	connection.query(`SELECT * FROM Users WHERE mail = ?`, user.mail, (err, result)=>{
 		if(err){
 			console.error(err);
 		}
 		// if something match the query
 		else if(result[0] != undefined){
-			// // compare also the password of the user with the matching mail
-			 if(result[0].mail == user.mail && result[0].password == user.password){	
-				
+			// compare both mails
+			if(result[0].mail == user.mail){
+			 	console.log(result[0]);
+				bcrypt.hash(user.password, saltRounds, (err, hash)=>{
+					if (err){
+						console.error(err);			
+					}
+					else {
+						console.log(user.password)
+						console.log(hash);
+						console.log(result[0].password);
+						bcrypt.compare(result[0].password, hash, function(err, res){
+							if(err){console.error(err);}
+							else {
+								console.log('je sais plus trop où je suis là...')
+							}
+						});
+					}
+				});
+			 	
+
+
+
+
+
+
+
+
 			 	let authUser = {
 			 		name : result[0].name,
 			 		surname : result[0].surname,
@@ -168,6 +192,9 @@ app.post('/log_in', (req,res)=>{
 		// if the query don't meet any match so the identification failed
 		else {
 			// connection.end();
+
+
+			// user failed to authenticate
 			res.redirect("/");
 		}
 	});
@@ -178,7 +205,7 @@ app.post('/log_in', (req,res)=>{
 // route to user dashboard page
 app.get('/dashboard', (req, res)=>{
 	sess=req.session;
-	console.log(sess.user);
+	// console.log(sess.user);
 	res.render('dashboard');
 });
 
