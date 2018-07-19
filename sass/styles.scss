@@ -99,6 +99,22 @@ nav {
     padding-left: 35px;
     padding-right: 35px;
 }
+
+.bouttonResa {
+    background: linear-gradient(45deg,$orange,$jaune);
+    background: -webkit-linear-gradient(45deg,$orange,$jaune);
+    background: -moz-linear-gradient(45deg,$orange,$jaune);
+    background: -ms-linear-gradient(45deg,$orange,$jaune);
+    background: -o-linear-gradient(45deg,$orange,$jaune);
+}
+
+.bouttonResa:hover{
+    background: linear-gradient(45deg,$jaune,$orange);
+    background: -webkit-linear-gradient(45deg,$jaune,$orange);
+    background: -moz-linear-gradient(45deg,$jaune,$orange);
+    background: -ms-linear-gradient(45deg,$jaune,$orange);
+    background: -o-linear-gradient(45deg,$jaune,$orange);
+}
 // ------------
 
 
