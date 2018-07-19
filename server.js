@@ -140,10 +140,13 @@ app.post('/dashboard', (req,res)=>{
 				// create the token with payload and secret key (cf config.js file)
 				let token = jwt.sign(payload, app.get("superSecret"), {expiresIn: 1200000});
 				// console.log(token);
-			 	res.redirect("/dashboard");
+				// res.header("x-auth", token)
+				let head = req.header("x-auth", token);
+				console.log(head);
+				res.redirect("/resa");
 			}
 		}
-		// if the query meets no match
+		// if the query don't meet any match
 		else {
 			// connection.end();
 			res.redirect("/");
@@ -159,15 +162,17 @@ let tokenRoutes = express.Router();
 // route middleware to verify tokens
 tokenRoutes.use((req, res, next)=>{
 	// look for token in url or body of request
-	let token = req.body.token || req.query.token;
+	// console.log(res.header("x-auth"));
+	let token = res.header("x-auth");
+	// console.log(token);
 	// if a token is found
 	if (token){
-		console.log(token);
+		// console.log(token);
 		console.log("checking the token")
 		// check token
 		jwt.verify(token, app.get("superSecret"), (err, decoded)=>{
 			if(err){
-				console.error(err);
+				// console.error(err);
 			}
 			// if token is as expected, save it for further requests in other routes
 			else {
@@ -185,25 +190,18 @@ tokenRoutes.use((req, res, next)=>{
 
 
 // apply tokenverification to following routes
-// app.use(tokenRoutes);
+app.use(tokenRoutes);
 
 
 // page resa
-app.get('/resa', (req,res)=>{
+app.post('/resa', (req,res)=>{
 	console.log(req.body.token);
-	console.log(req.query.token);
-	console.log(req.param.token);
     res.render('resa');
 });
 
 // route to dashboard page
 app.get('/dashboard', (req, res)=>{
-	console.log(req.body.token);
-	console.log(req.query.token);
-	console.log(req.param.token);
-	console.log(req.headers['x-access-token']);	
-	console.log(req.session);
-	console.log(req.session.token);
+	console.log(req.params.token);
 	res.render('dashboard');
 });
 
