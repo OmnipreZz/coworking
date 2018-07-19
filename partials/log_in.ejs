@@ -1,0 +1,22 @@
+<div class="row">
+  <form class="col s12" action="/dashboard" method="POST">
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="email" name="mailRegister" type="email" class="validate" required/>
+      <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" -->
+        <label for="email">E-mail</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+        <input id="password" name="pwd" type="password" class="validate" required/>
+        <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" -->
+        <label for="password">Mot de passe</label>
+      </div>
+    </div>
+    <div class="row center">
+      <button class="btn waves-effect waves-light mt" type="submit" name="action">Je m'authentifie</button>
+    </div>
+  </form>
+</div>

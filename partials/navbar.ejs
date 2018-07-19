@@ -38,7 +38,13 @@
 
             </li>
             <li>
-                <a href="#" class="waves-effect waves-light btn">Se connecter</a>
+                <a class="waves-effect waves-light btn modal-trigger" href="#modal_log_in">Se connecter</a>
+                <div id="modal_log_in" class="modal">
+                    <div class="modal-content">
+                        <h4>Connectez-vous</h4>
+                        <%- include ../partials/log_in.ejs %>
+                    </div>
+                </div>
             </li>
         </ul>
     </div>
@@ -72,7 +78,7 @@
 
         </li>
         <li>
-            <a href="#" class="waves-effect waves-light btn">Se connecter</a>
+            <a class="waves-effect waves-light btn modal-trigger" href="#">Se connecter</a>
         </li>
     </ul>
 </nav>

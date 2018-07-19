@@ -5,7 +5,9 @@ const express = require('express'),
 	  mysql = require('mysql'),
 	  bcrypt = require('bcrypt'),
       sgMail = require('@sendgrid/mail'),
-	  connection = require('./public/js/connection'),
+      connection = require('./public/js/connection'),
+      jwt = require('jsonwebtoken'),
+      config = require('./public/js/config');
 	  saltRounds = 10;
 sgMail.setApiKey(apikey);
 
@@ -14,6 +16,9 @@ let app = express();
 
 // fait tourner le moteur ejs
 app.set('view engine', 'ejs');
+
+//set secret key to read token
+app.set("superSecret", config.secret);
 
 // utilise le dossier public pour les fichiers statiques
 app.use(express.static('public'));
@@ -47,11 +52,6 @@ app.post('/', (req, res) => {
 	res.render('index');
 });
 
-// page resa
-app.get('/resa', (req,res)=>{
-    res.render('resa');
-});
-
 // page test
 app.get('/test', (req,res)=>{
     res.render('testpage');
@@ -67,6 +67,7 @@ app.post('/registration', (req, res) => {
         surname : req.body.prenom,
 		mail : req.body.mailRegister,
         password : req.body.pwd,
+        role : "user",
 	}
 
 
@@ -74,8 +75,6 @@ app.post('/registration', (req, res) => {
 
 	// création d'une variable avec la valeur du champs de confirmation du password
 	let confpwd = req.body.confpwd
-	// console.log(user.password);
-	// console.log(confpwd);
 	//requête pour récupérer le mail du nouveau user s'il existe déjà dans la DB
 	let queryMail = `SELECT mail FROM users WHERE mail = '${user.mail}'`;
 	// comparaison mdp/confirmation mdp && mail du nouveau user/mail dans DB
@@ -111,8 +110,104 @@ app.post('/registration', (req, res) => {
 	}
 
 });
-//---------------------------------------------
 
+
+
+// when validating log_in form
+app.post('/dashboard', (req,res)=>{
+	// get input into a "user" object
+	let user = {
+		mail : req.body.mailRegister,
+        password : req.body.pwd
+	}
+	// get the user on the database whith the mail of the user trying to log in 
+	let authquery = `SELECT * FROM Users WHERE mail ='${user.mail}'`
+	connection.query(authquery, (err, result)=>{
+		if(err){
+			console.error(err);
+		}
+		// if something match the query
+		else if(result[0] != undefined){
+			// compare also the password of the user with the matching mail
+			if(result[0].mail == user.mail && result[0].password == user.password){	
+				
+				// that's what will be in the token
+				const payload = {
+					name: result[0].name,
+					mail: result[0].mail,
+					role: result[0].role
+				};
+				// create the token with payload and secret key (cf config.js file)
+				let token = jwt.sign(payload, app.get("superSecret"), {expiresIn: 1200000});
+				// console.log(token);
+				// res.header("x-auth", token)
+				let head = req.header("x-auth", token);
+				console.log(head);
+				res.redirect("/resa");
+			}
+		}
+		// if the query don't meet any match
+		else {
+			// connection.end();
+			res.redirect("/");
+		}
+	});
+});
+
+
+
+
+// defines an instance of the router for routes that imply authentication
+let tokenRoutes = express.Router();
+// route middleware to verify tokens
+tokenRoutes.use((req, res, next)=>{
+	// look for token in url or body of request
+	// console.log(res.header("x-auth"));
+	let token = res.header("x-auth");
+	// console.log(token);
+	// if a token is found
+	if (token){
+		// console.log(token);
+		console.log("checking the token")
+		// check token
+		jwt.verify(token, app.get("superSecret"), (err, decoded)=>{
+			if(err){
+				// console.error(err);
+			}
+			// if token is as expected, save it for further requests in other routes
+			else {
+				req.decoded = recoded;
+				next();
+			}
+		});
+	}
+	// if there is no token found return an error
+	else {
+	res.status(403);
+	res.send("no token found");
+	}
+});
+
+
+// apply tokenverification to following routes
+app.use(tokenRoutes);
+
+
+// page resa
+app.post('/resa', (req,res)=>{
+	console.log(req.body.token);
+    res.render('resa');
+});
+
+// route to dashboard page
+app.get('/dashboard', (req, res)=>{
+	console.log(req.params.token);
+	res.render('dashboard');
+});
+
+
+
+//---------------------------------------------
 
 const server = app.listen(process.env.PORT || 8080, (req, res) => {
     console.log('Server online!');
