@@ -1,6 +1,7 @@
+//----------------------------------
+// display calendar of this moment
 //--------------------------------
-// definition of variables
-//--------------------------------
+
 
 
 // definition of first day of month to start month calendar (it is a landmark)
@@ -20,16 +21,45 @@ let datmonth = moment().set('date',j).format('M');
 // month definition
 let month = moment().format('MMMM');
 let monthnb = moment().month();
+console.log(monthnb);
+console.log(month);
 
 
 
+// for (i; i > 0; i--) {
+//     dat = moment().set('date',j).format('D');
+//     $("#" + (i-1)).text(dat).addClass("outofmonth");
+//     j--;
+// };
 
+// i = Number(idfirstday);
+// j = 1;
+// let monthofdat = moment().set('date',j).format('M');
 
-//----------------------------------------------------------------------
+// for (i; i <= 42; i++) {
+
+//     dat = moment().set('date',j).format('D');
+
+//     datmonth = Number(moment().set('date',j).format('M'));
+//     let monthafter = Number(monthofdat) + 1;
+
+//     // Assign new attribut with the number of month (not necessary) and push date in cell
+//     $("#" + i).text(dat).attr("nbofmonth", datmonth);
+
+//     if (datmonth === monthafter){
+//         $("#" + i).addClass("outofmonth");
+//     }
+//     j++;
+// }
+
+    
+
+//-------------------------------------------------------------------------
 // handle of month and year
-//----------------------------------------------------------------------
+// -----------------------------------------------------------------------
 
-// display current month
+
+// console.log( moment().month() - 1 );
 $('#month').text(month);
 
 // and year 
@@ -43,27 +73,26 @@ $('#year').text(year);
 function changedate() {
 
     for (i = 0; i <= 42; i++) {
-        $("#" + (i)).removeClass("outofmonth").removeAttr("date");
+        $("#" + (i)).removeClass("outofmonth");
     }
 
-    // display year
     $('#year').text(year);
 
-    // Select and format month
     month = moment().set('month', monthnb).format('MMMM');
 
-    // display month
     $('#month').text(month);
 
     // definition of first day of month to start month calendar (it is a landmark)
     firstdayofmonth = '.' + moment().set({ 'year': year, 'month': monthnb, 'date': 1 }).format('dddd');
 
 
-    // syntax of class of cell
+    // syntax for jquery 
     onedayclass = "#week1 " + firstdayofmonth;
+    // console.log( "onedayclass :: " + onedayclass);
 
-    // get id of the first day of month
+
     idfirstday = $(onedayclass).attr('id');
+    // console.log( "idfirstday :: " + idfirstday);
 
     // Implementation of days in month calendar
     i = Number(idfirstday);
@@ -73,30 +102,24 @@ function changedate() {
 
     let nextmonthofdat = moment().year(year).dayOfYear(firstdayofmonthofyear).add(1, 'months').format('M');
 
-    // date to push in attribute
-    let monthdat;
-    let date;
-    let daydat;
-
     for (i; i <= 42; i++) {
 
         dat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('D');
-        daydat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('DD');
-        monthdat = moment().year(year).dayOfYear(firstdayofmonthofyear).format('MMM');
-        
-        date = moment().set({ 'year': year, 'month': monthdat, 'date': dat }).format('YYYY' + '-' + 'MM' + '-' + 'DD');
+
         
         datmonth = Number(moment().year(year).dayOfYear(firstdayofmonthofyear).format('M'));
 
         let monthafter = Number(nextmonthofdat);
         
         // Assign new attribut with the number of month and push date in cell
-        $("#" + i).text(dat).attr({"nbofmonth": datmonth, "date": date});
+        $("#" + i).text(dat).attr("nbofmonth", datmonth);
 
         if (datmonth === monthafter){
             $("#" + i).addClass("outofmonth");
         }
+
         firstdayofmonthofyear++;
+
     }
     
 
@@ -106,12 +129,9 @@ function changedate() {
 
     for (i; i > 0; i--) {
         dat = moment().year(year).dayOfYear(firstdayofmonthofyear-1).format('D');
-        daydat = moment().year(year).dayOfYear(firstdayofmonthofyear-1).format('DD');
-        monthdat = moment().year(year).dayOfYear(firstdayofmonthofyear-1).format('MMM');
-        date = moment().set({ 'year': year, 'month': monthdat, 'date': dat }).format('YYYY' + '-' + 'MM' + '-' + 'DD');
-
-        $("#" + (i)).text(dat).addClass("outofmonth").attr({"nbofmonth": datmonth, "date": date});
+        $("#" + (i)).text(dat).addClass("outofmonth");
         firstdayofmonthofyear--;
+        
     };
 
 }
@@ -164,4 +184,3 @@ function nextmonth(){
 }
 
 changedate();
-
