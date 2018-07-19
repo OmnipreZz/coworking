@@ -1,0 +1,559 @@
+// variables
+
+$rouge : rgb(84, 14, 11);
+$bleu: rgb(27, 153, 150);
+$vertPastel: rgb(147, 203, 166);
+$orange: rgb(241, 173, 50);
+$jaune: rgb(235, 219, 1);
+
+$gray: #797979;
+
+// ------------
+
+.dispbtn{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+#month{
+    font-size: 2em;
+    margin: 2%;
+    width: 28vh;
+}
+
+#year{
+    font-size: 2em;
+    margin: 2%;
+    width: 28vh
+}
+
+.styleDate {
+    font-family: 'Amiko', sans-serif;
+    background-color: red;
+    border-radius: 10px 10px 10px 10px;
+    color: white;
+    background: linear-gradient(45deg,$bleu,$vertPastel);
+    box-shadow: 2px 2px 2px $gray;
+}
+
+.btnDate {
+    background: linear-gradient(45deg,$orange,$jaune);
+}
+
+.day{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    // border: 2px solid black;
+    font-size: 2em;
+    border-radius: 30px 30px 0 0px;
+    background: linear-gradient(45deg,$vertPastel,$bleu);
+    color: white;
+    font-family: 'Amiko', sans-serif;
+
+}
+
+.calendargrid {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 5px;
+    margin: 0% 5%;
+    height: 80%;
+}
+    .week{
+
+    }
+    #days{
+
+    }
+        .cell{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            height:50px;
+            background: linear-gradient(45deg,$jaune,$orange);
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 2px $gray;
+        }
+
+.outofmonth{
+    color: rgba(126, 115, 115, 0.568);
+    text-shadow: none;
+}
+
+
+////////media
+
+@media (max-width: 767px) {
+
+    .day {
+        font-size: 1em;
+    }
+
+    .week {
+        .cell {
+            font-size: 1.5em;
+        }
+    }
+
+    .day {
+        background: none;
+        color: black;
+    }
+}
+
+
+
+//----------------------------------------------------------------
+// style.css
+//----------------------------------------------------------------
+
+// .hrBlue {
+//     width: 50vw;
+//     color: $bleu
+// }
+
+
+// h2 {
+//     color: $bleu;
+//     text-align: center;
+//     font-family: 'Montserrat', sans-serif;
+//     font-weight: bold;
+//     margin-top: 30px;
+//     margin-bottom: 20px;
+// }
+
+// h4 {
+//     color: $bleu;
+// }
+
+
+// // fonts
+// // ------------
+// .montserrat {
+//     font-family: 'Montserrat', sans-serif;
+// }
+
+// .archivo {
+//     font-family: 'Archivo Black', sans-serif;
+// }
+
+// .amiko {
+//     font-family: 'Amiko', sans-serif;
+// }
+
+// .grayLato {
+//     font-family: 'Lato', sans-serif;
+//     color: gray;
+// }
+
+
+// // ------------
+
+
+// // navbar 
+// // ------------
+
+// nav {
+//     height: 70px;
+// }
+
+// .navColor {
+//     color: $bleu;
+// }
+
+// .navTitle {
+//     margin-left: 10%;
+//     font-size: 2em;
+// }
+
+// .navHover:hover {
+//     background-color: white;
+// }
+
+// .navDivider {
+//     color: $bleu;
+//     font-size: 25px;
+//     padding-left: 35px;
+//     padding-right: 35px;
+// }
+// // ------------
+
+
+// // carousel
+// // ------------
+// .carou {
+//     height: 91vh;
+// }
+
+// .slide1 {
+//     background: url(/img/action-2277292.jpg) no-repeat center;
+//     background-size: cover;
+// }
+
+// .slide2 {
+//     background: url(/img/startup-594091.jpg) no-repeat center;
+//     background-size: cover;
+// }
+
+// .slide3 {
+//     background: url(/img/rest-700156.jpg) no-repeat center;
+//     background-size: cover;
+// }
+// // ------------
+
+
+// //Newsletter
+// //-------------
+// .newsLetter {
+//     height: 65vh;
+//     padding-top: 2vh;
+
+// }
+
+// .newsMargin {
+//     margin-top: 7vh;
+// }
+
+// //-------------
+
+// //banner background and margin
+// //----------
+
+// .blueBack {
+//     background-color: $bleu;
+//     margin: 0;
+//     height: 30vh;
+//     padding-top: 2vh;
+// }
+
+// .buttonMargin {
+//     padding-top: -5vh;
+// }
+
+// .logoAlign {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// //--------------
+
+
+// //description-----
+
+// .description {
+//     height: 400px;
+// }
+
+// //formules
+// //----------------
+
+// .collapsible {
+//     all: unset;
+// }
+
+// .card {
+//     cursor: pointer;
+//     // appearance: none;
+// }
+
+// .card-title {
+//     padding-top: 3vh;
+// }
+
+// .collapsible-header {
+//     all: unset;
+//     i {
+//         font-size: 3em;
+//     }
+// }
+
+// .card-panel {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     height: 20vh;
+// }
+
+// .tcard {
+//     font-family: 'Montserrat', sans-serif;
+//     color: $orange;
+//     font-weight: bold;
+// }
+
+// .hrOrange {
+//     color: $orange;
+//     width: 5vh;
+// }
+
+// .faIconTarif {
+//     margin-right: 2px;
+// }
+
+// .option1 {
+//     background-color: $vertPastel;
+//     color: white;
+// }
+
+// .option2 {
+//     background-color: $jaune;
+//     color: white;
+// }
+
+// .option3 {
+//     background-color: $orange;
+//     color: white;
+// }
+
+// .option4 {
+//     background-color: $rouge;
+//     color: white;
+// }   
+
+// .collapsible-body {
+//     a{
+//     background-color: $orange;
+//     margin-top: 5px;
+//     height: 100%;
+//     width:100%;
+//     }
+//     a:hover {
+//         background-color: $jaune;
+//     }
+//     hr {
+//         opacity: 0.3;
+//     }
+// }
+
+// //-------------------------
+
+
+// //map and contact
+// .map {
+//     height: 600px;
+//     margin: 0;
+// }
+
+// #mapid {
+//     height: 600px;
+//     margin-left: -1.5%;
+// }
+
+// .contact {
+//     background-color: white;
+//     height: 600px;
+// }
+
+// .titreContact {
+//     text-align: center;
+//     color: $bleu;
+//     font-weight: bold;
+// }
+
+// .descContact {
+//     color: $bleu;
+// }
+// //------------------------
+
+
+// // footer ---------------
+
+// .foot {
+//     background-color: $bleu;
+//     margin: 0;
+//     height: 12vh;
+// }
+
+// .footDivider {
+//     color: white;
+//     font-size: 25px;
+//     padding-left: 35px;
+//     padding-right: 35px;
+// }
+
+// .footIconSize {
+//     font-size: 20px;
+//     margin-left: 5px;
+// }
+
+// .footIcon {
+//     margin-top: 25px;
+// }
+
+// .footHeight {
+//     margin-top: 10px;
+// }
+
+// .mfArrow {
+//     margin-top: 5px;
+// }
+
+
+
+// //modal
+
+// .modalSize {
+//     width: 70%;
+//     min-height: 80%;
+// }
+
+
+// //---------------------
+// // Page Resa // calendar
+// //---------------------
+// #modal {
+//     width:80%;
+//     max-height:100%;
+// }
+
+// .titlemodal{
+//     font-size: 2em;
+//     font-weight: bold;
+//     color: black;
+// }
+
+// .modalresa{
+//     width: 30vw;
+//     height: 25vh;
+// }
+
+// #btnmodal2{
+//     background: no-repeat url(/img/business-3190209_960_720.jpg);
+//     background-size: cover;
+//     background-position: center;
+// }
+
+// #modal2 {
+//     height:100%;
+//     width:100%;
+// }
+
+// #btnmodal3{
+//     background: no-repeat url(/img/objects-731426_960_720.jpg);
+//     background-size: cover;
+//     background-position: center;
+// }
+
+// #btnmodal4{
+//     background: no-repeat url(/img/computer-3368242_960_720.jpg);
+//     background-size: cover;
+
+// }
+
+// //--------------------
+// // Fin Page Resa
+// //--------------------
+
+
+// //------------------
+// // Registration
+// //------------------
+
+// .mt{
+//     margin-top: 7vh;
+// }
+
+// .wrongPwd {
+//     border: 2px solid red;
+// }
+
+// // -----------------
+// // Fin registration
+// //------------------
+
+// //-------------------------
+// // Module Confirmation Resa
+
+// #choiceaccount{
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// // Fin
+// //-------------------------
+
+
+// // --------------MEDIA------------
+
+// @media (max-width: 1199px) {
+
+// }
+
+// @media (max-width: 991px) {
+
+// }
+
+// @media (max-width: 767px) {
+   
+//     .parallax-container {
+//         display: none;
+//     }
+
+//     .button-arrow {
+//         display: none;
+//     }
+
+//     .modalresa{
+//         width: 10vw;
+//         height: 5vh;
+//     }   
+
+//     .blueBack {
+//         padding-top: 50px;
+//     }
+
+//     .foot {
+//         height: auto;
+//     }
+
+//     .footDivider {
+//         font-size: 15px;
+//         padding-left: 15px;
+//         padding-right: 15px;
+//     }
+
+//     .footContact {
+//         font-size: 12px;
+//     }
+
+//     .carou {
+//         display: none;
+//     }
+
+//     .hideLogo {
+//         display: none;
+//     }
+
+//     .newsLetter {
+//     height: 30vh;
+//     }
+
+//     .mobileMarge {
+//         margin-top: 40px;
+//     }
+
+//     .goworking {
+//         font-size: 25px;
+//     }
+
+//     .modalSize {
+//     width: 100%;
+//     min-height: 100%;
+//     }
+
+//     .reduceTxtSize {
+//         font-size: 15px;
+//     }
+
+//     h2 {
+//         font-size: 40px;
+//     }
+    
+// }
+//-------------------media end----------------

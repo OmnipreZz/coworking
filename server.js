@@ -64,6 +64,11 @@ app.get('/test', (req,res)=>{
     res.render('testpage');
 });
 
+// route to dashboardadmin
+app.get('/dashboardadmin', (req, res)=>{
+	res.render('dashboardadmin');
+});
+
 // requête DB inscription ---------------------
 app.post('/registration', (req, res) => {
 	
