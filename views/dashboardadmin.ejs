@@ -23,8 +23,6 @@
     
     <%- include partials/navbar.ejs %>
 
-    <%- include partials/tables.ejs %>
-
     <div class="container">
         <div class="row">
             <div id="coworkersofmonth">
@@ -33,6 +31,24 @@
     </div>
 
     <%- include partials/calendaradmin.ejs %>
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="rqemail" type="email" class="validate">
+                <label for="rqemail">Email</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="rqname" type="text" class="validate">
+                <label for="rqname">Nom</label>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+            <%- include partials/tables.ejs %>
+    </div>
+
+
 
 
 
