@@ -2,18 +2,37 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Item Name</th>
-            <th>Item Price</th>
+            <th>Surname</th>
+            <th>Mail</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>date_time</th>
+            <th>status</th>
         </tr>
     </thead>
 
     <tbody>
-        <tr>
-            <td><%= rqname %></td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-        </tr>
-        <tr>
+
+        <% print.forEach(function (user) { %>
+            <tr>
+                <td><%= user.name %></td>
+
+                <td><%= user.surname %></td>
+
+                <td><%= user.mail %></td>
+
+                <td><%= user.phone %></td>
+
+                <td><%= user.role %></td>
+
+                <td><%= user.date_time %></td>
+
+                <td><%= user.status %></td>
+            </tr>
+        <% }) %>
+
+            
+        <!-- <tr>
             <td>Alan</td>
             <td>Jellybean</td>
             <td>$3.76</td>
@@ -22,6 +41,10 @@
             <td>Jonathan</td>
             <td>Lollipop</td>
             <td>$7.00</td>
-        </tr>
+        </tr> -->
     </tbody>
 </table>
+
+<!--
+     select users.name, users.surname, users.mail, users.phone, users.role, booking.date_time, booking.status, users.idUser from users right join booking on users.idUser = booking.idUser order by name;
+     -->
