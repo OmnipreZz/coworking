@@ -6,6 +6,26 @@ $('.formula').click(function() {
     $("#msginfo").html('Vous avez choisi la formule');
     $("#msgformule").html(formulinfo);
     $("#option").attr('value', formulinfo);
+
+    switch (formulinfo) {
+        case 'Petit Passage' : 
+            $("#price").attr('value', 3);
+            $("#nbrDay").attr('value', 1);
+            break;
+        case 'Carnet du Nomade':
+            $("#price").attr('value', 30);
+            $("#nbrDay").attr('value', 10);
+            break;
+        case 'Formule Souplesse':
+            $("#price").attr('value', 45);
+            $("#nbrDay").attr('value', 16);
+            break;
+        case 'Comme à la Maison':
+            $("#price").attr('value', 100);
+            $("#nbrDay").attr('value', 62);
+            break;
+
+    }
 });
     
 //------------------------------
@@ -29,12 +49,12 @@ $('.validModalResa').click(() => {
     if ($('#morning').is(':checked')) {
         let matin = "Matin";
         $("#dateMatin").html(matin);
-        $('#morning').attr('value', matin);
+        $('#am').attr('value', matin);
     }
     if($('#afternoon').is(':checked')) {
         let aprem = "Après-midi";
         $("#dateAprem").html(aprem);
-        $('#afternoon').attr('value', aprem);
+        $('#pm').attr('value', aprem);
     }
     if ($('#cowork').is(':checked')) {
         let espace = "Espace Coworking";
@@ -49,12 +69,12 @@ $('.validModalResa').click(() => {
     if ($('#screen').is(':checked')) {
         let ecran = "Ecran";
         $("#optionEcran").html(ecran);
-        $("#screen").attr('value', ecran);
+        $("#ecran").attr('value', ecran);
     }
     if ($('#hammock').is(':checked')) {
         let hamac = "Hamac";
         $("#optionHamac").html(hamac);
-        $("#hammock").attr('value', hamac);
+        $("#ham").attr('value', hamac);
     }
     console.log("option");
     $("#msgOption").html('Les Détails');
