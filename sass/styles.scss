@@ -81,9 +81,47 @@ h4 {
     font-family: 'Ribeye Marrow', cursive;
 }
 
+//--------------------------//banner background COLOR and margin-------------------------
+
+.greenBack {
+    background-color: $vertPastel; 
+}
+
+.greenBack {
+    background-color: $vertPastel; 
+}
+
+.greenBack {
+    background-color: $vertPastel; 
+}
+
+.greenBack {
+    background-color: $vertPastel; 
+}
+
+
+
+.blueBack {
+    background-color: $bleu;
+    margin: 0;
+    height: 30vh;
+    padding-top: 2vh;
+}
+
+.buttonMargin {
+    padding-top: -5vh;
+}
+
+.logoAlign {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 // --------------------------------//navbar----------------------------------------- 
-// ------------
+// ---------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------
 
 nav {
     height: 70px;
@@ -161,26 +199,6 @@ nav {
 
 //-------------
 
-//--------------------------//banner background and margin-------------------------
-
-.blueBack {
-    background-color: $bleu;
-    margin: 0;
-    height: 30vh;
-    padding-top: 2vh;
-}
-
-.buttonMargin {
-    padding-top: -5vh;
-}
-
-.logoAlign {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
 
 //------------------------------//description-----------------------------------
 
@@ -191,82 +209,133 @@ nav {
 
 //-----------------------------//formules --- CARD ----------------------------------------
 
-.collapsible {
-    all: unset;
-    all: -webkit-unset;
-    all: -moz-unset;
-    all: -ms-unset;
-    all: -o-unset;
+// .collapsible {
+//     all: unset;
+//     all: -webkit-unset;
+//     all: -moz-unset;
+//     all: -ms-unset;
+//     all: -o-unset;
     
+// }
+
+// .card {
+//     cursor: pointer;
+//     appearance: none;
+// }
+
+// .card-title {
+//     padding-top: 3vh;
+// }
+
+// .collapsible-header {
+//     all: unset;
+//     all: -webkit-unset;
+//     all: -moz-unset;
+//     all: -ms-unset;
+//     all: -o-unset;
+//     i {
+//         font-size: 3em;
+//     }
+// }
+
+// .card-panel {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     height: 20vh;
+// }
+
+// .tcard {
+//     font-family: 'Montserrat', sans-serif;
+//     color: $orange;
+//     font-weight: bold;
+//     height: 40px;
+// }
+
+// .hrOrange {
+//     color: $orange;
+//     width: 5vh;
+// }
+
+// .faIconTarif {
+//     margin-right: 2px;
+// }
+
+.option1 {
+    background-color: $vertPastel;
+    // color: white;
 }
 
-.card {
-    cursor: pointer;
-    appearance: none;
+.option2 {
+    background-color: $jaune;
+    // color: white;
 }
 
-.card-title {
-    padding-top: 3vh;
+.option3 {
+    background-color: $orange;
+    // color: white;
 }
 
-.collapsible-header {
-    all: unset;
-    all: -webkit-unset;
-    all: -moz-unset;
-    all: -ms-unset;
-    all: -o-unset;
-    i {
-        font-size: 3em;
-    }
+.option4 {
+    background-color: $rouge;
+    // color: white;
+}   
+
+// .collapsible-body {
+//     hr {
+//         opacity: 0.3;
+//     }
+// }
+
+.mainCard {
+    box-shadow: 2px 2px 3px $gray;
+    border-left: 2px outset $gray;
+    border-top: 1px outset $gray;
 }
 
-.card-panel {
+.titleCard {
+    height: 180px;
+    color: white;
+    font-size: 30px;
     display: flex;
+    justify-content: space-around;
     flex-direction: column;
     align-items: center;
-    height: 20vh;
+    box-shadow: 2px 2px 3px $gray;
 }
 
-.tcard {
+.tCard {
+    margin-top: -30px;
+}
+
+.favCard {
+    font-size: 55px;
+}
+
+// .contentCard {
+    
+// }
+
+.h2card {
     font-family: 'Montserrat', sans-serif;
     color: $orange;
     font-weight: bold;
     height: 40px;
 }
 
+.hrCard {
+    opacity: 0.3;
+}
+
 .hrOrange {
+    width: 30px;
     color: $orange;
-    width: 5vh;
+    opacity: 0.5;
+    margin-top: 30px;
 }
 
-.faIconTarif {
-    margin-right: 2px;
-}
-
-.option1 {
-    background-color: $vertPastel;
-    color: white;
-}
-
-.option2 {
-    background-color: $jaune;
-    color: white;
-}
-
-.option3 {
-    background-color: $orange;
-    color: white;
-}
-
-.option4 {
-    background-color: $rouge;
-    color: white;
-}   
-
-.collapsible-body {
-    hr {
-        opacity: 0.3;
-    }
+.priceCard {
+    margin-top: 30px;
 }
 
 //---//boutton resa formule---------------
