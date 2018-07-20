@@ -137,14 +137,10 @@ app.post('/log_in', (req,res)=>{
 		else if(result[0] != undefined){
 			// compare both mails
 			if(result[0].mail == user.mail){
-			 	console.log(result[0]);
-				console.log(user.password)
-				console.log(result[0].password);
 				bcrypt.compare(user.password, result[0].password, function(err, cryptres){
 					if(err){console.error(err);}
 					else {
 						if (cryptres == true){
-							console.log('password match')
 							let authUser = {
 			 				name : result[0].name,
 			 				surname : result[0].surname,
@@ -157,17 +153,17 @@ app.post('/log_in', (req,res)=>{
 			 				sess = req.session;
 			 				sess.user = authUser;
 
-				 				// if it's a classic user, redirect to the user dashboard
-				 				if(sess.user.role === "user"){
+				 			// if it's a classic user, redirect to the user dashboard
+				 			if(sess.user.role === "user"){
 				 				res.redirect("/dashboard");
-				 				}
-				 				// else if it's an admin, redirect to admin dashboard
-				 				else if(sess.user.role === "admin"){
-				 					res.redirect("/dashboardadmin");
-				 				}
+				 			}
+				 			// else if it's an admin, redirect to admin dashboard
+				 			else if(sess.user.role === "admin"){
+				 				res.redirect("/dashboardadmin");
+				 			}
 						}
-						else { 
-							console.log('password mismatch');
+						else {
+							res.redirect("/");
 						}
 					}
 				});
@@ -175,9 +171,6 @@ app.post('/log_in', (req,res)=>{
 		}
 		// if the query don't meet any match so the identification failed
 		else {
-			// connection.end();
-
-
 			// user failed to authenticate
 			res.redirect("/");
 		}
@@ -216,9 +209,16 @@ app.get('/dashboard', (req, res)=>{
 	});
 
 app.get('/dashboardadmin', (req, res)=>{
-  
+	sess=req.session;
+	console.log(sess);
+	if(sess.role != "admin") {
+		console.log("not an admin!!")
+		res.redirect("/");
+	}
+	else {
 	res.render('dashboardadmin', {'rqname' : 'rqname',
 								'ole':rqname});
+	}
 });
 
 
