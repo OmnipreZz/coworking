@@ -64,37 +64,6 @@ app.get('/test', (req,res)=>{
     res.render('testpage');
 });
 
-// route to dashboardadmin
-//-----------------------------------
-
-
-	// Request MySQL
-	//--------------------------------
-
-	let query = `SELECT * FROM Users`;
-	var rqname=[];
-	connection.query(query, (err, result)=>{
-		if(err){
-			console.error(err);
-		}else{
-			for (let i = 0; i < result.length; i++) {
-				rqname.push(result[i].name)
-				console.log(rqname);
-			}
-
-		}
-	});
-
-
-
-app.get('/dashboardadmin', (req, res)=>{
-  
-	res.render('dashboardadmin', {'rqname' : 'rqname',
-								'ole':rqname});
-});
-
-//------------------------------------------------
-
 
 // requête DB inscription ---------------------
 app.post('/registration', (req, res) => {
@@ -169,51 +138,39 @@ app.post('/log_in', (req,res)=>{
 			// compare both mails
 			if(result[0].mail == user.mail){
 			 	console.log(result[0]);
-				bcrypt.hash(user.password, saltRounds, (err, hash)=>{
-					if (err){
-						console.error(err);			
-					}
+				console.log(user.password)
+				console.log(result[0].password);
+				bcrypt.compare(user.password, result[0].password, function(err, cryptres){
+					if(err){console.error(err);}
 					else {
-						console.log(user.password)
-						console.log(hash);
-						console.log(result[0].password);
-						bcrypt.compare(result[0].password, hash, function(err, res){
-							if(err){console.error(err);}
-							else {
-								console.log('je sais plus trop où je suis là...')
-							}
-						});
+						if (cryptres == true){
+							console.log('password match')
+							let authUser = {
+			 				name : result[0].name,
+			 				surname : result[0].surname,
+			 				mail : result[0].mail,
+			 				phone : result[0].phone,
+			 				avatar : result[0].urlavatar,
+			 				role : result[0].role
+			 				}
+			 				// set session then push the authUser object in it : it will be accessed with "sess.user"
+			 				sess = req.session;
+			 				sess.user = authUser;
+
+				 				// if it's a classic user, redirect to the user dashboard
+				 				if(sess.user.role === "user"){
+				 				res.redirect("/dashboard");
+				 				}
+				 				// else if it's an admin, redirect to admin dashboard
+				 				else if(sess.user.role === "admin"){
+				 					res.redirect("/dashboardadmin");
+				 				}
+						}
+						else { 
+							console.log('password mismatch');
+						}
 					}
 				});
-			 	
-
-
-
-
-
-
-
-
-			 	let authUser = {
-			 		name : result[0].name,
-			 		surname : result[0].surname,
-			 		mail : result[0].mail,
-			 		phone : result[0].phone,
-			 		avatar : result[0].urlavatar,
-			 		role : result[0].role
-			 	}
-			 	// set session then push the authUser object in it : it will be accessed with "sess.user"
-			 	sess = req.session;
-			 	sess.user = authUser;
-
-			 	// if it's a classic user, redirect to the user dashboard
-			 	if(sess.user.role === "user"){
-			 	res.redirect("/dashboard");
-			 	}
-			 	// else if it's an admin, redirect to admin dashboard
-			 	else if(sess.user.role === "admin"){
-			 		res.redirect("/dashboard_admin");
-			 	}
 			}
 		}
 		// if the query don't meet any match so the identification failed
@@ -235,6 +192,34 @@ app.get('/dashboard', (req, res)=>{
 	// console.log(sess.user);
 	res.render('dashboard');
 });
+
+// route to dashboardadmin
+//-----------------------------------
+
+	// Request MySQL
+	//--------------------------------
+
+	let query = `SELECT * FROM Users`;
+	var rqname=[];
+	connection.query(query, (err, result)=>{
+		if(err){
+			console.error(err);
+		}else{
+			for (let i = 0; i < result.length; i++) {
+				rqname.push(result[i].name)
+				console.log(rqname);
+			}
+
+		}
+	});
+
+app.get('/dashboardadmin', (req, res)=>{
+  
+	res.render('dashboardadmin', {'rqname' : 'rqname',
+								'ole':rqname});
+});
+
+
 
 
 //---------------------------------------------
