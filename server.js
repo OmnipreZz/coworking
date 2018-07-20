@@ -1,5 +1,6 @@
 const express = require('express'),
-      bodyParser = require('body-parser'),
+	  bodyParser = require('body-parser'),
+	  moment = require('moment'),
       session = require('express-session'),
       ejs = require('ejs'),
 	  apikey = require('./sendgrid/apikey'),
@@ -234,31 +235,45 @@ app.get('/dashboard', (req, res)=>{
 	// Request MySQL
 	//--------------------------------
 
-	let query = `SELECT * FROM Users`;
-	var rqname=[];
-	connection.query(query, (err, result)=>{
-		if(err){
-			console.error(err);
-		}else{
-			for (let i = 0; i < result.length; i++) {
-				rqname.push(result[i].name)
-				// console.log(rqname);
-			}
+	// let query = `SELECT name FROM users`;
+	// var rqname=[];
+	// connection.query(query, (err, result)=>{
+	// 	if(err){
+	// 		console.error(err);
+	// 	}else{
 
-		}
-	});
+	// 		for (let i = 0; i < result.length; i++) {
+	// 			rqname.push(result[i].name)
+	// 		}
+	// 	}
+	// });
 
 app.get('/dashboardadmin', (req, res)=>{
-	sess=req.session;
-	console.log(sess);
-	if(sess.role != "admin") {
-		console.log("not an admin!!")
-		res.redirect("/");
-	}
-	else {
-	res.render('dashboardadmin', {'rqname' : 'rqname',
-								'ole':rqname});
-	}
+	// sess=req.session;
+	// console.log(sess);
+	// if(sess.role != "admin") {
+	// 	console.log("not an admin!!")
+	// 	res.redirect("/");
+	// }
+	// else {
+		let query = `SELECT users.name, users.surname, users.mail, users.phone, users.role, booking.date_time, booking.status, users.idUser FROM users RIGHT JOIN booking ON users.idUser = booking.idUser ORDER BY users.idUser;`;
+		connection.query(query, (err, result)=>{
+			if(err){
+				console.error(err);
+			}else{
+				
+				console.log("result :: " + result[0].date_time);
+				console.log('lenght of result :: ' + result.length);
+				for (let i = 0; i < result.length; i++) {
+					console.log(result[i].date_time);
+				result[i].date_time=moment(result[i].date_time).format("ddd, MMM, YYYY");
+				};
+				obj = {print: result};
+				res.render('dashboardadmin', obj);
+			}
+		});
+	
+	//}
 });
 
 
