@@ -5,7 +5,7 @@ $('.formula').click(function() {
     console.log(formulinfo);
     $("#msginfo").html('Vous avez choisi la formule');
     $("#msgformule").html(formulinfo);
-    $("#msgformule").attr('name',formulinfo);
+    $("#option").attr('value', formulinfo);
 });
     
 //------------------------------
@@ -19,7 +19,7 @@ $('.cellday').click(function() {
     let chosendate = moment(datecell).format("DD/MM/YYYY");
     console.log(chosendate);
     $("#msgDate").html('Pour le : '+ chosendate);
-    $("#msgDate").attr("name", datecell);
+    $("#date").attr("value", datecell);
 });
 
 // modal resa calendar checked ///////////////////////////
@@ -29,30 +29,32 @@ $('.validModalResa').click(() => {
     if ($('#morning').is(':checked')) {
         let matin = "Matin";
         $("#dateMatin").html(matin);
-        $('#dateMatin').attr('name', matin);
+        $('#morning').attr('value', matin);
     }
     if($('#afternoon').is(':checked')) {
         let aprem = "Après-midi";
         $("#dateAprem").html(aprem);
-        $('#dateAprem').attr('name', aprem);
+        $('#afternoon').attr('value', aprem);
     }
     if ($('#cowork').is(':checked')) {
         let espace = "Espace Coworking";
         $("#optionEspace").html(espace);
+        $("#place").attr('value', espace);
     }
     if ($('#solo').is(':checked')) {
         let espace = "Bureau";
         $("#optionEspace").html(espace);
+        $("#place").attr('value', espace);
     }
     if ($('#screen').is(':checked')) {
         let ecran = "Ecran";
         $("#optionEcran").html(ecran);
-        $("#optionEcran").attr('name', ecran);
+        $("#screen").attr('value', ecran);
     }
     if ($('#hammock').is(':checked')) {
         let hamac = "Hamac";
         $("#optionHamac").html(hamac);
-        $("#optionHamac").attr('name', hamac);
+        $("#hammock").attr('value', hamac);
     }
     console.log("option");
     $("#msgOption").html('Les Détails');

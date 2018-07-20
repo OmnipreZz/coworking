@@ -183,7 +183,13 @@ app.post("/booking", (req, res) => {
 	tel : req.body.telephone,
 	mail : req.body.mail
 	}
+
+	let booking = {
+		date : req.body.date,
+		
+	}
 	console.log(user);
+	console.log(req.body.option);
 
 });
 
