@@ -105,3 +105,16 @@ Emma Satyagraha : emma.mda@outlook.fr
 * Commencement de l'authentification (connexion d'un utilisateur)
 * Enregistrement d'un utilisateur - partie back
 * Design du calendrier
+
+
+### jeudi 19 juillet
+
+* ajout (en js) d'une classe "date" à toutes les div du calendrier ayant pour valeur la date qui leur correspond
+* affichage des produits séléctionnés à l'écran lors de la résa d'un utilisateur
+* création des sessions avec des cookies et express-session
+* création d'une page dashboard admin
+* début des requêtes pour afficher des données dans la page dashboard
+* début des comparaisons de mots de passe avec bcrypt
+* début des requêtes pour réellement créer une réservation lors de l'envoi de la demande
+
+

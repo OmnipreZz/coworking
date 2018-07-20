@@ -64,10 +64,6 @@ app.get('/test', (req,res)=>{
     res.render('testpage');
 });
 
-// route to dashboardadmin
-app.get('/dashboardadmin', (req, res)=>{
-	res.render('dashboardadmin');
-});
 
 // requête DB inscription ---------------------
 app.post('/registration', (req, res) => {
@@ -133,41 +129,56 @@ app.post('/log_in', (req,res)=>{
         password : req.body.pwd
 	}
 	// get the user on the database whith the mail of the user trying to log in 
-	let logInQuery = `SELECT * FROM Users WHERE mail ='${user.mail}'`
-	connection.query(logInQuery, (err, result)=>{
+	connection.query(`SELECT * FROM Users WHERE mail = ?`, user.mail, (err, result)=>{
 		if(err){
 			console.error(err);
 		}
 		// if something match the query
 		else if(result[0] != undefined){
-			// // compare also the password of the user with the matching mail
-			 if(result[0].mail == user.mail && result[0].password == user.password){	
-				
-			 	let authUser = {
-			 		name : result[0].name,
-			 		surname : result[0].surname,
-			 		mail : result[0].mail,
-			 		phone : result[0].phone,
-			 		avatar : result[0].urlavatar,
-			 		role : result[0].role
-			 	}
-			 	// set session then push the authUser object in it : it will be accessed with "sess.user"
-			 	sess = req.session;
-			 	sess.user = authUser;
+			// compare both mails
+			if(result[0].mail == user.mail){
+			 	console.log(result[0]);
+				console.log(user.password)
+				console.log(result[0].password);
+				bcrypt.compare(user.password, result[0].password, function(err, cryptres){
+					if(err){console.error(err);}
+					else {
+						if (cryptres == true){
+							console.log('password match')
+							let authUser = {
+			 				name : result[0].name,
+			 				surname : result[0].surname,
+			 				mail : result[0].mail,
+			 				phone : result[0].phone,
+			 				avatar : result[0].urlavatar,
+			 				role : result[0].role
+			 				}
+			 				// set session then push the authUser object in it : it will be accessed with "sess.user"
+			 				sess = req.session;
+			 				sess.user = authUser;
 
-			 	// if it's a classic user, redirect to the user dashboard
-			 	if(sess.user.role === "user"){
-			 	res.redirect("/dashboard");
-			 	}
-			 	// else if it's an admin, redirect to admin dashboard
-			 	else if(sess.user.role === "admin"){
-			 		res.redirect("/dashboard_admin");
-			 	}
+				 				// if it's a classic user, redirect to the user dashboard
+				 				if(sess.user.role === "user"){
+				 				res.redirect("/dashboard");
+				 				}
+				 				// else if it's an admin, redirect to admin dashboard
+				 				else if(sess.user.role === "admin"){
+				 					res.redirect("/dashboardadmin");
+				 				}
+						}
+						else { 
+							console.log('password mismatch');
+						}
+					}
+				});
 			}
 		}
 		// if the query don't meet any match so the identification failed
 		else {
 			// connection.end();
+
+
+			// user failed to authenticate
 			res.redirect("/");
 		}
 	});
@@ -178,9 +189,37 @@ app.post('/log_in', (req,res)=>{
 // route to user dashboard page
 app.get('/dashboard', (req, res)=>{
 	sess=req.session;
-	console.log(sess.user);
+	// console.log(sess.user);
 	res.render('dashboard');
 });
+
+// route to dashboardadmin
+//-----------------------------------
+
+	// Request MySQL
+	//--------------------------------
+
+	let query = `SELECT * FROM Users`;
+	var rqname=[];
+	connection.query(query, (err, result)=>{
+		if(err){
+			console.error(err);
+		}else{
+			for (let i = 0; i < result.length; i++) {
+				rqname.push(result[i].name)
+				console.log(rqname);
+			}
+
+		}
+	});
+
+app.get('/dashboardadmin', (req, res)=>{
+  
+	res.render('dashboardadmin', {'rqname' : 'rqname',
+								'ole':rqname});
+});
+
+
 
 
 //---------------------------------------------
