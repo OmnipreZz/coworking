@@ -1,6 +1,5 @@
 const express = require('express'),
 	  bodyParser = require('body-parser'),
-	  moment = require('moment'),
       session = require('express-session'),
       ejs = require('ejs'),
 	  apikey = require('./sendgrid/apikey'),
