@@ -177,6 +177,16 @@ app.post('/log_in', (req,res)=>{
 	});
 });
 
+app.post("/booking", (req, res) => {
+	let user = {
+	name : req.body.name,
+	tel : req.body.telephone,
+	mail : req.body.mail
+	}
+	console.log(user);
+
+});
+
 
 
 // route to user dashboard page
