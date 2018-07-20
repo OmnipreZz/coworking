@@ -205,6 +205,8 @@ app.get('/dashboard', (req, res)=>{
 		if(err){
 			console.error(err);
 		}else{
+			console.log(result);
+			
 			for (let i = 0; i < result.length; i++) {
 				rqname.push(result[i].name)
 				console.log(rqname);
