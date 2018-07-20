@@ -11,6 +11,7 @@ const express = require('express'),
       jwt = require('jsonwebtoken'),
       config = require('./public/js/config');
 	  saltRounds = 10;
+	  moment = require('moment');
 sgMail.setApiKey(apikey);
 
 // declare la variable app avec express
@@ -185,15 +186,37 @@ app.post("/booking", (req, res) => {
 	tel : req.body.telephone,
 	mail : req.body.mail
 	}
-
+	let chosendate = req.body.date;
+	let amonthlater = moment(chosendate).add(1, 'month').format("YYYY-MM-DD");
+	console.log(amonthlater);
 	let option = {
 		price : req.body.price,
-		date : req.body.date,
+		start_date : chosendate,
+		end_date : amonthlater,
 		numberOfHalfDays : req.body.nbrDay
 	}
-	console.log(user);
-	console.log(option);
 
+	let place = {
+	 name :	req.body.place
+	}
+	console.log(place);
+
+	if(req.body.am && req.body.pm){
+		let morning = req.body.am;
+		let afternoon = req.body.pm;
+	}
+
+	else{
+	let momentOfDay =  req.body.am || req.body.pm
+		console.log(momentOfDay);
+	}
+	// console.log(user);
+	// console.log(option);
+	// let rent_place = {
+	// 	day : chosendate
+	// 	// idPlace = 
+	// }
+	// // console.log(rent_place);
 
 });
 
