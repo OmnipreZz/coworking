@@ -53,6 +53,8 @@ CREATE TABLE Options(
 	idOption INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY(idOption),
 	price INT,
+	start_date DATE,
+	end_date DATE,
 	numberOfHalfDays INT
 );
 
