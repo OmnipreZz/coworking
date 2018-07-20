@@ -187,11 +187,16 @@ nav {
 
 .collapsible {
     all: unset;
+    all: -webkit-unset;
+    all: -moz-unset;
+    all: -ms-unset;
+    all: -o-unset;
+    
 }
 
 .card {
     cursor: pointer;
-    // appearance: none;
+    appearance: none;
 }
 
 .card-title {
@@ -200,6 +205,10 @@ nav {
 
 .collapsible-header {
     all: unset;
+    all: -webkit-unset;
+    all: -moz-unset;
+    all: -ms-unset;
+    all: -o-unset;
     i {
         font-size: 3em;
     }
