@@ -179,12 +179,16 @@ app.post('/log_in', (req,res)=>{
 });
 
 app.post("/booking", (req, res) => {
+
+	// get informations to create a new user in db
 	let user = {
 	name : req.body.name,
 	surname : req.body.surname,
 	tel : req.body.telephone,
-	mail : req.body.mail
+	mail : req.body.mail,
+	role : "user"
 	}
+	// get informations to create a new option in db
 	let chosendate = req.body.date;
 	let amonthlater = moment(chosendate).add(1, 'month').format("YYYY-MM-DD");
 	console.log(amonthlater);
@@ -195,22 +199,34 @@ app.post("/booking", (req, res) => {
 		numberOfHalfDays : req.body.nbrDay
 	}
 
+	// get information to create a new place in db
 	let place = {
 	 name :	req.body.place
 	}
 	console.log(place);
 
+
+	let equipment = {
+
+	}
+
+
+
+
+	//get informations to create a new rent_place in db 
+	// if the userr selected morning & afternoon = create two new rent_places
 	if(req.body.am && req.body.pm){
 		let morning = req.body.am;
 		let afternoon = req.body.pm;
 	}
-
+	// else only create one
 	else{
 	let momentOfDay =  req.body.am || req.body.pm
 		console.log(momentOfDay);
 	}
 	// console.log(user);
 	// console.log(option);
+	console.log(place);
 	// let rent_place = {
 	// 	day : chosendate
 	// 	// idPlace = 
@@ -224,6 +240,12 @@ app.post("/booking", (req, res) => {
 // route to user dashboard page
 app.get('/dashboard', (req, res)=>{
 	sess=req.session;
+	// if (sess.role != user){
+	// 	res.redirect("/");
+	// }
+	// else {
+		
+	// }
 	// console.log(sess.user);
 	res.render('dashboard');
 });
