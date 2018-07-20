@@ -186,12 +186,12 @@ app.post("/booking", (req, res) => {
 	surname : req.body.surname,
 	tel : req.body.telephone,
 	mail : req.body.mail,
-	role : "user"
+	role : "user",
+	// idOption : 
 	}
 	// get informations to create a new option in db
 	let chosendate = req.body.date;
 	let amonthlater = moment(chosendate).add(1, 'month').format("YYYY-MM-DD");
-	console.log(amonthlater);
 	let option = {
 		price : req.body.price,
 		start_date : chosendate,
@@ -203,14 +203,22 @@ app.post("/booking", (req, res) => {
 	let place = {
 	 name :	req.body.place
 	}
-	console.log(place);
 
-
-	let equipment = {
-
+	// get information about equipment and put it in an object
+	n = 0;
+	let equipment : {
+		nbr : n,
+		screen : "",
+		ham : ""
 	}
 
+	if(req.body.ecran) {
+		equipment.screen = req.body.ecran;
+	}
 
+	if(req.body.ham) {
+		equipment.hammock = req.body.ham;
+	}
 
 
 	//get informations to create a new rent_place in db 
@@ -218,15 +226,41 @@ app.post("/booking", (req, res) => {
 	if(req.body.am && req.body.pm){
 		let morning = req.body.am;
 		let afternoon = req.body.pm;
+
+		let rent_place1 = {
+			day : chosendate,
+			moment : morning
+			// idPlace : 
+		}
+
+		let rent_place2 = {
+			day : chosendate,
+			moment : afternoon
+		}
+		// console.log(rent_place1);
+		// console.log(rent_place2);
 	}
 	// else only create one
-	else{
-	let momentOfDay =  req.body.am || req.body.pm
-		console.log(momentOfDay);
+	else {
+		let momentOfDay =  req.body.am || req.body.pm;
+		let rent_place = {
+			day : chosendate,
+			moment : momentOfDay
+		}
+		// console.log(rent_place);
 	}
+
+	let booking = {
+		date_time : moment().format(),
+		status: "En attente"
+	}
+
+	console.log(booking)
+
+
 	// console.log(user);
 	// console.log(option);
-	console.log(place);
+	// console.log(place);
 	// let rent_place = {
 	// 	day : chosendate
 	// 	// idPlace = 
@@ -244,7 +278,7 @@ app.get('/dashboard', (req, res)=>{
 	// 	res.redirect("/");
 	// }
 	// else {
-		
+
 	// }
 	// console.log(sess.user);
 	res.render('dashboard');

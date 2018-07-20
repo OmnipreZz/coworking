@@ -47,12 +47,12 @@ $('.cellday').click(function() {
 $('.validModalResa').click(() => {
 
     if ($('#morning').is(':checked')) {
-        let matin = "Matin";
+        let matin = "morning";
         $("#dateMatin").html(matin);
         $('#am').attr('value', matin);
     }
     if($('#afternoon').is(':checked')) {
-        let aprem = "Après-midi";
+        let aprem = "afternoon";
         $("#dateAprem").html(aprem);
         $('#pm').attr('value', aprem);
     }
