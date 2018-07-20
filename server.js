@@ -243,13 +243,15 @@ app.get('/dashboardadmin', (req, res)=>{
 				console.log('lenght of result :: ' + result.length);
 				for (let i = 0; i < result.length; i++) {
 					console.log(result[i].date_time);
-				result[i].date_time=moment(result[i].date_time).format("ddd, MMM, YYYY");
+				result[i].date_time=moment(result[i].date_time).format("YYYY-MM-DD");
 				};
 				obj = {print: result};
 				res.render('dashboardadmin', obj);
 			}
 		});
-	
+		
+		// let query2 = `SELECT `
+
 	//}
 });
 
