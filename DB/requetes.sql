@@ -39,9 +39,9 @@ CREATE TABLE Equipment_Quantity(
 CREATE TABLE Booking(
 	idBooking INT NOT NULL AUTO_INCREMENT,
 	PRIMARY KEY(idBooking),
-	date_time Date, 	
+	date_time Date,
+	status VARCHAR(20) NOT NULL,	
 	idRent_Place INT,
-	status VARCHAR(20) NOT NULL,
 	FOREIGN KEY(idRent_Place) REFERENCES Rent_Place(idRent_Place),
 	idEquipment_Quantity INT,
 	FOREIGN KEY(idEquipment_Quantity) REFERENCES Equipment_Quantity(idEquipment_Quantity),
