@@ -8,21 +8,27 @@
         <!-- Modal Structure -->
         <div id="userchoice" class="modal modalSize">
             <div class="modal-content">
-                    <form class="col s12" action="/reguser" method="POST">
+                    <form class="col s12" action="/booking" method="POST">
                         <div class="row">
                             <div class="input-field col s6">
-                                <input id="first_name" name="nom" type="text" class="validate" required/>
-                                <label for="first_name">Nom</label>
+                                <input id="second_name" name="surname" type="text" class="validate" required/>
+                                <label for="second_name">Nom</label>
                             </div>
                             <div class="input-field col s6">
+                                <input id="first_name" name="name" type="text" class="validate" required/>
+                                <label for="first_name">Prénom</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
                                 <input id="telephone" name="telephone" type="tel" class="validate" required/>
-                                <label for="telephone">Telephone</label>
+                                <label for="telephone">Téléphone</label>
                             </div>
                         </div>
                     
                         <div class="row">
                             <div class="input-field col s12">
-                                <input id="email" name="mailRegister" type="email" class="validate" required/>
+                                <input id="email" name="mail" type="email" class="validate" required/>
                             <!-- pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" -->
                                 <label for="email">E-mail</label>
                             </div>
@@ -38,13 +44,25 @@
                                 </label>
                             </div>
                         </div>
+
+                        <div class="hiddenInput">
+                            <input name="option" id="option" type="text"/>
+                            <input name="price" id="price" type="text" />
+                            <input name="nbrDay" id="nbrDay" type="text" />
+                            <input name="date" id="date" type="text" />
+                            <input name="am" id="am" type="text" />
+                            <input name="pm" id="pm" type="text" />
+                            <input name="place" id="place" type="text" />
+                            <input name="ecran" id="ecran" type="text" />
+                            <input name="ham" id="ham" type="text" />
+                        </div>
                         <div class="row center">
                             <button class="btn waves-effect waves-light mt" type="submit" name="action">Je valide mes coordonnées</button>
                         </div>
                     </form>
                     <div class="col s12" id="choiceaccount">
-                        <a class="waves-effect waves-teal btn-flat navColor" href="#modal5">Je crée un compte</a>
-                        <a class="waves-effect waves-teal btn-flat navColor" href="#">J'ai déjà un compte</a>
+                        <a class="waves-effect waves-teal btn-flat blueColor" href="#modal5">Je crée un compte</a>
+                        <a class="waves-effect waves-teal btn-flat blueColor" href="#">J'ai déjà un compte</a>
                     </div>
             </div>
             <!-- <div class="modal-footer"> -->
