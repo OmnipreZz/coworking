@@ -180,10 +180,19 @@ app.post('/log_in', (req,res)=>{
 app.post("/booking", (req, res) => {
 	let user = {
 	name : req.body.name,
+	surname : req.body.surname,
 	tel : req.body.telephone,
 	mail : req.body.mail
 	}
+
+	let option = {
+		price : req.body.price,
+		date : req.body.date,
+		numberOfHalfDays : req.body.nbrDay
+	}
 	console.log(user);
+	console.log(option);
+
 
 });
 
