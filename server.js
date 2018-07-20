@@ -206,7 +206,7 @@ app.post("/booking", (req, res) => {
 
 	// get information about equipment and put it in an object
 	n = 0;
-	let equipment : {
+	let equipment = {
 		nbr : n,
 		screen : "",
 		ham : ""
