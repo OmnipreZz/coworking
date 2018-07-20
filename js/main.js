@@ -36,7 +36,7 @@ $('.formula').click(function() {
 $('.cellday').click(function() {
     let datecell = $(this).children().attr("date");
     console.log(datecell);
-    let chosendate = moment(datecell).format("DD/MM/YYYY");
+    let chosendate = moment(datecell).format("DD-MM-YYYY");
     console.log(chosendate);
     $("#msgDate").html('Pour le : '+ chosendate);
     $("#date").attr("value", datecell);
