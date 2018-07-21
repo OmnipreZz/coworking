@@ -48,12 +48,14 @@ $('.validModalResa').click(() => {
 
     if ($('#morning').is(':checked')) {
         let matin = "morning";
-        $("#dateMatin").html(matin);
+        let mat = "Matin"
+        $("#dateMatin").html(mat);
         $('#am').attr('value', matin);
     }
     if($('#afternoon').is(':checked')) {
         let aprem = "afternoon";
-        $("#dateAprem").html(aprem);
+        let ap = "Après-midi"
+        $("#dateAprem").html(ap);
         $('#pm').attr('value', aprem);
     }
     if ($('#cowork').is(':checked')) {

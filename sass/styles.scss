@@ -204,84 +204,21 @@ nav {
 
 
 //-----------------------------//formules --- CARD ----------------------------------------
-
-// .collapsible {
-//     all: unset;
-//     all: -webkit-unset;
-//     all: -moz-unset;
-//     all: -ms-unset;
-//     all: -o-unset;
-    
-// }
-
-// .card {
-//     cursor: pointer;
-//     appearance: none;
-// }
-
-// .card-title {
-//     padding-top: 3vh;
-// }
-
-// .collapsible-header {
-//     all: unset;
-//     all: -webkit-unset;
-//     all: -moz-unset;
-//     all: -ms-unset;
-//     all: -o-unset;
-//     i {
-//         font-size: 3em;
-//     }
-// }
-
-// .card-panel {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     height: 20vh;
-// }
-
-// .tcard {
-//     font-family: 'Montserrat', sans-serif;
-//     color: $orange;
-//     font-weight: bold;
-//     height: 40px;
-// }
-
-// .hrOrange {
-//     color: $orange;
-//     width: 5vh;
-// }
-
-// .faIconTarif {
-//     margin-right: 2px;
-// }
-
 .option1 {
     background-color: $vertPastel;
-    // color: white;
 }
 
 .option2 {
     background-color: $jaune;
-    // color: white;
 }
 
 .option3 {
     background-color: $orange;
-    // color: white;
 }
 
 .option4 {
     background-color: $rouge;
-    // color: white;
 }   
-
-// .collapsible-body {
-//     hr {
-//         opacity: 0.3;
-//     }
-// }
 
 .mainCard {
     margin-top: 20px;
@@ -308,10 +245,6 @@ nav {
 
 .favCard {
     font-size: 55px;
-}
-
-.contentCard {
-    
 }
 
 .h2card {
@@ -401,12 +334,15 @@ nav {
 .formuleIcon  {
     display: flex;
     justify-content: space-around;
-    font-size: 50px;
     color: white;
     padding-top: 50px;
-    p {
-        font-size: 80px;
+    i {
+        font-size: 50px;
+    }
+    span {
+        font-size: 30px;
         font-weight: bold;
+        font-family: 'Gaegu', cursive;
     }
 }
 
@@ -638,9 +574,11 @@ nav {
     }
 
     .formuleIcon  {
-    font-size: 30px;
+    i {
+        font-size: 30px;
+    }
   
-    p {
+    span {
         display: none;
     }
 }
