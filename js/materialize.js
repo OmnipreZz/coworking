@@ -3,7 +3,7 @@
 //---------------------
 $(document).ready(function () {
     $('.sidenav').sidenav();
-});
+
 
 //---------------------
 
@@ -26,7 +26,7 @@ $('.carousel-icon').carousel({
 });
 setInterval(function () {
     $('.carousel-icon').carousel('next');
-}, 6000);
+}, 7500);
 
 //---------------------
 
@@ -34,9 +34,8 @@ setInterval(function () {
 
 // Parallax
 //---------------------
-$(document).ready(function () {
-    $('.parallax').parallax();
-});
+$('.parallax').parallax();
+
 
 
 //enable collapsible in the options cards
@@ -50,8 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // ------------------------
 // [Test Page] Modal
 
-$(document).ready(function(){
     $('.modal').modal();
-  });
+
 
 //---------------------
+});
