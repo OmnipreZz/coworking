@@ -27,11 +27,10 @@ $gray: #797979;
 h2 {
     color: $bleu;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     margin-top: 30px;
     margin-bottom: 20px;
-    font-family: 'Ribeye Marrow', cursive;
+    font-family: cursive;
 }
 
 h4 {
@@ -77,9 +76,6 @@ h4 {
     color: gray;
 }
 
-.ribeye {
-    font-family: 'Ribeye Marrow', cursive;
-}
 
 //--------------------------//banner background COLOR and margin-------------------------
 
@@ -165,7 +161,7 @@ nav {
 // ------------------------------------------//carousel-----------------------------------
 // ------------
 .carou {
-    height: 91vh;
+    height: 90vh;
 }
 
 .slide1 {
@@ -292,6 +288,7 @@ nav {
     box-shadow: 2px 2px 3px $gray;
     border-left: 2px outset $gray;
     border-top: 1px outset $gray;
+    background-color: #F3F5F7;
 }
 
 .titleCard {
@@ -313,9 +310,9 @@ nav {
     font-size: 55px;
 }
 
-// .contentCard {
+.contentCard {
     
-// }
+}
 
 .h2card {
     font-family: 'Montserrat', sans-serif;
@@ -337,6 +334,9 @@ nav {
 
 .priceCard {
     margin-top: 30px;
+    p {
+        margin-left: 2%;
+    }
 }
 
 //---//boutton resa formule---------------
@@ -395,8 +395,25 @@ nav {
 }
 
 
-
 //-------------------------
+
+// -----------------------------Carousel Icon-------------------------------
+.formuleIcon  {
+    display: flex;
+    justify-content: space-around;
+    font-size: 50px;
+    color: white;
+    padding-top: 50px;
+    p {
+        font-size: 80px;
+        font-weight: bold;
+    }
+}
+
+.carousel-icon {
+    background-color: $bleu;
+    max-height: 30vh;
+}
 
 
 //-----------------------------//map and contact-------------------------------
@@ -619,6 +636,14 @@ nav {
     h2 {
         font-size: 35px;
     }
+
+    .formuleIcon  {
+    font-size: 30px;
+  
+    p {
+        display: none;
+    }
+}
     
 }
 //-------------------//media end---------------------------

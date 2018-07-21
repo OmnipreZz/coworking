@@ -12,13 +12,21 @@ $(document).ready(function () {
 // Carousel
 //---------------------
 
-$('.carousel').carousel({
+$('.carou').carousel({
     duration: 400,
     fullWidth: true
 });
 setInterval(function () {
-    $('.carousel').carousel('next');
+    $('.carou').carousel('next');
 }, 5000);
+
+$('.carousel-icon').carousel({
+    duration: 800,
+    fullWidth: true
+});
+setInterval(function () {
+    $('.carousel-icon').carousel('next');
+}, 6000);
 
 //---------------------
 

@@ -1,7 +1,7 @@
 <%- include partials/header.ejs %>
     <%- include partials/navbar.ejs %>
 
-<!-- carousel -->
+<!-- //////////////carousel///////////////// -->
 <div class=" carou carousel carousel-slider">
     <div class="carousel-fixed-item center">
         <a href="#anchorDesc" class="btn-floating btn-large">
@@ -16,7 +16,7 @@
     </div>
 </div>
 
-<!-- description -->
+<!-- ////////////////////description//////////////////// -->
 <div class="container description" id="anchorDesc">
     <div class="row">
         <div class="col s12 m12 s12">
@@ -28,21 +28,21 @@
     </div>
 </div>
 
-<!-- parallax -->
+<!-- ///////////////////parallax/////////////////////////// -->
 <div class="parallax-container">
     <div class="parallax">
         <img src="/img/coworking.jpg"/>
     </div>
 </div>
 
-<!-- newsletter -->
+<!-- ///////////////////////newsletter//////////////////////// -->
 <div class="row newsLetter">
     <div class="col s12 m12 l12 center hideLogo newsMargin">
         <img src="/img/charte-logotype-MDA.png" class="responsive-img newsletterPad" width="140"/>
     </div>
     <div class=" col s12 m12 l12">
         <div class="button-arrow">
-            <a href="#anchorTarif" class="btn-floating btn-large">
+            <a href="#anchorResa" class="btn-floating btn-large">
                 <i class="material-icons">arrow_downward</i>
             </a>
         </div>
@@ -55,21 +55,68 @@
 <hr class="hrBlue"/>
 <br/>
 
-<!-- cartes avec les différentes formules -->
+<!-- /////////////cartes avec les différentes formules////////////// -->
 <%- include partials/testformule.ejs %>
 <!-- //fin div carte formule -->
 
 <!-- banner --> 
-    <div class="row blueBack">
+    <!-- <div class="row blueBack"> -->
             <!-- <div class="col s12 l12 m12 center mt button-arrow">
                 <a href="#anchorCal" class="btn-floating btn-large">
                     <i class="material-icons">arrow_downward</i>
                 </a>
             </div> -->
+
+        <!-- <div class="formuleIcon">
+            <i class="fas fa-wifi faIconTarif"></i> -->
+            <!-- <i class="far fa-file-alt"></i> -->
+            <!-- <i class="fas fa-coffee"></i>
+            <i class="fas fa-utensils faIconTarif"></i>
+            <i class="fas fa-couch"></i>
+            <i class="fas fa-unlock-alt"></i> -->
+            <!-- <i class="fas fa-headphones faIconTarif"></i> -->
+            <!-- <i class="fas fa-headset faIconTarif"></i>
+            <i class="fas fa-desktop"></i>
+            <i class="far fa-comment-dots"></i> -->
+            <!-- <i class="fas fa-key"></i> -->
+        <!-- </div>
+    </div> -->
+
+    <div class="carousel-icon carousel carousel-slider">
+        <div class="carousel-item blueBack formuleIcon" href="#one!">
+            <i class="fas fa-wifi"></i>
+            <p>Wifi</p>
+            <i class="fas fa-coffee"></i>
+            <p>Café</p>
+            <i class="fas fa-utensils"></i>
+            <p>Cuisine</p>
+            <i class="fas fa-couch"></i>
+            <p>Espace détente</p>
+        </div>
+        <div class="carousel-item blueBack formuleIcon" href="#two!">
+            <i class="fas fa-globe"></i>
+            <p>Cyber Base</p>
+            <i class="far fa-file-alt"></i>
+            <p>Imprimante</p>
+            <i class="fas fa-desktop"></i>
+            <p>Ecran</p>
+            <i class="fas fa-headphones"></i>
+            <p>Casque Audio</p>
+        </div>
+        <div class="carousel-item blueBack formuleIcon" href="#three!">
+            <i class="fas fa-unlock-alt"></i>
+            <p>Casiers</p>
+            <i class="fas fa-key"></i>
+            <p>Bureau</p>
+            <i class="fas fa-users"></i>
+            <p>Travail partagé</p>
+            <i class="far fa-comment-dots"></i>
+            <p>Rencontres</p>
+        </div>
     </div>
 <br>
 
-<!-- reservation -->
+<!-- //////////////////////reservation/////////////////////// -->
 <div id="anchorCal" class="container-fluid">
     <div id="choicebloc" class="row">
         <h2>Réservation</h2>
@@ -78,8 +125,7 @@
 </div>
 
 
-<!-- Information resa div -->
-
+<!-- //////////////////Information resa////////////////////// -->
 <div class="container">
     <div class="row resaDiv" id="resaConfirm">
         <div id="infoFormule" class="center">
@@ -104,7 +150,7 @@
 </div>
 
 
-<!-- bouton resa -->
+<!-- //////////////////////bouton resa///////////////////////////// -->
 <div class="row blueBack">
     <div class="col s12 l12 m12 button-arrow">
         <a href="#anchorContact" class="btn-floating btn-large">
@@ -128,7 +174,7 @@
 
 
 
-<!-- contact and map -->
+<!-- ////////////////////contact and map/////////////////////// -->
     <div id="anchorContact" class="row map">
         <div class="col l8 m8 s12">
             <div id="mapid"></div>
