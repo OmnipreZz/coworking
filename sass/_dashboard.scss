@@ -1,0 +1,43 @@
+.userBoard {
+    box-shadow: 2px 2px 3px gray;
+    height: 500px;
+}
+.avatar {
+    height: 400px;
+    margin-top: 50px;
+}
+
+.avatarPhoto {
+    height: 370px;
+    background-color: #F3F5F7;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-shadow: 2px 2px 3px $gray;
+    border-left: 2px outset $gray;
+    border-top: 1px outset $gray;
+    i {
+        color: $gray;
+        font-size: 300px;
+        margin-bottom: 20px;
+    }
+}
+
+.infoProfil {
+    margin-top: 50px;
+    p {
+        color: $gray;
+        font-weight: bold;
+    }
+    span {
+        font-weight: normal;
+        color: $gray;
+    }
+}
+
+.dateInscris {
+    font-style: italic;
+    p {
+        color: $bleu;
+    }
+}
