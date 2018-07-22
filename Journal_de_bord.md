@@ -117,4 +117,13 @@ Emma Satyagraha : emma.mda@outlook.fr
 * début des comparaisons de mots de passe avec bcrypt
 * début des requêtes pour réellement créer une réservation lors de l'envoi de la demande
 
+### vendredi 20 juillet
 
+* Requetes SQL côté admin et client
+* Design du site
+
+### samedi 21 & dimanche 22 juillet
+
+* Requetes SQL
+* Echec de la mise en ligne sur Heroku
+* Design du site
