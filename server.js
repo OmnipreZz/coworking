@@ -156,7 +156,7 @@ app.post('/log_in', (req,res)=>{
 
 				 			// if it's a classic user, redirect to the user dashboard
 				 			if(sess.user.role === "user"){
-				 				res.redirect("/dashboard");
+								 res.redirect("/dashboard");
 				 			}
 				 			// else if it's an admin, redirect to admin dashboard
 				 			else if(sess.user.role === "admin"){

@@ -20,8 +20,15 @@
             <li>
                 <span class="navDivider">|</span>
             </li>
+            <%# if(sess.user.role === "user") {%>
+                <!-- <li>
+                    <a class="waves-effect waves-light btn modal-trigger" href="/dashboard">Mon profil</a>
+                </li>
+                <li>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#">Se déconnecter</a>
+                </li> -->
+                <%# } else { %>
             <li>
-
                 <!-- Modal Trigger -->
                 <a class="waves-effect waves-light btn modal-trigger" href="#modal5">S'inscrire</a>
 
@@ -43,21 +50,27 @@
                     </div>
                 </div>
             </li>
+            <%# } %>
         </ul>
     </div>
 
 
     <ul class="sidenav archivo" id="mobile-demo">
-        <!-- <li>
-            <a href="#">Accueil</a>
-        </li> -->
         <li>
             <a href="/#anchorResa" class=" bouttonResa btn modal-trigge">Réserver</a>
         </li>
         <li>
-            <a href="/#anchorContact" class="bouttonResa btn modal-trigge pulse">Contact</a>
+            <a href="/#anchorContact" class="bouttonResa btn modal-trigge">Contact</a>
         </li>
         <div class="divider"></div>
+        <%# if(sess.user.role === "user") {%>
+        <!-- <li>
+            <a class="waves-effect waves-light btn modal-trigger" href="/dashboard">Mon profil</a>
+        </li>
+        <li>
+            <a class="waves-effect waves-light btn modal-trigger" href="#">Se déconnecter</a>
+        </li> -->
+        <%# } else { %>
         <li>
             <!-- Modal Trigger -->
             <a class="waves-effect waves-light btn modal-trigger" href="#modal6">S'inscrire</a>
@@ -69,7 +82,6 @@
                     <%- include ../partials/registration.ejs %>
                 </div>
             </div>
-
         </li>
         <li>
             <a class="waves-effect waves-light btn modal-trigger" href="#modal_log_in1">Se connecter</a>
@@ -80,5 +92,6 @@
                 </div>
             </div>
         </li>
+        <%# } %>
     </ul>
 </nav>
